@@ -1,0 +1,49 @@
+//=============================================
+//Thème Wordpress :
+//=============================================
+$wp: false;
+
+//=============================================
+//Couleurs :
+//=============================================
+@import 'couleurs';
+
+//=============================================
+//Fonts :
+//=============================================
+$taille-base: 16;
+$line-height-base: 1.5;
+$font-default: 'Lato', sans-serif;
+$font-secondaire: $font-default; //Titres par exemple
+$monospace-font-stack: "Consolas", "DejaVu Sans Mono", "Courier", monospace; //Code et autres
+$max-p-width: 33em;
+
+//=============================================
+//Mise en forme :
+//=============================================
+$p-justify: false;
+$a-underline: underline; //underline / none
+$puce-padding: 0;
+$puce-position: inside; //inside / outside
+
+//=============================================
+//Forms :
+//=============================================
+$input-defaut-size: 250 / $taille-base * 1em;
+$input-defaut-border: 1px solid $gris;
+
+//=============================================
+//Autres :
+//=============================================
+$width-wrap: 1200;
+$pc-wrap: 90%;
+$gm: 400; //Hauteur plan Google Map (false si il n'y a pas de plan sur le site)
+
+//=============================================
+//RWD :
+//=============================================
+$palier-big-1: 1600 / 16 * 1em; //...
+$palier-big-2: 2000 / 16 * 1em; //...
+$palier-1: 1000 / 16 * 1em; //...
+$palier-2: 700 / 16 * 1em; //...
+$palier-3: 500 / 16 * 1em; //...

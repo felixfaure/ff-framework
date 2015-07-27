@@ -1,0 +1,84 @@
+/* ==========================================================================
+   >>BASE
+   ========================================================================== */
+@-webkit-viewport{width:device-width}
+@-moz-viewport{width:device-width}
+@-ms-viewport{width:device-width}
+@-o-viewport{width:device-width}
+@viewport{width:device-width}
+
+html {
+	font-size: 100%; /* 16px dans la plupart des navigateurs */
+	-webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    width: 100%;
+}
+
+body {
+	background-color: $bg-color-body;
+	color: $color-txt-body;
+	font-family: $font-default;
+	font-size: 1em;
+	line-height: $line-height-base;
+	width: 100%;
+}
+
+.lt-ie9 body {
+	min-width: $palier-1;
+}
+
+/* On change le modèle de box pour tous les éléments */
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+/* Images */
+img {
+    border: 0;
+    -ms-interpolation-mode: bicubic;
+	height: auto;
+	width: auto;
+	vertical-align: middle;
+}
+a img {
+	border: 0;
+}
+
+/* Sélection (2 règles sinon ça ne marchera pas) */
+::-moz-selection {
+    background: $couleur-selection-bg;
+    text-shadow: none;
+	color: $couleur-selection-ft;
+}
+::selection {
+    background: $couleur-selection-bg;
+    text-shadow: none;
+	color: $couleur-selection-ft;
+}
+
+/* Empécher le débordement */
+img,
+table,
+td,
+blockquote,
+code,
+pre,
+textarea,
+input,
+video {
+	max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+textarea,
+p {
+	word-wrap: break-word;
+}

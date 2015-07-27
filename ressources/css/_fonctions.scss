@@ -1,0 +1,6 @@
+//=============================================
+//Fonctions :
+//=============================================
+@function em($target, $context: $taille-base) {
+	@return $target / $context * 1em;
+}

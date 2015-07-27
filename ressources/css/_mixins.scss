@@ -1,0 +1,9 @@
+//=============================================
+//Inline :
+//=============================================
+@mixin inline-block($alignment: none) {
+    display: inline-block;
+    @if $alignment and $alignment != none {
+        vertical-align: $alignment;
+    }
+}

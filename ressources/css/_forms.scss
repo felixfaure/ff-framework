@@ -1,0 +1,61 @@
+/* ==========================================================================
+   >>FORMS
+   ========================================================================== */
+/* --------------------------------------------------------------------------
+   ->général
+   -------------------------------------------------------------------------- */
+button,
+input,
+textarea,
+select {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  background-color: transparent;
+  outline-style: none; /* Supr bordure bleu chrome et safari */
+}
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  border: none;
+  cursor: pointer;
+}
+button[disabled],
+input[disabled] {
+  cursor: default;
+}
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical;
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="search"],
+textarea,
+select {
+	width: $input-defaut-size;
+	border: $input-defaut-border;
+}
+label {
+	@include inline-block(middle);
+  cursor: pointer;
+}
+
+/* --------------------------------------------------------------------------
+   ->style perso
+   -------------------------------------------------------------------------- */
+.btn {
+  @include inline-block();
+  padding: .6em 1em;
+  color: $color-txt-btn;
+  transition: all 0.3s;
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color-txt-btn-hover;
+  }
+}

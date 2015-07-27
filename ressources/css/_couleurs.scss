@@ -1,0 +1,43 @@
+//Générales
+//=========
+$noir: #000;
+$blanc: #fff;
+$gris: #F6F6F6;
+$jaune: #ff0;
+$rouge: #cb1d1d;
+
+//Couleurs principales
+//====================
+$couleur1: #00d8a8; //...
+$couleur2: darken($gris,10%); //...
+//...
+
+//Body
+//====
+$bg-color-body: $blanc;
+$color-txt-body: $noir;
+
+//Menu et logo
+//============
+//...
+
+//Boutons
+//=======
+$bg-color-btn: $noir;
+$bg-color-btn-hover: $couleur1;
+$color-txt-btn: $blanc;
+$color-txt-btn-hover: $blanc;
+
+//Liens
+//=====
+$color-links: $couleur1;
+$color-links-hover: $noir;
+
+//Selection
+//=========
+$couleur-selection-bg: darken($couleur1,5%);
+$couleur-selection-ft: $blanc;
+
+//Lignes (hr, quote, ...)
+//=======================
+$couleur-ligne: $couleur1;

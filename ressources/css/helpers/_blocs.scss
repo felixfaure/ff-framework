@@ -1,0 +1,66 @@
+/* ==========================================================================
+   >>HELPERS BLOCS
+   ========================================================================== */
+.inlineConteneur>*,
+.inlineBlock {
+	display: inline-block;
+}
+
+/* Wrapper */
+.wrapper {
+	width: $pc-wrap;
+	max-width: em($width-wrap);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Répartition justifiée parfaite */
+.perfectJustify {
+	display: block;
+	text-align: justify;
+	overflow: hidden;
+	&:before {
+		content: '';
+		display: block;
+		width: 100%;
+		margin-bottom: -1em * $line-height-base;
+	}
+	&:after {
+		content: '';
+		display: inline-block;
+		width: 100%;
+	}
+}
+.perfectJustify_i {
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+	top: 1em * $line-height-base;
+	text-align: left;
+}
+
+/* Masquage accessible */
+.accessHide {
+	position: relative;
+	// overflow: hidden;
+}
+.accessHide_i {
+	position: absolute;
+	top: 0;
+	left: 0;
+	line-height: 0;
+	font-size: 0;
+	color: transparent;
+	user-select: none;
+}
+
+.srOnly {
+    position: absolute !important;
+    clip: rect(1px, 1px, 1px, 1px);
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    height: 1px !important;
+    width: 1px !important;
+    overflow: hidden;
+}

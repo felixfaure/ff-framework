@@ -1,0 +1,59 @@
+/* ==========================================================================
+   >>HELPERS
+   ========================================================================== */
+.clearfix {
+	&:after {
+	  content: '';
+	  clear: both;
+	  display: table;
+	}
+}
+
+/* Allignement des bloc et images (.alignleft, .alignright, .aligncenter sont des classes WP) */
+.left,
+.alignleft { float: left;  }
+.right,
+.alignright { float: right; }
+.center,
+.aligncenter {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img.left,
+.alignleft { margin-right: 1em; }
+img.right,
+.alignright { margin-left: 1em; }
+img.left,
+img.right,
+.alignleft,
+.alignright,
+.aligncenter { margin-bottom: .3em; }
+
+/* Affichage */
+.none {
+	display: none;
+}
+
+.invisible {
+	opacity: 0;
+}
+.lt-ie9 .invisible {
+	visibility: hidden;
+}
+
+.table {
+	display: table;
+	width: 100%;
+}
+.table-fixed {
+	table-layout: fixed;
+}
+.table_row {
+	display: table-row;
+	width: 100%;
+}
+.table_cell {
+	display: table-cell;
+	vertical-align: top;
+}

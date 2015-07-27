@@ -1,0 +1,48 @@
+/* ==========================================================================
+   >>HELPERS TYPOS
+   ========================================================================== */
+/* Allignement du texte */
+.txtleft   { text-align: left; }
+.txtright  { text-align: right; }
+.txtcenter { text-align: center; }
+.txtjustify {
+	text-align: justify;
+	word-wrap: break-word;
+	hyphens: auto;
+}
+
+/* Mise en forme */
+.uppercase {
+	text-transform: uppercase;
+}
+.italic {
+	font-style: italic;
+}
+.bold {
+	font-weight: 700;
+}
+.light {
+	font-weight: 300;
+}
+.normal {
+	font-weight: 400;
+}
+.underline {
+	text-decoration: underline;
+}
+
+/* Fonts */
+.defaut-font {
+	font-family: $font-default;
+}
+.second-font {
+	font-family: $font-secondaire;
+}
+
+/* Couleurs */
+.txtwhite {
+	color: $blanc;
+}
+.txtblack {
+	color: $noir;
+}

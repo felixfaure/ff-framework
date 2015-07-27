@@ -1,0 +1,217 @@
+/* ==========================================================================
+   >>TYPO
+   ========================================================================== */
+/* --------------------------------------------------------------------------
+   ->titres (32 28 24 20 18 16)
+   -------------------------------------------------------------------------- */
+$headings-size: 32 28 24 20 18 16;
+@for $i from 1 through length($headings-size) {
+  $selector    : "h#{$i}, .h#{$i}-like";
+  $visual      : nth($headings-size, $i);
+  $line-height : if($i < 3, $line-height-base * $taille-base * 2, $line-height-base * $taille-base);
+
+  #{$selector} {
+    margin: $line-height-base * $taille-base / $visual * 1em (0);
+    line-height: $line-height / $visual;
+    font-size: em($visual);
+  }
+}
+h1, .h1-like,
+h2, .h2-like,
+h3, .h3-like,
+h4, .h4-like,
+h5, .h5-like,
+h6, .h6-like {
+	font-family: $font-secondaire;
+	max-width: $max-p-width;
+	//Eviter problèmes de margin
+	&:last-child {
+		margin-bottom: 0;
+	}
+	&:first-child {
+		margin-top: 0;
+	}
+}
+
+/* --------------------------------------------------------------------------
+   ->paragraphes et autres
+   -------------------------------------------------------------------------- */
+p,
+ul,
+ol,
+dl,
+blockquote,
+pre,
+table,
+caption,
+figure {
+    font-size: 1em; /* equiv 16px */
+    line-height: $line-height-base;
+    margin: $line-height-base * 1em (0);
+	max-width: $max-p-width;
+	// Virer marge basse sur premier et dernier enfant
+	&:last-child {
+		margin-bottom: 0;
+	}
+	&:first-child {
+		margin-top: 0;
+	}
+}
+
+@if $p-justify {
+p {
+	text-align: justify;
+	word-wrap: break-word;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	-o-hyphens: auto;
+	hyphens: auto;
+}
+}
+
+/* --------------------------------------------------------------------------
+   ->mise en forme du texte
+   -------------------------------------------------------------------------- */
+/* Gras et italique */
+b, strong {
+    font-weight: 700;
+}
+em {
+	font-style: italic;
+}
+
+/* Indice et exposant */
+sub, sup {
+    font-size: 0.75em;
+    position: relative;
+    vertical-align: 0;
+}
+sup {
+  bottom: 1ex;
+}
+sub {
+  top: .5ex;
+}
+
+/* --------------------------------------------------------------------------
+   ->liens
+   -------------------------------------------------------------------------- */
+/* Rappel : l'ordre des pseudo-classes doit être : link > visited > hover/focus > active */
+a {
+	color: $color-links;
+	text-decoration: $a-underline;
+	cursor: pointer;
+	transition: color 0.3s;
+	&:hover,
+	&:focus,
+	&:active {
+		color: $color-links-hover;
+	}
+	&:focus {
+		outline: thin dotted;
+	}
+	&:hover,
+	&:active {
+		outline: 0;
+	}
+}
+
+nav a {
+	text-decoration: none;
+}
+
+/* --------------------------------------------------------------------------
+   ->listes à puces et numérotées
+   -------------------------------------------------------------------------- */
+ul,
+ol {
+	padding-left: $puce-padding;
+	list-style-position: $puce-position;
+	&.unstyled {
+		list-style: none;
+	}
+}
+
+/* éviter marges supplémentaires sur éléments imbriqués et dans les menus */
+li p,
+li ul,
+li ol,
+nav ul,
+nav ol {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+nav ul,
+nav ol {
+	padding-left: 0;
+	list-style: none;
+	max-width: none;
+}
+
+/* --------------------------------------------------------------------------
+   ->autres mises en forme
+   -------------------------------------------------------------------------- */
+/* Code, mark, ... */
+code,
+pre,
+samp,
+kbd {
+	white-space: pre-wrap;
+	font-family: $monospace-font-stack;
+	line-height: 1em;
+}
+kbd {
+	padding: 0 0.125em;
+	border: 1px solid $noir;
+	border-color: rgba($noir,.5);
+}
+code {
+	display: block;
+    padding: 0.5em 1em;
+	border: 1px solid $noir;
+    border-color: rgba($noir,.1);
+	background-color: #c3c3c3;
+	background-color: rgba($noir,.04);
+	color: $rouge;
+}
+mark {
+	padding:0.125em 0.25em;
+	background: $jaune;
+}
+
+/* Citation */
+blockquote {
+	padding-left: 1em;
+	border-left: 3px solid $couleur-ligne;
+	font-style: italic;
+}
+
+/* Ligne horizontale */
+hr {
+	height: 0.1875em;
+	border: 0;
+	color: $couleur-ligne;
+	background-color: $couleur-ligne;
+	margin: $line-height-base/2 * 1em 0;
+}
+
+/* --------------------------------------------------------------------------
+   ->tailles alternatives
+   -------------------------------------------------------------------------- */
+$sizes:
+  smallest ($taille-base - 6),
+  smaller ($taille-base - 4),
+  small   ($taille-base - 2),
+  big     ($taille-base + 2),
+  bigger  ($taille-base + 4),
+  biggest ($taille-base + 6);
+
+@each $size in $sizes {
+  $keyword: nth($size, 1);
+  $size-px: nth($size, 2);
+
+  .#{$keyword} {
+    font-size: em($size-px);
+  }
+}
