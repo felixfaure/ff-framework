@@ -78,7 +78,7 @@ module.exports = function(grunt) {
                     ]
                 },
                 options: {
-					proxy: "localhost/travers_media/rouen",
+					proxy: "localhost/path_to_project",
                     watchTask: true // < VERY important
                 }
             }
@@ -111,6 +111,7 @@ module.exports = function(grunt) {
 
     // grunt.registerTask('default', ['sass', 'autoprefixer', 'cssmin', 'concat', 'uglify', 'imagemin', "browserSync", "watch"]);
     // grunt.registerTask('default', ["browserSync", "watch"]);
-    grunt.registerTask('default', ['sass', 'autoprefixer', 'cssmin', 'concat', 'uglify', 'browserSync', 'watch']);
+    grunt.registerTask('default', ['sass', 'autoprefixer', 'cssmin', 'concat', 'uglify']);
+    grunt.registerTask('live', ['sass', 'autoprefixer', 'cssmin', 'concat', 'uglify', 'browserSync', 'watch']);
 
 };
