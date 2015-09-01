@@ -13,14 +13,14 @@ $wp: false !default;
 //=============================================
 $taille-base: 16 !default;
 $line-height-base: 1.5 !default;
-$font-default: 'Lato', sans-serif !default;
-$font-secondaire: $font-default !default; //Titres par exemple
-$monospace-font-stack: "Consolas", "DejaVu Sans Mono", "Courier", monospace !default; //Code et autres
-$max-p-width: 33em !default;
+$font-default: Arial, Helvetica, sans-serif !default;
+$font-secondaire: "Times New Roman", Times, serif !default; //Titres par exemple (la c'est une serif)
+$font-monospace: "Consolas", "DejaVu Sans Mono", "Courier", monospace !default; //Code et autres
 
 //=============================================
 //Mise en forme :
 //=============================================
+$max-p-width: none !default; //Pas plus de 80 caractères par ligne, 33em
 $p-justify: false !default;
 $a-underline: underline !default; //underline / none
 $puce-padding: 0 !default;
@@ -37,7 +37,7 @@ $input-defaut-border: 1px solid $gris !default;
 //=============================================
 $width-wrap: 1200 !default;
 $pc-wrap: 90% !default;
-$gm: 400 !default; //Hauteur plan Google Map (false si il n'y a pas de plan sur le site)
+$gm: false !default; //Hauteur plan Google Map, 400 pas mal (false si il n'y a pas de plan sur le site)
 
 //=============================================
 //RWD :
