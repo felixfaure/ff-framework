@@ -54,13 +54,25 @@
 	user-select: none;
 }
 
+
 .srOnly {
-    position: absolute !important;
+    position: absolute;
     clip: rect(1px, 1px, 1px, 1px);
-    margin: 0 !important;
-    padding: 0 !important;
-    border: 0 !important;
-    height: 1px !important;
-    width: 1px !important;
+    height: 1px;
+    width: 1px;
     overflow: hidden;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+}
+.srOnly-focusable {
+  &:active,
+  &:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+  }
 }
