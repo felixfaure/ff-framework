@@ -8,6 +8,7 @@
     }
 }
 
+
 //=============================================
 //Vendor prefixes :
 //=============================================
@@ -18,4 +19,18 @@
         }
     }
     #{$property}: $value;
+}
+
+
+//=============================================
+//RGBA (color & background color) :
+//=============================================
+@mixin color-opacity($color, $opacity: 0.9) {
+    color: $color; /* The Fallback */
+    color: rgba($color, $opacity);
+}
+
+@mixin background-opacity($color, $opacity: 0.9) {
+    background-color: $color; /* The Fallback */
+    background-color: rgba($color, $opacity);
 }
