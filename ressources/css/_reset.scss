@@ -26,3 +26,13 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+/* On change le modèle de box pour tous les éléments */
+html {
+	box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}

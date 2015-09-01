@@ -27,12 +27,6 @@ body {
 	min-width: $palier-1;
 }
 
-/* On change le modèle de box pour tous les éléments */
-*,
-*:before,
-*:after {
-	box-sizing: border-box;
-}
 
 /* Images */
 img {
