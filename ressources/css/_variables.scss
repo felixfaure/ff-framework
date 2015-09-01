@@ -1,7 +1,7 @@
 //=============================================
 //Thème Wordpress :
 //=============================================
-$wp: false;
+$wp: false !default;
 
 //=============================================
 //Couleurs :
@@ -11,39 +11,39 @@ $wp: false;
 //=============================================
 //Fonts :
 //=============================================
-$taille-base: 16;
-$line-height-base: 1.5;
-$font-default: 'Lato', sans-serif;
-$font-secondaire: $font-default; //Titres par exemple
-$monospace-font-stack: "Consolas", "DejaVu Sans Mono", "Courier", monospace; //Code et autres
-$max-p-width: 33em;
+$taille-base: 16 !default;
+$line-height-base: 1.5 !default;
+$font-default: 'Lato', sans-serif !default;
+$font-secondaire: $font-default !default; //Titres par exemple
+$monospace-font-stack: "Consolas", "DejaVu Sans Mono", "Courier", monospace !default; //Code et autres
+$max-p-width: 33em !default;
 
 //=============================================
 //Mise en forme :
 //=============================================
-$p-justify: false;
-$a-underline: underline; //underline / none
-$puce-padding: 0;
-$puce-position: inside; //inside / outside
+$p-justify: false !default;
+$a-underline: underline !default; //underline / none
+$puce-padding: 0 !default;
+$puce-position: inside !default; //inside / outside
 
 //=============================================
 //Forms :
 //=============================================
-$input-defaut-size: 250 / $taille-base * 1em;
-$input-defaut-border: 1px solid $gris;
+$input-defaut-size: 250 / $taille-base * 1em !default;
+$input-defaut-border: 1px solid $gris !default;
 
 //=============================================
 //Autres :
 //=============================================
-$width-wrap: 1200;
-$pc-wrap: 90%;
-$gm: 400; //Hauteur plan Google Map (false si il n'y a pas de plan sur le site)
+$width-wrap: 1200 !default;
+$pc-wrap: 90% !default;
+$gm: 400 !default; //Hauteur plan Google Map (false si il n'y a pas de plan sur le site)
 
 //=============================================
 //RWD :
 //=============================================
-$palier-big-1: 1600 / 16 * 1em; //...
-$palier-big-2: 2000 / 16 * 1em; //...
-$palier-1: 1000 / 16 * 1em; //...
-$palier-2: 700 / 16 * 1em; //...
-$palier-3: 500 / 16 * 1em; //...
+$palier-big-1: 1600 / 16 * 1em !default; //...
+$palier-big-2: 2000 / 16 * 1em !default; //...
+$palier-1: 1000 / 16 * 1em !default; //...
+$palier-2: 700 / 16 * 1em !default; //...
+$palier-3: 500 / 16 * 1em !default; //...

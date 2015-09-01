@@ -1,21 +1,21 @@
 //Générales
 //=========
-$noir: #000;
-$blanc: #fff;
-$gris: #F6F6F6;
-$jaune: #ff0;
-$rouge: #cb1d1d;
+$noir: #000 !default;
+$blanc: #fff !default;
+$gris: #F6F6F6 !default;
+$jaune: #ff0 !default;
+$rouge: #cb1d1d !default;
 
 //Couleurs principales
 //====================
-$couleur1: #00d8a8; //...
-$couleur2: darken($gris,10%); //...
+$couleur1: #00d8a8 !default; //...
+$couleur2: darken($gris,10%) !default; //...
 //...
 
 //Body
 //====
-$bg-color-body: $blanc;
-$color-txt-body: $noir;
+$bg-color-body: $blanc !default;
+$color-txt-body: $noir !default;
 
 //Menu et logo
 //============
@@ -23,21 +23,21 @@ $color-txt-body: $noir;
 
 //Boutons
 //=======
-$bg-color-btn: $noir;
-$bg-color-btn-hover: $couleur1;
-$color-txt-btn: $blanc;
-$color-txt-btn-hover: $blanc;
+$bg-color-btn: $noir !default;
+$bg-color-btn-hover: $couleur1 !default;
+$color-txt-btn: $blanc !default;
+$color-txt-btn-hover: $blanc !default;
 
 //Liens
 //=====
-$color-links: $couleur1;
-$color-links-hover: $noir;
+$color-links: $couleur1 !default;
+$color-links-hover: $noir !default;
 
 //Selection
 //=========
-$couleur-selection-bg: darken($couleur1,5%);
-$couleur-selection-ft: $blanc;
+$couleur-selection-bg: darken($couleur1,5%) !default;
+$couleur-selection-ft: $blanc !default;
 
 //Lignes (hr, quote, ...)
 //=======================
-$couleur-ligne: $couleur1;
+$couleur-ligne: $couleur1 !default;
