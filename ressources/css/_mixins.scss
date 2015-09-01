@@ -11,17 +11,6 @@
 
 
 //=============================================
-//Inline :
-//=============================================
-@mixin inline-block($alignment: none) {
-    display: inline-block;
-    @if $alignment and $alignment != none {
-        vertical-align: $alignment;
-    }
-}
-
-
-//=============================================
 //Vendor prefixes :
 //=============================================
 @mixin vendor-prefix($property, $value, $prefixes: webkit moz ms o) {
