@@ -28,3 +28,7 @@ node_modules
 
 # sass
 .sass-cache
+
+# Thumbnails windows
+Thumbs.db
+*/Thumbs.db
