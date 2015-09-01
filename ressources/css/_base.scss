@@ -27,19 +27,6 @@ body {
 	min-width: $palier-1;
 }
 
-
-/* Images */
-img {
-    border: 0;
-    -ms-interpolation-mode: bicubic;
-	height: auto;
-	width: auto;
-	vertical-align: middle;
-}
-a img {
-	border: 0;
-}
-
 /* Sélection (2 règles sinon ça ne marchera pas) */
 @include selection {
     background: $couleur-selection-bg;

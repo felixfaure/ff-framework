@@ -1,18 +1,43 @@
 /* ==========================================================================
    >>RESET
    ========================================================================== */
+/* Hard reset */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed,  figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
+	font-size: 1em;
 	font: inherit;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section {
+
+/* HTML5 */
+article, aside, datagrid, datalist, details, dialog, figcaption, figure, footer, header, hgroup, main, menu, nav, section {
 	display: block;
 }
+audio, canvas, progress, video {
+	display: block; //ou inline-block
+}
+abbr, eventsource, mark, meter, time, output, bb {
+	display: inline;
+}
+
+/* Images, iframes */
+img,
+iframe {
+	vertical-align: middle;
+}
+img {
+    border: 0;
+    -ms-interpolation-mode: bicubic;
+	height: auto;
+	width: auto;
+}
+a img {
+	border: 0;
+}
+
+/* Blockquotes */
 blockquote,
 q {
 	quotes: none;
@@ -22,6 +47,8 @@ q {
 		content: none;
 	}
 }
+
+/* Tables */
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
