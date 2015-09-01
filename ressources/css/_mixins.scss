@@ -34,3 +34,35 @@
     background-color: $color; /* The Fallback */
     background-color: rgba($color, $opacity);
 }
+
+
+//=============================================
+//Media query en em
+//=============================================
+@mixin mq($breakpoint, $query-type : 'max') {
+    @if $query-type == "max" {
+        @media only screen and (max-width: em($breakpoint)) {
+            @content;
+        }
+    }
+
+    @else if $query-type == "min" {
+        @media only screen and (min-width: em($breakpoint)) {
+            @content;
+        }
+    }
+
+    @else if $query-type == "hdpi" {
+        @media only screen and (-webkit-min-device-pixel-ratio: $ratioHDPI),
+        only screen and (min--moz-device-pixel-ratio: $ratioHDPI),
+        only screen and (-o-min-device-pixel-ratio: #{$ratioHDPI}/1),
+        only screen and (min-resolution: round($ratioHDPI * 96dpi)),
+        only screen and (min-resolution: $ratioHDPI * 1dppx) {
+            @content;
+        }
+    }
+
+    @else  {
+        @warn "Type non supported.";
+    }
+}
