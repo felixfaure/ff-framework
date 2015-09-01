@@ -1,43 +1,38 @@
-//Générales
-//=========
+//Couleurs basiques
+//=================
 $noir: #000 !default;
 $blanc: #fff !default;
 $gris: #F6F6F6 !default;
 $jaune: #ff0 !default;
 $rouge: #cb1d1d !default;
 
-//Couleurs principales
-//====================
+//Couleurs principales du projet
+//==============================
 $couleur1: #00d8a8 !default; //...
-$couleur2: darken($gris,10%) !default; //...
 //...
 
-//Body
-//====
+//Couleurs générales
+//==================
 $bg-color-body: $blanc !default;
 $color-txt-body: $noir !default;
 
-//Menu et logo
-//============
-//...
-
-//Boutons
-//=======
+//Couleur des boutons (.btn)
+//==========================
 $bg-color-btn: $noir !default;
 $bg-color-btn-hover: $couleur1 !default;
 $color-txt-btn: $blanc !default;
 $color-txt-btn-hover: $blanc !default;
 
-//Liens
-//=====
+//Couleurs des liens
+//==================
 $color-links: $couleur1 !default;
 $color-links-hover: $noir !default;
 
-//Selection
-//=========
+//Couleur de la sélection
+//=======================
 $couleur-selection-bg: darken($couleur1,5%) !default;
 $couleur-selection-ft: $blanc !default;
 
-//Lignes (hr, quote, ...)
-//=======================
+//Couleur des hr, quote, etc.
+//===========================
 $couleur-ligne: $couleur1 !default;
