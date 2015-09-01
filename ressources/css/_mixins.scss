@@ -60,6 +60,19 @@
 
 
 //=============================================
+//Placeholder :
+//=============================================
+@mixin placeholder {
+    $placeholders: ":-webkit-input" ":-moz" "::-moz" "-moz" ":-ms-input" "-ms-input";
+    @each $placeholder in $placeholders {
+        &:#{$placeholder}-placeholder {
+            @content;
+        }
+    }
+}
+
+
+//=============================================
 //Media query en em
 //=============================================
 @mixin mq($breakpoint, $query-type : 'max') {
