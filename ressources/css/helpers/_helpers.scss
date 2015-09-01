@@ -2,11 +2,7 @@
    >>HELPERS
    ========================================================================== */
 .clearfix {
-	&:after {
-	  content: '';
-	  clear: both;
-	  display: table;
-	}
+	@include clearfix;
 }
 
 /* Allignement des bloc et images (.alignleft, .alignright, .aligncenter sont des classes WP) */
