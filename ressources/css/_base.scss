@@ -47,12 +47,7 @@ a img {
 }
 
 /* Sélection (2 règles sinon ça ne marchera pas) */
-::-moz-selection {
-    background: $couleur-selection-bg;
-    text-shadow: none;
-	color: $couleur-selection-ft;
-}
-::selection {
+@include selection {
     background: $couleur-selection-bg;
     text-shadow: none;
 	color: $couleur-selection-ft;

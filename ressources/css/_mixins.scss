@@ -24,6 +24,28 @@
 
 
 //=============================================
+//Sélection :
+//=============================================
+@mixin selection($current-selector: false) {
+    @if $current-selector {
+        &::-moz-selection {
+            @content;
+        }
+        &::selection {
+            @content;
+        }
+    } @else {
+        ::-moz-selection {
+            @content;
+        }
+        ::selection {
+            @content;
+        }
+    }
+}
+
+
+//=============================================
 //RGBA (color & background color) :
 //=============================================
 @mixin color-opacity($color, $opacity: 0.9) {
