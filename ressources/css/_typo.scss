@@ -197,17 +197,20 @@ kbd {
 }
 
 /* Code */
+@if $prism {
 /* Use with prism.js : http://prismjs.com/ */
-/* cf. prism.scss */
-// pre > code {
-// 	display: block;
-//     max-height: em(400);
-//     overflow-x: auto;
-//     padding: .5em 1em;
-//     tab-size: 4;
-//     white-space: pre;
-//     background-color: #efefef;
-// }
+/* cf. partie prism */
+} @else {
+pre > code {
+	display: block;
+    max-height: em(400);
+    overflow-x: auto;
+    padding: .5em 1em;
+    tab-size: 4;
+    white-space: pre;
+    background-color: #efefef;
+}
+}
 
 /* Surlignement */
 mark {

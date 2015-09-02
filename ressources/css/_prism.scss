@@ -1,3 +1,4 @@
+@if $prism {
 /* --------------------------------------------------------------------------
    ->Prism
    -------------------------------------------------------------------------- */
@@ -132,6 +133,7 @@ pre[class*="language-"] {
 	cursor: help;
 }
 
+@if $prism-show-langage-name {
 /* Ajout du nom du language */
 pre[rel] {
     position: relative;
@@ -151,4 +153,7 @@ pre[rel] {
         font-size: em(14);
         text-shadow: none;
     }
+}
+}
+
 }
