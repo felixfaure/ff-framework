@@ -25,10 +25,10 @@ abbr, eventsource, mark, meter, time, output, bb {
 /* Images, iframes */
 img,
 iframe {
+	border: 0;
 	vertical-align: middle;
 }
 img {
-    border: 0;
     -ms-interpolation-mode: bicubic;
 	height: auto;
 	width: auto;
