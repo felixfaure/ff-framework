@@ -29,6 +29,8 @@ node_modules
 # sass
 .sass-cache
 
-# Thumbnails windows
+# Windows image file caches
 Thumbs.db
 */Thumbs.db
+# Folder config file
+Desktop.ini
