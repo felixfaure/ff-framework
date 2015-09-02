@@ -203,6 +203,15 @@ textarea:focus:invalid {
     border-color: $rouge;
 }
 
+/* Désactiver le bouton d'envoie si invalide. */
+input:invalid ~ [type="submit"],
+select:invalid ~ [type="submit"],
+textarea:invalid ~ [type="submit"] {
+    opacity: .3;
+    pointer-events: none;
+    cursor: default;
+}
+
 /* --------------------------------------------------------------------------
    ->Styles placeholder
    -------------------------------------------------------------------------- */
