@@ -186,9 +186,35 @@ mark {
  */
 q,
 blockquote {
-	padding-left: 1em;
-	border-left: 3px solid $couleur-ligne;
-	font-style: italic;
+    quotes: "\201C" "\201D" "\2018" "\2019";
+}
+:lang(fr) q,
+:lang(fr) blockquote {
+    quotes: "\00AB\00A0" "\00A0\00BB" "\201C" "\201D" "\2018" "\2019";
+}
+:lang(en) q,
+:lang(en) blockquote {
+    quotes: "\201C" "\201D" "\2018" "\2019";
+}
+:lang(es) q,
+:lang(es) blockquote {
+    quotes: "\00AB" "\00BB" "\201C" "\201D";
+}
+:lang(it) q,
+:lang(it) blockquote {
+    quotes: "\00AB\00A0" "\00A0\00BB" "\201C" "\201D";
+}
+:lang(de) q,
+:lang(de) blockquote {
+    quotes: "\201e" "\201c" "\201a" "\2018";
+}
+q:before,
+blockquote:before {
+    content: open-quote;
+}
+q:after,
+blockquote:after {
+    content: close-quote;
 }
 
 /* Ligne horizontale */
