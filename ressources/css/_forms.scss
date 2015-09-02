@@ -116,7 +116,7 @@ select {
 /* Désactivé */
 button[disabled],
 input[disabled] {
-    cursor: default;
+    cursor: not-allowed;
 }
 
 /* Textarea */
