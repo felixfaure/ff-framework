@@ -176,8 +176,6 @@ samp,
 kbd {
 	font-family: $font-monospace;
 }
-code,
-pre,
 samp {
     white-space: pre-line;
     white-space: pre-wrap;
@@ -197,15 +195,59 @@ kbd {
     font-weight: 700;
     white-space: nowrap;
 }
-code {
-	display: block;
-    padding: 0.5em 1em;
-	border: 1px solid $noir;
-    border-color: rgba($noir,.1);
-	background-color: #c3c3c3;
-	background-color: rgba($noir,.04);
-	color: $rouge;
+
+/* Code */
+/* Use with prism.js : http://prismjs.com/ */
+code[class*="language-"],
+pre[class*="language-"] {
+    display: block;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    tab-size: 4;
+    hyphens: none;
+    color: #4D4E53;
 }
+pre[class*="language-"] {
+	background-color: #efefef;
+    padding-left: 1em;
+}
+pre[rel] {
+    position: relative;
+    padding-top: em(30);
+    &:before {
+        content: attr(rel);
+        display: block;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: em(5,14) em(16,14);
+        background-color: #777;
+        color: $blanc;
+        font-family: $font-default;
+        font-weight: 700;
+        font-size: em(14);
+    }
+}
+pre > code {
+    padding: .5em (0);
+    max-height: em(400);
+    overflow: auto;
+}
+// pre > code {
+// 	display: block;
+//     max-height: em(400);
+//     overflow-x: auto;
+//     padding: .5em 1em;
+//     tab-size: 4;
+//     white-space: pre;
+// 	background-color: #efefef;
+// 	border-left: .5em solid #777;
+// 	// color: $rouge;
+// }
+
+/* Surlignement */
 mark {
 	padding: .125em .25em;
 	background: $jaune;
