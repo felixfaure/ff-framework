@@ -78,7 +78,7 @@ module.exports = function(grunt) {
                     ]
                 },
                 options: {
-					proxy: "localhost/path_to_project",
+					proxy: "localhost/ff-framework",
                     watchTask: true // < VERY important
                 }
             }
