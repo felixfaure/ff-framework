@@ -60,6 +60,15 @@
 
 
 //=============================================
+//REM :
+//=============================================
+@mixin rem($value, $base: $taille-base) {
+    font-size: $value * 1px; /* The Fallback */
+    font-size: ($value / $base) * 1rem;
+}
+
+
+//=============================================
 //Placeholder :
 //=============================================
 @mixin placeholder($current-selector: false) {
