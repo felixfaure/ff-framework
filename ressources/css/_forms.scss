@@ -28,7 +28,7 @@ button,
 html input[type="button"], /* Fix webkit bug where native `audio` and `video` controls are destroyed. */
 input[type="reset"],
 input[type="submit"] {
-  -webkit-appearance: none;
+    -webkit-appearance: none;
 }
 
 /* Remove inner padding and border in Firefox 4+ */
@@ -77,6 +77,18 @@ input[type="search"] {
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
     -webkit-appearance: none;
+}
+
+/* legend normalize */
+legend {
+    white-space: normal;
+}
+
+/* select normalize */
+/* if select styling bugs on WebKit */
+/* select { -webkit-appearance: none; } */
+select {
+    -webkit-appearance: menulist-button;
 }
 
 /* --------------------------------------------------------------------------
@@ -129,6 +141,7 @@ select {
 	width: $input-defaut-size;
 	border: $input-defaut-border;
     padding: .5em;
+    -webkit-border-radius: 0px; /* Remove border radius safari */
 }
 label,
 .label {
@@ -167,6 +180,10 @@ input[type="color"] {
     width: 3em;
 }
 
+textarea {
+    min-height: $nb-lines-textarea * $line-height-base;
+}
+
 /* --------------------------------------------------------------------------
    ->Styles invalide
    -------------------------------------------------------------------------- */
@@ -202,6 +219,7 @@ textarea:focus:invalid {
     padding: .6em 1em;
     color: $color-txt-btn;
     background-color: $bg-color-btn;
+    vertical-align: middle;
     transition: all 0.3s;
     &:hover,
     &:focus,
