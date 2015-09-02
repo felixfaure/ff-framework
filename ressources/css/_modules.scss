@@ -14,7 +14,7 @@
 	height: em($gm);
 	background-color: #e5e3df;
 	img {
-		max-width: none;
+		max-width: none; /* Fix bug */
 	}
 	.no-js & {
 		display: none;
