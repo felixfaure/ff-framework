@@ -4,59 +4,141 @@
 /* --------------------------------------------------------------------------
    ->général
    -------------------------------------------------------------------------- */
+/* Reset */
 button,
 input,
 textarea,
 select {
-  color: inherit;
-  font-family: inherit;
-  font-size: inherit;
-  background-color: transparent;
-  outline-style: none; /* Supr bordure bleu chrome et safari */
+    margin: 0;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    background-color: transparent;
+    outline-style: none; /* Supr bordure bleu chrome et safari */
+}
+
+/* Curseur */
+label,
+button,
+input[type="submit"],
+input[type="button"],
+input[type="reset"] {
+    cursor: pointer;
+}
+
+/* Alignement */
+label,
+button,
+input,
+select {
+    vertical-align: middle;
+}
+
+/* Désactivé */
+button[disabled],
+input[disabled] {
+    cursor: default;
+}
+
+/* Textarea */
+textarea {
+    overflow: auto;
+    vertical-align: top;
+    resize: vertical;
+}
+
+/* --------------------------------------------------------------------------
+   ->Styles persos
+   -------------------------------------------------------------------------- */
+input,
+textarea,
+select {
+    display: block;
+	width: $input-defaut-size;
+	border: $input-defaut-border;
+    padding: .5em;
+}
+label,
+.label {
+	display: inline-block;
 }
 button,
 input[type="button"],
 input[type="reset"],
-input[type="submit"] {
-  border: none;
-  cursor: pointer;
+input[type="submit"],
+input[type="radio"],
+input[type="checkbox"] {
+    display: inline-block;
+    width: auto;
 }
-button[disabled],
-input[disabled] {
-  cursor: default;
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type="range"],
+input[type="color"],
+input[type="radio"],
+input[type="checkbox"],
+input[type="image"] {
+    border: none;
 }
-textarea {
-  overflow: auto;
-  vertical-align: top;
-  resize: vertical;
+input[type="radio"],
+input[type="checkbox"],
+input[type="image"] {
+    background-color: transparent;
 }
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="password"],
-input[type="search"],
-textarea,
-select {
-	width: $input-defaut-size;
-	border: $input-defaut-border;
+input[type="range"],
+input[type="color"] {
+    padding: 0;
 }
-label {
-	display: inline-block;
-    vertical-align: middle;
-  cursor: pointer;
+input[type="color"] {
+    width: 3em;
 }
 
 /* --------------------------------------------------------------------------
-   ->style perso
+   ->Styles invalide
+   -------------------------------------------------------------------------- */
+select:invalid,
+input:invalid,
+textarea:invalid {
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border: $input-defaut-border;
+}
+select:required:invalid,
+input:required:invalid,
+input:focus:invalid,
+textarea:required:invalid,
+textarea:focus:invalid {
+    background: rgba($rouge,.2);
+    border-color: $rouge;
+}
+
+/* --------------------------------------------------------------------------
+   ->Styles placeholder
+   -------------------------------------------------------------------------- */
+@include placeholder {
+    color: inherit;
+    opacity: .5;
+}
+
+/* --------------------------------------------------------------------------
+   ->Bouton
    -------------------------------------------------------------------------- */
 .btn {
-  display: inline-block;
-  padding: .6em 1em;
-  color: $color-txt-btn;
-  transition: all 0.3s;
-  &:hover,
-  &:focus,
-  &:active {
-    color: $color-txt-btn-hover;
-  }
+    display: inline-block;
+    padding: .6em 1em;
+    color: $color-txt-btn;
+    background-color: $bg-color-btn;
+    transition: all 0.3s;
+    &:hover,
+    &:focus,
+    &:active {
+        color: $color-txt-btn-hover;
+        background-color: $bg-color-btn-hover;
+    }
+    &[disabled] {
+        color: $color-txt-btn;
+        background-color: $bg-color-btn;
+    }
 }

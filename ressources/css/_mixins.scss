@@ -62,12 +62,20 @@
 //=============================================
 //Placeholder :
 //=============================================
-@mixin placeholder {
-    $placeholders: ":-webkit-input" ":-moz" "::-moz" "-moz" ":-ms-input" "-ms-input";
-    @each $placeholder in $placeholders {
-        &:#{$placeholder}-placeholder {
-            @content;
-        }
+@mixin placeholder($current-selector: false) {
+    $placeholders: "::-webkit-input" ":-moz" "::-moz" ":-ms-input";
+	@if $current-selector {
+		@each $placeholder in $placeholders {
+	        &#{$placeholder}-placeholder {
+	            @content;
+	        }
+	    }
+    } @else {
+		@each $placeholder in $placeholders {
+	        #{$placeholder}-placeholder {
+	            @content;
+	        }
+	    }
     }
 }
 
