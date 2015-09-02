@@ -39,20 +39,3 @@
 	top: 1em * $line-height-base;
 	text-align: left;
 }
-
-/* Table */
-.table {
-	display: table;
-	width: 100%;
-}
-.table-fixed {
-	table-layout: fixed;
-}
-.table_row {
-	display: table-row;
-	width: 100%;
-}
-.table_cell {
-	display: table-cell;
-	vertical-align: top;
-}

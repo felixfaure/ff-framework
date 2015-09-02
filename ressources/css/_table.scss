@@ -1,0 +1,30 @@
+/* ==========================================================================
+   >>TABLES
+   ========================================================================== */
+/* Table css */
+.table {
+	display: table;
+	width: 100%;
+}
+.table-fixed {
+	table-layout: fixed;
+}
+.table_row {
+	display: table-row;
+	width: 100%;
+}
+.table_cell {
+	display: table-cell;
+	vertical-align: top;
+}
+
+/* Lignes de même hauteur (comme github), avec "..." si coupé */
+.table-sameHeight,
+table.table-sameHeight {
+	table-layout: fixed;
+	p {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}
