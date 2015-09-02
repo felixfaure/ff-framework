@@ -15,9 +15,9 @@ $wp-classes: false !default;
 $taille-base: 16 !default;
 $line-height-base: 1.5 !default;
 $vertical-rythm: '2t-1b' !default; //1t-1b, 2t-1b, 2t-2b, 1t, 1b
-$font-default: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif !default;
+$font-default: "Helvetica Neue", "Helvetica", "Arial", sans-serif !default;
 $font-secondaire: "Georgia", "Cambria", "Times New Roman", "Times", serif !default; //Titres par exemple (la c'est une serif)
-$font-monospace: "Bitstream Vera Sans Mono", "Consolas", "DejaVu Sans Mono", "Courier", monospace !default; //Code et autres
+$font-monospace: "Consolas", "DejaVu Sans Mono", "Courier", monospace !default; //Code et autres
 $headings-size: 26 24 22 20 18 16; //false pour ne pas utiliser la boucle
 $headings-weight: 400 400 400 400 400 700;
 
