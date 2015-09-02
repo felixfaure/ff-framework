@@ -198,43 +198,7 @@ kbd {
 
 /* Code */
 /* Use with prism.js : http://prismjs.com/ */
-code[class*="language-"],
-pre[class*="language-"] {
-    display: block;
-    white-space: pre;
-    word-spacing: normal;
-    word-break: normal;
-    tab-size: 4;
-    hyphens: none;
-    color: #4D4E53;
-}
-pre[class*="language-"] {
-	background-color: #efefef;
-    padding-left: 1em;
-}
-pre[rel] {
-    position: relative;
-    padding-top: em(30);
-    &:before {
-        content: attr(rel);
-        display: block;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        padding: em(5,14) em(16,14);
-        background-color: #777;
-        color: $blanc;
-        font-family: $font-default;
-        font-weight: 700;
-        font-size: em(14);
-    }
-}
-pre > code {
-    padding: .5em (0);
-    max-height: em(400);
-    overflow: auto;
-}
+/* cf. prism.scss */
 // pre > code {
 // 	display: block;
 //     max-height: em(400);
@@ -242,9 +206,7 @@ pre > code {
 //     padding: .5em 1em;
 //     tab-size: 4;
 //     white-space: pre;
-// 	background-color: #efefef;
-// 	border-left: .5em solid #777;
-// 	// color: $rouge;
+//     background-color: #efefef;
 // }
 
 /* Surlignement */
