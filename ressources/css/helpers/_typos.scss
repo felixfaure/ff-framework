@@ -10,6 +10,11 @@
 	word-wrap: break-word;
 	hyphens: auto;
 }
+.txtnojustify {
+	text-align: left;
+	word-wrap: normal;
+	hyphens: none;
+}
 
 /* Mise en forme */
 .uppercase {
