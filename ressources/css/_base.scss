@@ -1,33 +1,28 @@
 /* ==========================================================================
    >>BASE
    ========================================================================== */
-@-webkit-viewport{width:device-width}
-@-moz-viewport{width:device-width}
-@-ms-viewport{width:device-width}
-@-o-viewport{width:device-width}
-@viewport{width:device-width}
-
 html {
+	width: 100%;
 	font-size: 100%; /* 16px dans la plupart des navigateurs */
 	-webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
-    width: 100%;
 }
 
 body {
+	width: 100%;
 	background-color: $bg-color-body;
 	color: $color-txt-body;
 	font-family: $font-default;
 	font-size: 1em;
 	line-height: $line-height-base;
-	width: 100%;
 }
 
+/* Pour IE8 qui ne prend pas en charge les medias query, on limite la largeur */
 .lt-ie9 body {
 	min-width: $palier-1;
 }
 
-/* Sélection (2 règles sinon ça ne marchera pas) */
+/* Sélection */
 @include selection {
     background: $couleur-selection-bg;
     text-shadow: none;
@@ -48,6 +43,7 @@ svg {
 	max-width: 100%;
 }
 
+/* Casser les chaines trop longues */
 h1,
 h2,
 h3,
@@ -59,3 +55,10 @@ textarea,
 p {
 	word-wrap: break-word;
 }
+
+/* fix viewport pour Win8 (snap mode) et préparer le jour où le viewport sera supporté */
+@-webkit-viewport{ width: device-width }
+@-moz-viewport{ width: device-width }
+@-ms-viewport{ width: device-width }
+@-o-viewport{ width: device-width }
+@viewport{ width: device-width }
