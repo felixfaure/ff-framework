@@ -158,14 +158,23 @@ code,
 pre,
 samp,
 kbd {
-	white-space: pre-wrap;
 	font-family: $font-monospace;
-	line-height: 1em;
+}
+code,
+pre,
+samp {
+    white-space: pre-wrap;
 }
 kbd {
-	padding: 0 0.125em;
-	border: 1px solid $noir;
-	border-color: rgba($noir,.5);
+    display: inline-block;
+    padding: em(2,12) em(4,12);
+    border: 1px solid #B4B4B4;
+    border-radius: em(3,12);
+    background-color: #F4F7F8;
+    box-shadow: 0px 1px 1px rgba($noir, .2), 0px 2px 0px 0px rgba($blanc, .7) inset;
+    font-size: em(12);
+    font-weight: 700;
+    white-space: nowrap;
 }
 code {
 	display: block;
@@ -175,6 +184,7 @@ code {
 	background-color: #c3c3c3;
 	background-color: rgba($noir,.04);
 	color: $rouge;
+    line-height: 1em;
 }
 mark {
 	padding:0.125em 0.25em;
