@@ -3,14 +3,27 @@
     <head>
         <meta charset="utf-8">
         <title>Erreur 404 : page non trouvée</title>
-        <link rel="stylesheet" href="style.250420141.css">
+
+        <!-- <link rel="stylesheet" href="style.250420141.css"> -->
+        <link rel="stylesheet" href="style.css">
 
         <!-- Google analytics ou autres outils d'analytics -->
 
         <!-- Favicon & mobiles icons (http://realfavicongenerator.net/) -->
     </head>
     <body>
-        <main id="content" role="main">
+        <header id="header" class="header" role="banner">
+            <nav role="navigation" id="primaryNav" class="primaryNav">
+                <ul>
+                    <li><a href="#nowhere" title="Lorum">Lorem</a></li>
+                    <li><a href="#nowhere" title="Aliquam">Aliquam</a></li>
+                    <li><a href="#nowhere" title="Morbi">Morbi</a></li>
+                    <li><a href="#nowhere" title="Praesent">Praesent</a></li>
+                </ul>
+            </nav>
+        </header><!-- #header -->
+
+        <main id="main" class="main" role="main">
             <h1>Erreur 404 : page non trouvée</h1>
             <p>La page que vous essayez de voir n'existe pas ou plus.</p>
             <p>Il peut y avoir plusieurs raisons à cela :</p>
@@ -20,5 +33,9 @@
 				<li>La page a été déplacée.</li>
             </ul>
         </main><!-- #content -->
+
+        <footer id="footer" class="footer" role="contentinfo">
+
+        </footer><!-- #footer -->
     </body>
 </html>
