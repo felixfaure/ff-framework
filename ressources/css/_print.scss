@@ -2,6 +2,7 @@
    >>PRINT
    ========================================================================== */
 @media print {
+    /* Général */
     * {
         background: transparent !important;
         //color: #000 !important; /* Black prints faster: h5bp.com/s */
@@ -9,55 +10,51 @@
         text-shadow: none !important;
     }
 
-    a[href]:after {
+    @page {
+        margin: 0.5cm;
+    }
+
+    /* Liens, abbr */
+    p a[href]:after {
         content: " (" attr(href) ")";
     }
-
-    abbr[title]:after {
+    p abbr[title]:after {
         content: " (" attr(title) ")";
     }
-
-    /*
-     * Don't show links for images, or javascript/internal links
-     */
-
-    .ir a:after,
-    a[href^="javascript:"]:after,
-    a[href^="#"]:after {
+    /* Pas pour images (classe à ajoutée...), liens internes et js */
+    p .linkWithNoTxt a:after,
+    p a[href^="javascript:"]:after,
+    p a[href^="#"]:after {
         content: "";
     }
 
+    /* Gestion des débordement de page */
     pre,
-    blockquote {
-        page-break-inside: avoid;
-    }
-
-    thead {
-        display: table-header-group; /* h5bp.com/t */
-    }
-
+    blockquote,
+    ul,
+    ol,
     tr,
     img {
         page-break-inside: avoid;
     }
 
-    img {
-        max-width: 100% !important;
+    h1,
+    h2,
+    h3,
+    caption {
+        page-break-after: avoid;
     }
 
-    @page {
-        margin: 0.5cm;
+    /* En tete de table */
+    thead {
+        display: table-header-group; /* h5bp.com/t */
     }
 
+    /* Veuves et orphelins */
     p,
     h2,
     h3 {
         orphans: 3;
         widows: 3;
-    }
-
-    h2,
-    h3 {
-        page-break-after: avoid;
     }
 }
