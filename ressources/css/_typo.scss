@@ -26,12 +26,16 @@ h6, .h6-like {
 	font-family: $font-secondaire;
 	max-width: $max-p-width;
 	//Eviter problèmes de margin
+    @if $vertical-rythm != '1t' {
 	&:last-child {
 		margin-bottom: 0;
 	}
+    }
+    @if $vertical-rythm != '1b' {
 	&:first-child {
 		margin-top: 0;
 	}
+    }
 }
 
 /* --------------------------------------------------------------------------
