@@ -1,8 +1,32 @@
 /* ==========================================================================
    >>HELPERS
    ========================================================================== */
+/* Clearfix */
 .clearfix {
 	@include clearfix;
+}
+
+/* Masquage accessible */
+.srOnly {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+}
+.srOnly-focusable {
+  &:active,
+  &:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+  }
 }
 
 /* Allignement des bloc et images (.alignleft, .alignright, .aligncenter sont des classes WP) */
@@ -26,7 +50,7 @@ img.right,
 .alignright,
 .aligncenter { margin-bottom: .3em; }
 
-/* Affichage */
+/* Masquage */
 .none {
 	display: none;
 }
@@ -36,20 +60,4 @@ img.right,
 }
 .lt-ie9 .invisible {
 	visibility: hidden;
-}
-
-.table {
-	display: table;
-	width: 100%;
-}
-.table-fixed {
-	table-layout: fixed;
-}
-.table_row {
-	display: table-row;
-	width: 100%;
-}
-.table_cell {
-	display: table-cell;
-	vertical-align: top;
 }

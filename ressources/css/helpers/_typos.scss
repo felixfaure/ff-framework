@@ -2,15 +2,15 @@
    >>HELPERS TYPOS
    ========================================================================== */
 /* Allignement du texte */
-.txtleft   { text-align: left; }
-.txtright  { text-align: right; }
-.txtcenter { text-align: center; }
-.txtjustify {
+.txtLeft   { text-align: left; }
+.txtRight  { text-align: right; }
+.txtCenter { text-align: center; }
+.txtJustify {
 	text-align: justify;
 	word-wrap: break-word;
 	hyphens: auto;
 }
-.txtnojustify {
+.txtNoJustify {
 	text-align: left;
 	word-wrap: normal;
 	hyphens: none;
@@ -29,7 +29,7 @@
 .light {
 	font-weight: 300;
 }
-.normal {
+.normalWeight {
 	font-weight: 400;
 }
 .underline {
@@ -45,9 +45,12 @@
 }
 
 /* Couleurs */
-.txtwhite {
+.txtWhite {
 	color: $blanc;
 }
-.txtblack {
+.txtBlack {
 	color: $noir;
+}
+.txtRed {
+	color: $rouge;
 }

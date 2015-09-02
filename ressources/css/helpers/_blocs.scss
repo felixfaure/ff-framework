@@ -1,6 +1,7 @@
 /* ==========================================================================
    >>HELPERS BLOCS
    ========================================================================== */
+/* Inline block */
 .inlineConteneur>*,
 .inlineBlock {
 	display: inline-block;
@@ -39,40 +40,19 @@
 	text-align: left;
 }
 
-/* Masquage accessible */
-.accessHide {
-	position: relative;
-	// overflow: hidden;
+/* Table */
+.table {
+	display: table;
+	width: 100%;
 }
-.accessHide_i {
-	position: absolute;
-	top: 0;
-	left: 0;
-	line-height: 0;
-	font-size: 0;
-	color: transparent;
-	user-select: none;
+.table-fixed {
+	table-layout: fixed;
 }
-
-
-.srOnly {
-    position: absolute;
-    clip: rect(1px, 1px, 1px, 1px);
-    height: 1px;
-    width: 1px;
-    overflow: hidden;
-    margin: -1px;
-    padding: 0;
-    border: 0;
+.table_row {
+	display: table-row;
+	width: 100%;
 }
-.srOnly-focusable {
-  &:active,
-  &:focus {
-    position: static;
-    width: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    clip: auto;
-  }
+.table_cell {
+	display: table-cell;
+	vertical-align: top;
 }
