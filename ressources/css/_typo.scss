@@ -7,14 +7,14 @@
 $headings-size: 26 24 22 20 18 16;
 $headings-weight: 400 400 400 400 400 700;
 @for $i from 1 through length($headings-size) {
-  $selector    : "h#{$i}, .h#{$i}-like";
-  $visual      : nth($headings-size, $i);
-  $weight      : nth($headings-weight, $i);
+    $selector    : "h#{$i}, .h#{$i}-like";
+    $visual      : nth($headings-size, $i);
+    $weight      : nth($headings-weight, $i);
 
-  #{$selector} {
-    @include flow-hr($visual);
-    font-weight: $weight;
-  }
+    #{$selector} {
+        @include flow-hr($visual);
+        font-weight: $weight;
+    }
 }
 
 h1, .h1-like,
@@ -201,18 +201,18 @@ hr {
    ->tailles alternatives
    -------------------------------------------------------------------------- */
 $sizes:
-  smallest ($taille-base - 6),
-  smaller ($taille-base - 4),
-  small   ($taille-base - 2),
-  big     ($taille-base + 2),
-  bigger  ($taille-base + 4),
-  biggest ($taille-base + 6);
+    smallest ($taille-base - 6),
+    smaller ($taille-base - 4),
+    small   ($taille-base - 2),
+    big     ($taille-base + 2),
+    bigger  ($taille-base + 4),
+    biggest ($taille-base + 6);
 
 @each $size in $sizes {
-  $keyword: nth($size, 1);
-  $size-px: nth($size, 2);
+    $keyword: nth($size, 1);
+    $size-px: nth($size, 2);
 
-  .#{$keyword} {
-    font-size: em($size-px);
-  }
+    .#{$keyword} {
+        @include flow-other($size-px);
+    }
 }
