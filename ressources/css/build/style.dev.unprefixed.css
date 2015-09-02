@@ -32,12 +32,13 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 }
 
 /* HTML5 */
-article, aside, datagrid, datalist, details, dialog, figcaption, figure, footer, header, hgroup, main, menu, nav, section {
+article, aside, datagrid, datalist, details, dialog, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
 
 audio, canvas, progress, video {
-  display: block;
+  display: inline-block;
+  vertical-align: baseline;
 }
 
 abbr, eventsource, mark, meter, time, output, bb {
@@ -53,18 +54,36 @@ iframe {
 
 img {
   -ms-interpolation-mode: bicubic;
-  height: auto;
   width: auto;
+}
+
+img:not([src$=".svg"]) {
+  height: auto;
 }
 
 a img {
   border: 0;
 }
 
+svg:not(:root) {
+  overflow: hidden;
+}
+
 /* Tables */
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+/* Audio */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/* Links (Remove the gray background color from active links in IE 10) */
+a {
+  background-color: transparent;
 }
 
 /* On change le mod├¿le de box pour tous les ├®l├®ments */
@@ -134,6 +153,10 @@ html {
 .aligncenter {
   margin-left: auto;
   margin-right: auto;
+}
+
+.blockRight {
+  margin-left: auto;
 }
 
 img.left,
@@ -222,7 +245,7 @@ img.right,
 
 /* Fonts */
 .defaut-font {
-  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
 .second-font {
@@ -240,6 +263,49 @@ img.right,
 
 .txtRed {
   color: #cb1d1d;
+}
+
+/* ==========================================================================
+   >>HELPERS BLOCS
+   ========================================================================== */
+/* Inline block */
+.inlineConteneur > *,
+.inlineBlock {
+  display: inline-block;
+}
+
+/* Wrapper */
+.wrapper {
+  width: 90%;
+  max-width: 75em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* R├®partition justifi├®e parfaite */
+.perfectJustify {
+  display: block;
+  text-align: justify;
+  overflow: hidden;
+}
+.perfectJustify:before {
+  content: '';
+  display: block;
+  width: 100%;
+  margin-bottom: -1.5em;
+}
+.perfectJustify:after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+}
+
+.perfectJustify_i {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  top: 1.5em;
+  text-align: left;
 }
 
 /* ==========================================================================
@@ -412,69 +478,6 @@ img.right,
 }
 
 /* ==========================================================================
-   >>HELPERS BLOCS
-   ========================================================================== */
-/* Inline block */
-.inlineConteneur > *,
-.inlineBlock {
-  display: inline-block;
-}
-
-/* Wrapper */
-.wrapper {
-  width: 90%;
-  max-width: 75em;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* R├®partition justifi├®e parfaite */
-.perfectJustify {
-  display: block;
-  text-align: justify;
-  overflow: hidden;
-}
-.perfectJustify:before {
-  content: '';
-  display: block;
-  width: 100%;
-  margin-bottom: -1.5em;
-}
-.perfectJustify:after {
-  content: '';
-  display: inline-block;
-  width: 100%;
-}
-
-.perfectJustify_i {
-  display: inline-block;
-  vertical-align: middle;
-  position: relative;
-  top: 1.5em;
-  text-align: left;
-}
-
-/* Table */
-.table {
-  display: table;
-  width: 100%;
-}
-
-.table-fixed {
-  table-layout: fixed;
-}
-
-.table_row {
-  display: table-row;
-  width: 100%;
-}
-
-.table_cell {
-  display: table-cell;
-  vertical-align: top;
-}
-
-/* ==========================================================================
    >>CLASSES WORDPRESS
    ========================================================================== */
 /* ==========================================================================
@@ -492,7 +495,7 @@ body {
   width: 100%;
   background-color: #fff;
   color: #000;
-  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-size: 1em;
   line-height: 1.5;
 }
@@ -564,71 +567,71 @@ p {
 /* --------------------------------------------------------------------------
    ->titres
    -------------------------------------------------------------------------- */
-h1, .h1-like {
+h1, .h1 {
   font-size: 1.625em;
   line-height: 1.84615;
   margin: 1.84615em 0 0.92308em 0;
   font-weight: 400;
 }
 
-h2, .h2-like {
+h2, .h2 {
   font-size: 1.5em;
   line-height: 1;
   margin: 1em 0 0.5em 0;
   font-weight: 400;
 }
 
-h3, .h3-like {
+h3, .h3 {
   font-size: 1.375em;
   line-height: 1.09091;
   margin: 2.18182em 0 1.09091em 0;
   font-weight: 400;
 }
 
-h4, .h4-like {
+h4, .h4 {
   font-size: 1.25em;
   line-height: 1.2;
   margin: 2.4em 0 1.2em 0;
   font-weight: 400;
 }
 
-h5, .h5-like {
+h5, .h5 {
   font-size: 1.125em;
   line-height: 1.33333;
   margin: 2.66667em 0 1.33333em 0;
   font-weight: 400;
 }
 
-h6, .h6-like {
+h6, .h6 {
   font-size: 1em;
   line-height: 1.5;
   margin: 3em 0 1.5em 0;
   font-weight: 700;
 }
 
-h1, .h1-like,
-h2, .h2-like,
-h3, .h3-like,
-h4, .h4-like,
-h5, .h5-like,
-h6, .h6-like {
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
   font-family: "Georgia", "Cambria", "Times New Roman", "Times", serif;
   max-width: none;
 }
-h1:last-child, .h1-like:last-child,
-h2:last-child, .h2-like:last-child,
-h3:last-child, .h3-like:last-child,
-h4:last-child, .h4-like:last-child,
-h5:last-child, .h5-like:last-child,
-h6:last-child, .h6-like:last-child {
+h1:last-child, .h1:last-child,
+h2:last-child, .h2:last-child,
+h3:last-child, .h3:last-child,
+h4:last-child, .h4:last-child,
+h5:last-child, .h5:last-child,
+h6:last-child, .h6:last-child {
   margin-bottom: 0;
 }
-h1:first-child, .h1-like:first-child,
-h2:first-child, .h2-like:first-child,
-h3:first-child, .h3-like:first-child,
-h4:first-child, .h4-like:first-child,
-h5:first-child, .h5-like:first-child,
-h6:first-child, .h6-like:first-child {
+h1:first-child, .h1:first-child,
+h2:first-child, .h2:first-child,
+h3:first-child, .h3:first-child,
+h4:first-child, .h4:first-child,
+h5:first-child, .h5:first-child,
+h6:first-child, .h6:first-child {
   margin-top: 0;
 }
 
@@ -636,6 +639,7 @@ h6:first-child, .h6-like:first-child {
    ->paragraphes et autres
    -------------------------------------------------------------------------- */
 p,
+.p,
 ul,
 ol,
 dl,
@@ -651,6 +655,7 @@ figure {
   max-width: none;
 }
 p:last-child,
+.p:last-child,
 ul:last-child,
 ol:last-child,
 dl:last-child,
@@ -662,6 +667,7 @@ figure:last-child {
   margin-bottom: 0;
 }
 p:first-child,
+.p:first-child,
 ul:first-child,
 ol:first-child,
 dl:first-child,
@@ -687,8 +693,8 @@ em {
 
 /* Indice et exposant */
 sub, sup {
-  font-size: 0.75em;
   position: relative;
+  font-size: .75em;
   vertical-align: 0;
 }
 
@@ -729,16 +735,18 @@ nav a {
    -------------------------------------------------------------------------- */
 ul,
 ol {
-  padding-left: 0;
+  padding-left: 2em;
   list-style-position: inside;
 }
 ul.unstyled,
 ol.unstyled {
   list-style: none;
+  padding-left: 0;
 }
 
 /* ├®viter marges suppl├®mentaires sur ├®l├®ments imbriqu├®s et dans les menus */
 li p,
+li .p,
 li ul,
 li ol,
 nav ul,
@@ -762,13 +770,17 @@ code,
 pre,
 samp,
 kbd {
-  font-family: "Bitstream Vera Sans Mono", "Consolas", "DejaVu Sans Mono", "Courier", monospace;
+  font-family: "Consolas", "DejaVu Sans Mono", "Courier", monospace;
 }
 
-code,
-pre,
 samp {
+  white-space: pre-line;
   white-space: pre-wrap;
+  line-height: 1em;
+}
+
+pre {
+  overflow: auto;
 }
 
 kbd {
@@ -783,20 +795,14 @@ kbd {
   white-space: nowrap;
 }
 
-code {
-  display: block;
-  padding: 0.5em 1em;
-  border: 1px solid #000;
-  border-color: rgba(0, 0, 0, 0.1);
-  background-color: #c3c3c3;
-  background-color: rgba(0, 0, 0, 0.04);
-  color: #cb1d1d;
-  line-height: 1em;
-}
-
+/* Code */
+/* Use with prism.js : http://prismjs.com/ */
+/* cf. partie prism */
+/* Surlignement */
 mark {
-  padding: 0.125em 0.25em;
+  padding: .125em .25em;
   background: #ff0;
+  color: #000;
 }
 
 /* Abbreviations, sigles, etc. */
@@ -900,6 +906,41 @@ hr {
 }
 
 /* ==========================================================================
+   >>TABLES
+   ========================================================================== */
+/* Table css */
+.table {
+  display: table;
+  width: 100%;
+}
+
+.table-fixed {
+  table-layout: fixed;
+}
+
+.table_row {
+  display: table-row;
+  width: 100%;
+}
+
+.table_cell {
+  display: table-cell;
+  vertical-align: top;
+}
+
+/* Lignes de m├¬me hauteur (comme github), avec "..." si coup├® */
+.table-sameHeight,
+table.table-sameHeight {
+  table-layout: fixed;
+}
+.table-sameHeight p,
+table.table-sameHeight p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ==========================================================================
    >>LAYOUT
    ========================================================================== */
 /* --------------------------------------------------------------------------
@@ -915,8 +956,187 @@ hr {
    >>MODULES
    ========================================================================== */
 /* --------------------------------------------------------------------------
+  ->Skip links
+  -------------------------------------------------------------------------- */
+/* Pour avoir le focus chrome oblige a mettre un tabindex ├á -1, on lui enl├¿ve l'outline */
+*[tabindex="-1"]:focus {
+  outline: none;
+}
+
+/* M├¬me styles que WP */
+.skipLinks {
+  position: fixed;
+  left: 0.375em;
+  top: 0.4375em;
+  z-index: 9999;
+}
+.skipLinks a {
+  display: inline-block;
+  padding: 1.07143em 1.64286em 1em;
+  background-color: #F1F1F1;
+  color: #21759B;
+  font-size: 0.875em;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.6);
+}
+
+/* --------------------------------------------------------------------------
    ->Google map
    -------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------
+   ->Prism
+   -------------------------------------------------------------------------- */
+/* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript+bash+git+php+scss+sql&plugins=remove-initial-line-feed */
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: black;
+  text-shadow: 0 1px white;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  tab-size: 4;
+  hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+  text-shadow: none;
+  background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+  text-shadow: none;
+  background: #b3d4fc;
+}
+
+@media print {
+  code[class*="language-"],
+  pre[class*="language-"] {
+    text-shadow: none;
+  }
+}
+/* Code blocks */
+pre[class*="language-"] {
+  padding: 1em;
+  margin: .5em 0;
+  overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background: #f5f2f0;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: slategray;
+}
+
+.token.punctuation {
+  color: #999;
+}
+
+.namespace {
+  opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #a67f59;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #07a;
+}
+
+.token.function {
+  color: #DD4A68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: #e90;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+/* Ajout du nom du language */
+pre[rel] {
+  position: relative;
+  padding-top: 1.875em;
+}
+pre[rel]:before {
+  content: attr(rel);
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.35714em 1.42857em 0.35714em 1.14286em;
+  border-bottom-right-radius: 1em;
+  background-color: #777;
+  color: #fff;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 0.875em;
+  text-shadow: none;
+}
+
 /* --------------------------------------------------------------------------
    ->Slick slider styles g├®n├®reaux
    -------------------------------------------------------------------------- */
@@ -1112,13 +1332,14 @@ hr {
    >>FORMS
    ========================================================================== */
 /* --------------------------------------------------------------------------
-   ->g├®n├®ral
+   ->Reset
    -------------------------------------------------------------------------- */
-/* Reset */
+/* G├®n├®ral Reset */
 button,
 input,
 textarea,
-select {
+select,
+optgroup {
   margin: 0;
   color: inherit;
   font-family: inherit;
@@ -1126,10 +1347,90 @@ select {
   background-color: transparent;
   outline-style: none;
   /* Supr bordure bleu chrome et safari */
+  text-transform: none;
 }
 
+/* Boutons */
+button {
+  overflow: visible;
+  /* IE 8/9/10/11 overflow hidden */
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: none;
+}
+
+/* Remove inner padding and border in Firefox 4+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/* Firefox 4+ setting `line-height` on `input` using `!important` in the UA stylesheet */
+input {
+  line-height: normal;
+}
+
+/* Normalize checkbox and radio button */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome.
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  box-sizing: content-box;
+  /* 2 */
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/* legend normalize */
+legend {
+  white-space: normal;
+}
+
+/* select normalize */
+/* if select styling bugs on WebKit */
+/* select { -webkit-appearance: none; } */
+select {
+  -webkit-appearance: menulist-button;
+}
+
+/* --------------------------------------------------------------------------
+   ->G├®n├®ral
+   -------------------------------------------------------------------------- */
 /* Curseur */
 label,
+.label,
 button,
 input[type="submit"],
 input[type="button"],
@@ -1139,6 +1440,7 @@ input[type="reset"] {
 
 /* Alignement */
 label,
+.label,
 button,
 input,
 select {
@@ -1148,7 +1450,7 @@ select {
 /* D├®sactiv├® */
 button[disabled],
 input[disabled] {
-  cursor: default;
+  cursor: not-allowed;
 }
 
 /* Textarea */
@@ -1156,6 +1458,11 @@ textarea {
   overflow: auto;
   vertical-align: top;
   resize: vertical;
+}
+
+/* optgroup */
+optgroup {
+  font-weight: 700;
 }
 
 /* --------------------------------------------------------------------------
@@ -1168,6 +1475,8 @@ select {
   width: 15.625em;
   border: 1px solid #F6F6F6;
   padding: .5em;
+  -webkit-border-radius: 0px;
+  /* Remove border radius safari */
 }
 
 label,
@@ -1212,6 +1521,10 @@ input[type="color"] {
   width: 3em;
 }
 
+textarea {
+  min-height: 4.5;
+}
+
 /* --------------------------------------------------------------------------
    ->Styles invalide
    -------------------------------------------------------------------------- */
@@ -1230,6 +1543,15 @@ textarea:required:invalid,
 textarea:focus:invalid {
   background: rgba(203, 29, 29, 0.2);
   border-color: #cb1d1d;
+}
+
+/* D├®sactiver le bouton d'envoie si invalide. */
+input:invalid ~ [type="submit"],
+select:invalid ~ [type="submit"],
+textarea:invalid ~ [type="submit"] {
+  opacity: .3;
+  pointer-events: none;
+  cursor: default;
 }
 
 /* --------------------------------------------------------------------------
@@ -1263,6 +1585,7 @@ textarea:focus:invalid {
   padding: .6em 1em;
   color: #fff;
   background-color: #000;
+  vertical-align: middle;
   transition: all 0.3s;
 }
 .btn:hover, .btn:focus, .btn:active {
@@ -1289,18 +1612,23 @@ textarea:focus:invalid {
     margin: 0.5cm;
   }
   /* Liens, abbr */
-  p a[href]:after {
+  p a[href]:after,
+  .p a[href]:after {
     content: " (" attr(href) ")";
   }
 
-  p abbr[title]:after {
+  p abbr[title]:after,
+  .p abbr[title]:after {
     content: " (" attr(title) ")";
   }
 
   /* Pas pour images (classe ├á ajout├®e...), liens internes et js */
   p .linkWithNoTxt a:after,
   p a[href^="javascript:"]:after,
-  p a[href^="#"]:after {
+  p a[href^="#"]:after,
+  .p .linkWithNoTxt a:after,
+  .p a[href^="javascript:"]:after,
+  .p a[href^="#"]:after {
     content: "";
   }
 
@@ -1329,6 +1657,8 @@ textarea:focus:invalid {
 
   /* Veuves et orphelins */
   p,
+  .p,
+  blockquote,
   h2,
   h3 {
     orphans: 3;
