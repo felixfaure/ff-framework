@@ -122,6 +122,18 @@ nav a {
 	text-decoration: none;
 }
 
+// Lien externe :
+// a[href^="http://"],
+// a[href^="https://"]
+// Enlever pour notre domaine
+// a[href^="http://www.mondomaine.com"]
+
+// Contact :
+// a[href^="mailto:"]
+
+// PDF :
+// a[href$=".pdf"]
+
 /* --------------------------------------------------------------------------
    ->listes à puces et numérotées
    -------------------------------------------------------------------------- */
