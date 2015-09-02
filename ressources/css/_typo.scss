@@ -6,7 +6,7 @@
    -------------------------------------------------------------------------- */
 @if $headings-size {
 @for $i from 1 through length($headings-size) {
-    $selector    : "h#{$i}, .h#{$i}-like";
+    $selector    : "h#{$i}, .h#{$i}";
     $visual      : nth($headings-size, $i);
     $weight      : nth($headings-weight, $i);
 
@@ -17,12 +17,12 @@
 }
 }
 
-h1, .h1-like,
-h2, .h2-like,
-h3, .h3-like,
-h4, .h4-like,
-h5, .h5-like,
-h6, .h6-like {
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
 	font-family: $font-secondaire;
 	max-width: $max-p-width;
 	//Eviter problèmes de margin
@@ -42,6 +42,7 @@ h6, .h6-like {
    ->paragraphes et autres
    -------------------------------------------------------------------------- */
 p,
+.p,
 ul,
 ol,
 dl,
@@ -64,7 +65,8 @@ figure {
 }
 
 @if $p-justify {
-p {
+p,
+.p {
 	text-align: justify;
 	word-wrap: break-word;
 	hyphens: auto;
@@ -84,8 +86,8 @@ em {
 
 /* Indice et exposant */
 sub, sup {
-    font-size: 0.75em;
     position: relative;
+    font-size: .75em;
     vertical-align: 0;
 }
 sup {
@@ -143,11 +145,13 @@ ol {
 	list-style-position: $puce-position;
 	&.unstyled {
 		list-style: none;
+        padding-left: 0;
 	}
 }
 
 /* éviter marges supplémentaires sur éléments imbriqués et dans les menus */
 li p,
+li .p,
 li ul,
 li ol,
 nav ul,
@@ -175,7 +179,12 @@ kbd {
 code,
 pre,
 samp {
+    white-space: pre-line;
     white-space: pre-wrap;
+    line-height: 1em;
+}
+pre {
+    overflow: auto;
 }
 kbd {
     display: inline-block;
@@ -196,11 +205,11 @@ code {
 	background-color: #c3c3c3;
 	background-color: rgba($noir,.04);
 	color: $rouge;
-    line-height: 1em;
 }
 mark {
-	padding:0.125em 0.25em;
+	padding: .125em .25em;
 	background: $jaune;
+    color: $noir;
 }
 
 /* Abbreviations, sigles, etc. */
