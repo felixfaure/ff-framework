@@ -37,17 +37,6 @@ a img {
 	border: 0;
 }
 
-/* Blockquotes */
-blockquote,
-q {
-	quotes: none;
-	&:before,
-	&:after {
-		content: '';
-		content: none;
-	}
-}
-
 /* Tables */
 table {
 	border-collapse: collapse;

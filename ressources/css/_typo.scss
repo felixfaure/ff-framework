@@ -181,7 +181,10 @@ mark {
 	background: $jaune;
 }
 
-/* Citation */
+/* Citations
+ * cf. https://en.wikipedia.org/wiki/Quotation_mark#Summary_table_for_all_languages
+ */
+q,
 blockquote {
 	padding-left: 1em;
 	border-left: 3px solid $couleur-ligne;
