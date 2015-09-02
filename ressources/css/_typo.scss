@@ -191,6 +191,14 @@ mark {
 	background: $jaune;
 }
 
+/* Abbreviations, sigles, etc. */
+abbr[title] {
+    border-bottom: dotted 1px;
+    cursor: help;
+    font-variant : none;
+    text-decoration: none;
+}
+
 /* Citations
  * cf. https://en.wikipedia.org/wiki/Quotation_mark#Summary_table_for_all_languages
  */
