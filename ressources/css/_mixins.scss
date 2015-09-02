@@ -102,3 +102,19 @@
         @warn "Type non supported.";
     }
 }
+
+
+//=============================================
+//Mixins pour le rythme vertical :
+//=============================================
+@mixin flow-hr( $value, $type-vr: $vertical-rythm ){
+	font-size: em($value);
+	line-height: line-height($value, $type-vr);
+	margin: margin-em($value, $type-vr) ;
+}
+
+@mixin flow-other( $value, $type-vr: $vertical-rythm ){
+	font-size: em($value);
+	line-height: line-height($value, $type-vr);
+	margin: margin-em-other($value, $type-vr) ;
+}

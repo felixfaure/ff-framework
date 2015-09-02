@@ -2,20 +2,21 @@
    >>TYPO
    ========================================================================== */
 /* --------------------------------------------------------------------------
-   ->titres (32 28 24 20 18 16)
+   ->titres
    -------------------------------------------------------------------------- */
-$headings-size: 32 28 24 20 18 16;
+$headings-size: 26 24 22 20 18 16;
+$headings-weight: 400 400 400 400 400 700;
 @for $i from 1 through length($headings-size) {
   $selector    : "h#{$i}, .h#{$i}-like";
   $visual      : nth($headings-size, $i);
-  $line-height : if($i < 3, $line-height-base * $taille-base * 2, $line-height-base * $taille-base);
+  $weight      : nth($headings-weight, $i);
 
   #{$selector} {
-    margin: $line-height-base * $taille-base / $visual * 1em (0);
-    line-height: $line-height / $visual;
-    font-size: em($visual);
+    @include flow-hr($visual);
+    font-weight: $weight;
   }
 }
+
 h1, .h1-like,
 h2, .h2-like,
 h3, .h3-like,
