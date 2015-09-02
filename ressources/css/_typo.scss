@@ -4,8 +4,7 @@
 /* --------------------------------------------------------------------------
    ->titres
    -------------------------------------------------------------------------- */
-$headings-size: 26 24 22 20 18 16;
-$headings-weight: 400 400 400 400 400 700;
+@if $headings-size {
 @for $i from 1 through length($headings-size) {
     $selector    : "h#{$i}, .h#{$i}-like";
     $visual      : nth($headings-size, $i);
@@ -15,6 +14,7 @@ $headings-weight: 400 400 400 400 400 700;
         @include flow-hr($visual);
         font-weight: $weight;
     }
+}
 }
 
 h1, .h1-like,
