@@ -15,16 +15,21 @@
     }
 
     /* Liens, abbr */
-    p a[href]:after {
+    p a[href]:after,
+    .p a[href]:after {
         content: " (" attr(href) ")";
     }
-    p abbr[title]:after {
+    p abbr[title]:after,
+    .p abbr[title]:after {
         content: " (" attr(title) ")";
     }
     /* Pas pour images (classe à ajoutée...), liens internes et js */
     p .linkWithNoTxt a:after,
     p a[href^="javascript:"]:after,
-    p a[href^="#"]:after {
+    p a[href^="#"]:after,
+    .p .linkWithNoTxt a:after,
+    .p a[href^="javascript:"]:after,
+    .p a[href^="#"]:after {
         content: "";
     }
 
@@ -52,6 +57,8 @@
 
     /* Veuves et orphelins */
     p,
+    .p,
+    blockquote,
     h2,
     h3 {
         orphans: 3;
