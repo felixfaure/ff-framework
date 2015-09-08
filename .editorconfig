@@ -1,0 +1,17 @@
+# editorconfig.org
+
+root = true
+
+# For all files :
+# Unix-style newlines with a newline ending every file
+[*]
+end_of_line = lf
+insert_final_newline = true
+# UTF8, 4 spaces for indentation and indent with spaces
+charset = utf-8
+indent_size = 4
+indent_style = space
+trim_trailing_whitespace = true
+
+[*.md]
+trim_trailing_whitespace = false
