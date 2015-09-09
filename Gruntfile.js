@@ -49,7 +49,8 @@ module.exports = function(grunt) {
 			dist: {
 				options: {
 					style: 'expanded',
-					sourcemap: true
+					sourcemap: true,
+                    precision: 6
 				},
 				files: {
 					'ressources/css/build/style.dev.unprefixed.css': 'ressources/css/style.scss'

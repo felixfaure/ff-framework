@@ -16,3 +16,7 @@ Workflow idéal avec une utilisation de Grunt couplé à sass.
 ##Autres
 - .htaccess optimisé (baser sur boilerplate)
 - plein d'astuces
+
+##A faire
+- Ordonner et meilleur formatage avec des scss grunt-scss-lint
+- Ordonner les propriétés css avec grunt-csscomb
