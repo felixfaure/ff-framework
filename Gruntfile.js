@@ -1,33 +1,46 @@
 module.exports = function(grunt) {
+    'use strict';
+
+    // Force use of Unix newlines
+    grunt.util.linefeed = '\n';
 
     // All configuration goes here
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
 		concat: {
-            prod: {
-				src: [
-					'ressources/js/build/libs/*.js', // Tous les plugins et libs
-					'ressources/js/build/perso/*.js'  // Fichiers scripts principeaux
-				],
-				dest: 'ressources/js/dev/production.js',
+            perso: {
+				src: ['ressources/js/perso/*.js'], // Fichiers scripts perso
+				dest: 'ressources/js/build/perso.js',
+			},
+            plugins: {
+				src: ['ressources/js/libs/*.js'], // Tous les plugins et libs
+				dest: 'ressources/js/build/plugins.js',
 			},
 			header: {
-				src: ['ressources/js/build/header/*.js'],
-				dest: 'ressources/js/dev/header.js',
+				src: ['ressources/js/header/*.js'], // Fichiers scripts header
+				dest: 'ressources/js/build/header.js',
+			},
+            prod: {
+				src: ['ressources/js/libs/*.js','ressources/js/perso/*.js'], // Fichiers scripts perso + plugins
+				dest: 'ressources/js/build/production.js',
 			},
         },
 
 		uglify: {
-			// options: {
-			// 	sourceMap: true
-			// },
+			options: {
+                compress: {
+                    warnings: false
+                },
+                mangle: true,
+				// sourceMap: true
+			},
 			prod: {
-				src: 'ressources/js/dev/production.js',
+				src: 'ressources/js/build/production.js',
 				dest: 'js/production.min.js'
 			},
 			header: {
-				src: 'ressources/js/dev/header.js',
+				src: 'ressources/js/build/header.js',
 				dest: 'js/header.min.js'
 			}
 		},
