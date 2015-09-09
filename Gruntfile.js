@@ -131,9 +131,9 @@ module.exports = function(grunt) {
 
 	require('load-grunt-tasks')(grunt);
 
-    // grunt.registerTask('default', ['sass', 'autoprefixer', 'cssmin', 'concat', 'uglify', 'imagemin', "browserSync", "watch"]);
-    // grunt.registerTask('default', ["browserSync", "watch"]);
     grunt.registerTask('default', ['sass', 'autoprefixer', 'cssmin', 'concat', 'uglify']);
+    grunt.registerTask('css', ['sass', 'autoprefixer', 'cssmin']);
+    grunt.registerTask('js', ['concat', 'uglify']);
     grunt.registerTask('live', ['sass', 'autoprefixer', 'cssmin', 'concat', 'uglify', 'browserSync', 'watch']);
 
 };
