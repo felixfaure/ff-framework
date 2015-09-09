@@ -259,7 +259,7 @@ img.right,
 }
 
 .second-font {
-  font-family: "Georgia", "Cambria", "Times New Roman", "Times", serif;
+  font-family: inherit;
 }
 
 /* Couleurs */
@@ -576,8 +576,8 @@ p {
    -------------------------------------------------------------------------- */
 h1, .h1 {
   font-size: 1.625em;
-  line-height: 1.84615;
-  margin: 1.84615em 0 0.92308em 0;
+  line-height: 1.846154;
+  margin: 1.846154em 0 0.923077em 0;
   font-weight: 400;
 }
 
@@ -590,8 +590,8 @@ h2, .h2 {
 
 h3, .h3 {
   font-size: 1.375em;
-  line-height: 1.09091;
-  margin: 2.18182em 0 1.09091em 0;
+  line-height: 1.090909;
+  margin: 2.181818em 0 1.090909em 0;
   font-weight: 400;
 }
 
@@ -604,8 +604,8 @@ h4, .h4 {
 
 h5, .h5 {
   font-size: 1.125em;
-  line-height: 1.33333;
-  margin: 2.66667em 0 1.33333em 0;
+  line-height: 1.333333;
+  margin: 2.666667em 0 1.333333em 0;
   font-weight: 400;
 }
 
@@ -622,7 +622,7 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-  font-family: "Georgia", "Cambria", "Times New Roman", "Times", serif;
+  font-family: inherit;
   max-width: none;
 }
 h1:last-child, .h1:last-child,
@@ -794,7 +794,7 @@ pre {
 
 kbd {
   display: inline-block;
-  padding: 0.16667em 0.33333em;
+  padding: 0.166667em 0.333333em;
   border: 1px solid #B4B4B4;
   border-radius: 0.25em;
   background-color: #F4F7F8;
@@ -893,14 +893,14 @@ hr {
 
 .small {
   font-size: 0.875em;
-  line-height: 1.71429;
-  margin: 1.71429em 0;
+  line-height: 1.714286;
+  margin: 1.714286em 0;
 }
 
 .big {
   font-size: 1.125em;
-  line-height: 1.33333;
-  margin: 1.33333em 0;
+  line-height: 1.333333;
+  margin: 1.333333em 0;
 }
 
 .bigger {
@@ -911,8 +911,8 @@ hr {
 
 .biggest {
   font-size: 1.375em;
-  line-height: 1.09091;
-  margin: 1.09091em 0;
+  line-height: 1.090909;
+  margin: 1.090909em 0;
 }
 
 /* ==========================================================================
@@ -982,7 +982,7 @@ table.table-sameHeight p {
 }
 .skipLinks a {
   display: inline-block;
-  padding: 1.07143em 1.64286em 1em;
+  padding: 1.071429em 1.642857em 1em;
   background-color: #F1F1F1;
   color: #21759B;
   font-size: 0.875em;
@@ -1143,7 +1143,7 @@ pre[rel]:before {
   position: absolute;
   top: 0;
   left: 0;
-  padding: 0.35714em 1.42857em 0.35714em 1.14286em;
+  padding: 0.357143em 1.428571em 0.357143em 1.142857em;
   border-bottom-right-radius: 1em;
   background-color: #777;
   color: #fff;

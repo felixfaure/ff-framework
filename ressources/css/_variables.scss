@@ -25,7 +25,7 @@ $font-sans-serif: "Helvetica Neue", "Helvetica", "Arial", sans-serif !default;
 $font-serif: "Georgia", "Times New Roman", "Times", serif !default;
 $font-monospace: "Consolas", "DejaVu Sans Mono", "Courier", monospace !default;
 $font-default: $font-sans-serif !default;
-$font-secondaire: $font-serif !default;
+$font-secondaire: inherit !default;
 $headings-size: 26 24 22 20 18 16; //false pour ne pas utiliser la boucle
 $headings-weight: 400 400 400 400 400 700;
 
