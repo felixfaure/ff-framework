@@ -112,8 +112,7 @@ module.exports = function(grunt) {
 				livereload: false,
 			},
 			scripts: {
-				files: ['ressources/js/build/**/*.js'],
-				//tasks: ['modernizr', 'concat', 'uglify'],
+				files: ['ressources/js/**/*.js'],
 				tasks: ['concat', 'uglify'],
 				options: {
 					spawn: false,
