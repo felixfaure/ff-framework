@@ -88,13 +88,17 @@ a {
 
 /* On change le mod├¿le de box pour tous les ├®l├®ments */
 html {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 *,
 *:before,
 *:after {
-  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+     -moz-box-sizing: inherit;
+          box-sizing: inherit;
 }
 
 /* ==========================================================================
@@ -717,7 +721,9 @@ a {
   color: #00d8a8;
   text-decoration: underline;
   cursor: pointer;
-  transition: color 0.3s;
+  -webkit-transition: color 0.3s;
+       -o-transition: color 0.3s;
+          transition: color 0.3s;
 }
 a:hover, a:focus, a:active {
   color: #000;
@@ -792,7 +798,8 @@ kbd {
   border: 1px solid #B4B4B4;
   border-radius: 0.25em;
   background-color: #F4F7F8;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2), 0px 2px 0px 0px rgba(255, 255, 255, 0.7) inset;
+  -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2), 0px 2px 0px 0px rgba(255, 255, 255, 0.7) inset;
+          box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2), 0px 2px 0px 0px rgba(255, 255, 255, 0.7) inset;
   font-size: 0.75em;
   font-weight: 700;
   white-space: nowrap;
@@ -981,7 +988,8 @@ table.table-sameHeight p {
   font-size: 0.875em;
   font-weight: 700;
   text-decoration: none;
-  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.6);
+          box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.6);
 }
 
 /* --------------------------------------------------------------------------
@@ -1008,6 +1016,7 @@ pre[class*="language-"] {
   word-wrap: normal;
   line-height: 1.5;
   -moz-tab-size: 4;
+    -o-tab-size: 4;
        tab-size: 4;
   -webkit-hyphens: none;
      -moz-hyphens: none;
@@ -1173,12 +1182,14 @@ pre[rel]:before {
   cursor: pointer;
   cursor: move;
   cursor: grab;
+  cursor: -moz-grab;
   cursor: -webkit-grab;
 }
 .slick-list:active, .slick-list.dragging {
   cursor: pointer;
   cursor: move;
   cursor: grabbing;
+  cursor: -moz-grabbing;
   cursor: -webkit-grabbing;
 }
 .slick-list:focus {
@@ -1258,6 +1269,8 @@ pre[rel]:before {
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+       -o-transform: translateY(-50%);
           transform: translateY(-50%);
   background: transparent;
   border: none;
@@ -1385,7 +1398,9 @@ input {
 /* Normalize checkbox and radio button */
 input[type="checkbox"],
 input[type="radio"] {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 0;
 }
 
@@ -1406,7 +1421,9 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
-  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
   /* 2 */
 }
 
@@ -1538,7 +1555,8 @@ textarea {
 select:invalid,
 input:invalid,
 textarea:invalid {
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   border: 1px solid #F6F6F6;
 }
 
@@ -1592,7 +1610,9 @@ textarea:invalid ~ [type="submit"] {
   color: #fff;
   background-color: #000;
   vertical-align: middle;
-  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+       -o-transition: all 0.3s;
+          transition: all 0.3s;
 }
 .btn:hover, .btn:focus, .btn:active {
   color: #fff;
@@ -1610,7 +1630,8 @@ textarea:invalid ~ [type="submit"] {
   /* G├®n├®ral */
   * {
     background: transparent !important;
-    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+            box-shadow: none !important;
     text-shadow: none !important;
   }
 
