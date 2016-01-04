@@ -1,34 +1,11 @@
 /* --------------------------------------------------------------------------
    ->animations
    -------------------------------------------------------------------------- */
-.moveToLeft {
-	animation: moveToLeft .6s ease both;
-	overflow: hidden;
-}
-@keyframes moveToLeft {
-	to { transform: translateX(-100%); }
-}
-
-.moveFromLeft {
-	animation: moveFromLeft .6s ease both;
-	overflow: hidden;
-}
-@keyframes moveFromLeft {
-	from { transform: translateX(-100%); }
-}
-
-.moveToRight {
-	animation: moveToRight .6s ease both;
-	overflow: hidden;
-}
-@keyframes moveToRight {
-	to { transform: translateX(100%); }
-}
-
-.moveFromRight {
-	animation: moveFromRight .6s ease both;
-	overflow: hidden;
-}
-@keyframes moveFromRight {
-	from { transform: translateX(100%); }
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }
