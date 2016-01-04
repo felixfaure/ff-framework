@@ -1,8 +1,12 @@
 //=============================================
-//px to em :
+//px to em/rem :
 //=============================================
 @function em($target, $context: $taille-base) {
 	@return $target / $context * 1em;
+}
+
+@function rem($target, $context: $taille-base) {
+	@return $target / $context * 1rem;
 }
 
 
