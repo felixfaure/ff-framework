@@ -14,12 +14,12 @@
 //Vendor prefixes :
 //=============================================
 @mixin vendor-prefix($property, $value, $prefixes: webkit moz ms o) {
-    @if $prefixes {
-        @each $prefix in $prefixes {
-            #{'-' + $prefix + '-' + $property}: $value;
-        }
+  @if $prefixes {
+    @each $prefix in $prefixes {
+      #{'-' + $prefix + '-' + $property}: $value;
     }
-    #{$property}: $value;
+  }
+  #{$property}: $value;
 }
 
 
@@ -27,21 +27,21 @@
 //Sélection :
 //=============================================
 @mixin selection($current-selector: false) {
-    @if $current-selector {
-        &::-moz-selection {
-            @content;
-        }
-        &::selection {
-            @content;
-        }
-    } @else {
-        ::-moz-selection {
-            @content;
-        }
-        ::selection {
-            @content;
-        }
+  @if $current-selector {
+    &::-moz-selection {
+      @content;
     }
+    &::selection {
+      @content;
+    }
+  } @else {
+    ::-moz-selection {
+      @content;
+    }
+    ::selection {
+      @content;
+    }
+  }
 }
 
 
@@ -49,13 +49,13 @@
 //RGBA (color & background color) :
 //=============================================
 @mixin color-opacity($color, $opacity: 0.9) {
-    color: $color; /* The Fallback */
-    color: rgba($color, $opacity);
+  color: $color; /* The Fallback */
+  color: rgba($color, $opacity);
 }
 
 @mixin background-opacity($color, $opacity: 0.9) {
-    background-color: $color; /* The Fallback */
-    background-color: rgba($color, $opacity);
+  background-color: $color; /* The Fallback */
+  background-color: rgba($color, $opacity);
 }
 
 
@@ -63,8 +63,8 @@
 //REM :
 //=============================================
 @mixin rem($value, $base: $taille-base) {
-    font-size: $value * 1px; /* The Fallback */
-    font-size: ($value / $base) * 1rem;
+  font-size: $value * 1px; /* The Fallback */
+  font-size: ($value / $base) * 1rem;
 }
 
 
@@ -72,20 +72,20 @@
 //Placeholder :
 //=============================================
 @mixin placeholder($current-selector: false) {
-    $placeholders: "::-webkit-input" ":-moz" "::-moz" ":-ms-input";
+  $placeholders: "::-webkit-input" ":-moz" "::-moz" ":-ms-input";
 	@if $current-selector {
 		@each $placeholder in $placeholders {
-	        &#{$placeholder}-placeholder {
-	            @content;
-	        }
-	    }
-    } @else {
+      &#{$placeholder}-placeholder {
+        @content;
+      }
+	  }
+  } @else {
 		@each $placeholder in $placeholders {
-	        #{$placeholder}-placeholder {
-	            @content;
-	        }
-	    }
-    }
+      #{$placeholder}-placeholder {
+        @content;
+      }
+	  }
+  }
 }
 
 
@@ -93,49 +93,49 @@
 //Media query en em
 //=============================================
 @mixin mq($value: false, $query-type: 'max') {
-    @if $query-type == "max" {
-        @media only screen and (max-width: em($value)) {
-            @content;
-        }
+  @if $query-type == "max" {
+    @media only screen and (max-width: em($value)) {
+      @content;
     }
+  }
 
-    @else if $query-type == "min" {
-        @media only screen and (min-width: em($value)) {
-            @content;
-        }
+  @else if $query-type == "min" {
+    @media only screen and (min-width: em($value)) {
+      @content;
     }
+  }
 
-    @else if $query-type == "hdpi" {
-        @media only screen and (-webkit-min-device-pixel-ratio: $ratioHDPI),
-        only screen and (min--moz-device-pixel-ratio: $ratioHDPI),
-        only screen and (-o-min-device-pixel-ratio: #{$ratioHDPI}/1),
-        only screen and (min-resolution: round($ratioHDPI * 96dpi)),
-        only screen and (min-resolution: $ratioHDPI * 1dppx) {
-            @content;
-        }
+  @else if $query-type == "hdpi" {
+    @media only screen and (-webkit-min-device-pixel-ratio: $ratioHDPI),
+    only screen and (min--moz-device-pixel-ratio: $ratioHDPI),
+    only screen and (-o-min-device-pixel-ratio: #{$ratioHDPI}/1),
+    only screen and (min-resolution: round($ratioHDPI * 96dpi)),
+    only screen and (min-resolution: $ratioHDPI * 1dppx) {
+      @content;
     }
+  }
 
 	@else if $query-type == "orientation" {
-        @media all and (orientation: $value) {
-            @content;
-        }
+    @media all and (orientation: $value) {
+      @content;
     }
+  }
 
 	@else if $query-type == "min-ratio" {
-        @media screen and (min-aspect-ratio: $value) {
-            @content;
-        }
+    @media screen and (min-aspect-ratio: $value) {
+      @content;
     }
+  }
 
 	@else if $query-type == "max-ratio" {
-        @media screen and (max-aspect-ratio: $value) {
-            @content;
-        }
+    @media screen and (max-aspect-ratio: $value) {
+      @content;
     }
+  }
 
-    @else  {
-        @warn "Type non supported.";
-    }
+  @else  {
+    @warn "Type non supported.";
+  }
 }
 
 
