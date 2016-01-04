@@ -5,7 +5,7 @@ html {
 	width: 100%;
 	font-size: 100%; /* 16px dans la plupart des navigateurs */
 	-webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
 }
 
 body {
@@ -24,8 +24,8 @@ body {
 
 /* Sélection */
 @include selection {
-    background: $couleur-selection-bg;
-    text-shadow: none;
+  background: $couleur-selection-bg;
+  text-shadow: none;
 	color: $couleur-selection-ft;
 }
 
