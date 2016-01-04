@@ -136,23 +136,23 @@ pre[class*="language-"] {
 @if $prism-show-langage-name {
 /* Ajout du nom du language */
 pre[rel] {
-    position: relative;
-    padding-top: em(30);
-    &:before {
-        content: attr(rel);
-        display: inline-block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        padding: em(5,14) em(20,14) em(5,14) em(16,14);
+  position: relative;
+  padding-top: em(30);
+  &:before {
+    content: attr(rel);
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: em(5,14) em(20,14) em(5,14) em(16,14);
 		border-bottom-right-radius: em(14,14);
-        background-color: #777;
-        color: $blanc;
-        font-family: $font-default;
-        font-weight: 400;
-        font-size: em(14);
-        text-shadow: none;
-    }
+    background-color: #777;
+    color: $blanc;
+    font-family: $font-default;
+    font-weight: 400;
+    font-size: em(14);
+    text-shadow: none;
+  }
 }
 }
 
