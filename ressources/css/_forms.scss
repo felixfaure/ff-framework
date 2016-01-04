@@ -5,6 +5,10 @@
 /* --------------------------------------------------------------------------
    ->Styles persos
    -------------------------------------------------------------------------- */
+legend,
+fieldset {
+  display: block;
+}
 input,
 textarea,
 select {
@@ -49,7 +53,18 @@ input[type="color"] {
 input[type="color"] {
     width: 3em;
 }
-
+// input[type="date"] {
+//     &::-webkit-datetime-edit-fields-wrapper { background: silver; }
+//     &::-webkit-datetime-edit-text,
+//     &::-webkit-datetime-edit-month-field,
+//     &::-webkit-datetime-edit-day-field,
+//     &::-webkit-datetime-edit-year-field {
+//       color: inherit;
+//       opacity: .5;
+//     }
+//     &::-webkit-inner-spin-button { display: none; }
+//     &::-webkit-calendar-picker-indicator { display: none; }
+// }
 textarea {
     min-height: $nb-lines-textarea * $line-height-base;
 }
@@ -64,11 +79,12 @@ textarea:invalid {
     box-shadow: none;
     border: $input-defaut-border;
 }
-select:required:invalid,
-input:required:invalid,
+select:focus:invalid,
 input:focus:invalid,
-textarea:required:invalid,
-textarea:focus:invalid {
+textarea:focus:invalid,
+select.is-error,
+input.is-error,
+textarea.is-error {
     background: rgba($rouge,.2);
     border-color: $rouge;
 }
