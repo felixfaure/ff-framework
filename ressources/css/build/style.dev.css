@@ -19,9 +19,11 @@
  * Sommaire à faire...
  */
 /* ==========================================================================
-   >>RESET
+   >>RESET GENERAL
    ========================================================================== */
-/* Hard reset */
+/* --------------------------------------------------------------------------
+   ->Hard reset
+   -------------------------------------------------------------------------- */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -31,7 +33,9 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   vertical-align: baseline;
 }
 
-/* HTML5 */
+/* --------------------------------------------------------------------------
+   ->HTML5
+   -------------------------------------------------------------------------- */
 article, aside, datagrid, datalist, details, dialog, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
@@ -45,7 +49,9 @@ abbr, eventsource, mark, meter, time, output, bb {
   display: inline;
 }
 
-/* Images, iframes */
+/* --------------------------------------------------------------------------
+   ->Images, iframes
+   -------------------------------------------------------------------------- */
 img,
 iframe {
   border: 0;
@@ -69,6 +75,9 @@ svg:not(:root) {
   overflow: hidden;
 }
 
+/* --------------------------------------------------------------------------
+   ->Autres ├®l├®ments
+   -------------------------------------------------------------------------- */
 /* Tables */
 table {
   border-collapse: collapse;
@@ -86,7 +95,9 @@ a {
   background-color: transparent;
 }
 
-/* On change le mod├¿le de box pour tous les ├®l├®ments */
+/* --------------------------------------------------------------------------
+   ->Mod├¿le de boite
+   -------------------------------------------------------------------------- */
 html {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
@@ -99,6 +110,155 @@ html {
   -webkit-box-sizing: inherit;
      -moz-box-sizing: inherit;
           box-sizing: inherit;
+}
+
+/* ==========================================================================
+   >>RESET FORMS
+   ========================================================================== */
+/* --------------------------------------------------------------------------
+  ->Reset et normalisation
+  -------------------------------------------------------------------------- */
+/* G├®n├®ral Reset */
+button,
+input,
+textarea,
+select,
+optgroup {
+  margin: 0;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  background-color: transparent;
+  outline-style: none;
+  /* Supr bordure bleu chrome et safari */
+  text-transform: none;
+  letter-spacing: inherit;
+}
+
+/* Remove border radius safari */
+input,
+textarea,
+select {
+  -webkit-border-radius: 0px;
+}
+
+/* Boutons */
+button {
+  padding: 0;
+  overflow: visible;
+  /* IE 8/9/10/11 overflow hidden */
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: none;
+}
+
+/* Remove inner padding and border in Firefox 4+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/* Firefox 4+ setting `line-height` on `input` using `!important` in the UA stylesheet */
+input {
+  line-height: normal;
+}
+
+/* Normalize checkbox and radio button */
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+}
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome.
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/* legend normalize */
+legend {
+  white-space: normal;
+}
+
+/* select normalize */
+/* if select styling bugs on WebKit */
+/* select { -webkit-appearance: none; } */
+select {
+  -webkit-appearance: menulist-button;
+}
+
+/* --------------------------------------------------------------------------
+   ->Styles G├®n├®reaux
+   -------------------------------------------------------------------------- */
+/* Curseur */
+label,
+.label,
+button,
+input[type="submit"],
+input[type="button"],
+input[type="reset"] {
+  cursor: pointer;
+}
+
+/* Alignement */
+label,
+.label,
+button,
+input,
+select {
+  vertical-align: middle;
+}
+
+/* D├®sactiv├® */
+button[disabled],
+input[disabled] {
+  cursor: not-allowed;
+}
+
+/* Textarea */
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical;
+}
+
+/* optgroup */
+optgroup {
+  font-weight: 700;
 }
 
 /* ==========================================================================
@@ -125,8 +285,8 @@ html {
 .srOnly {
   position: absolute;
   clip: rect(1px, 1px, 1px, 1px);
-  height: 1px;
-  width: 1px;
+  height: 1px !important;
+  width: 1px !important;
   overflow: hidden;
   margin: -1px;
   padding: 0;
@@ -182,7 +342,7 @@ img.right,
 }
 
 /* Masquage */
-.none {
+.is-hide {
   display: none;
 }
 
@@ -254,11 +414,11 @@ img.right,
 }
 
 /* Fonts */
-.defaut-font {
+.defautFont {
   font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
-.second-font {
+.secondFont {
   font-family: inherit;
 }
 
@@ -694,7 +854,7 @@ b, strong {
   font-weight: 700;
 }
 
-em {
+i, em {
   font-style: italic;
 }
 
@@ -928,12 +1088,14 @@ hr {
   table-layout: fixed;
 }
 
-.table_row {
+.table_row,
+.tr {
   display: table-row;
   width: 100%;
 }
 
-.table_cell {
+.table_cell,
+.td {
   display: table-cell;
   vertical-align: top;
 }
@@ -948,6 +1110,147 @@ table.table-sameHeight p {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+/* ==========================================================================
+   >>FORMS
+   ========================================================================== */
+/* --------------------------------------------------------------------------
+   ->Styles persos
+   -------------------------------------------------------------------------- */
+legend,
+fieldset {
+  display: block;
+}
+
+input,
+textarea,
+select {
+  display: block;
+  width: 15.625em;
+  border: 1px solid #F6F6F6;
+  padding: .5em;
+}
+
+label,
+.label {
+  display: inline-block;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type="radio"],
+input[type="checkbox"] {
+  display: inline-block;
+  width: auto;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type="range"],
+input[type="color"],
+input[type="radio"],
+input[type="checkbox"],
+input[type="image"] {
+  border: none;
+}
+
+input[type="radio"],
+input[type="checkbox"],
+input[type="image"] {
+  background-color: transparent;
+}
+
+input[type="range"],
+input[type="color"] {
+  padding: 0;
+}
+
+input[type="color"] {
+  width: 3em;
+}
+
+textarea {
+  min-height: 4.5;
+}
+
+/* --------------------------------------------------------------------------
+   ->Styles invalide
+   -------------------------------------------------------------------------- */
+select:invalid,
+input:invalid,
+textarea:invalid {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: 1px solid #F6F6F6;
+}
+
+select:focus:invalid,
+input:focus:invalid,
+textarea:focus:invalid,
+select.is-error,
+input.is-error,
+textarea.is-error {
+  background: rgba(203, 29, 29, 0.2);
+  border-color: #cb1d1d;
+}
+
+/* D├®sactiver le bouton d'envoie si invalide. */
+input:invalid ~ [type="submit"],
+select:invalid ~ [type="submit"],
+textarea:invalid ~ [type="submit"] {
+  opacity: .3;
+  pointer-events: none;
+  cursor: default;
+}
+
+/* --------------------------------------------------------------------------
+   ->Styles placeholder
+   -------------------------------------------------------------------------- */
+::-webkit-input-placeholder {
+  color: inherit;
+  opacity: .5;
+}
+
+:-moz-placeholder {
+  color: inherit;
+  opacity: .5;
+}
+
+::-moz-placeholder {
+  color: inherit;
+  opacity: .5;
+}
+
+:-ms-input-placeholder {
+  color: inherit;
+  opacity: .5;
+}
+
+/* --------------------------------------------------------------------------
+   ->Bouton
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-block;
+  padding: .6em 1em;
+  color: #fff;
+  background-color: #000;
+  vertical-align: middle;
+  -webkit-transition: all 0.3s;
+       -o-transition: all 0.3s;
+          transition: all 0.3s;
+}
+.btn:hover, .btn:focus, .btn:active {
+  color: #fff;
+  background-color: #00d8a8;
+}
+.btn[disabled] {
+  color: #fff;
+  background-color: #000;
 }
 
 /* ==========================================================================
@@ -990,6 +1293,51 @@ table.table-sameHeight p {
   text-decoration: none;
   -webkit-box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.6);
           box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.6);
+}
+
+/* --------------------------------------------------------------------------
+   ->Loader
+   -------------------------------------------------------------------------- */
+.has-loader {
+  position: relative;
+}
+
+.has-loader:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 5;
+  width: 2.5em;
+  height: 2.5em;
+  margin-left: -1.25em;
+  margin-top: -1.25em;
+  border: 0.1875em solid rgba(255, 255, 255, 0.2);
+  border-left-color: #fff;
+  border-radius: 50%;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  -webkit-transition: opacity .4s;
+       -o-transition: opacity .4s;
+          transition: opacity .4s;
+  opacity: 0;
+  -webkit-animation: none;
+       -o-animation: none;
+          animation: none;
+}
+.no-opacity .has-loader:after {
+  visibility: hidden;
+}
+
+.has-loader.is-loading:after {
+  opacity: 1;
+  -webkit-animation: spin 1.1s infinite linear;
+       -o-animation: spin 1.1s infinite linear;
+          animation: spin 1.1s infinite linear;
+}
+.no-opacity .has-loader.is-loading:after {
+  visibility: visible;
 }
 
 /* --------------------------------------------------------------------------
@@ -1153,476 +1501,44 @@ pre[rel]:before {
   text-shadow: none;
 }
 
-/* --------------------------------------------------------------------------
-   ->Slick slider styles g├®n├®reaux
-   -------------------------------------------------------------------------- */
-/* Slider */
-/* ---------------------------- */
-.slick-slider {
-  position: relative;
-  display: block;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-touch-callout: none;
-  -khtml-user-select: none;
-  -ms-touch-action: pan-y;
-  touch-action: pan-y;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.slick-list {
-  position: relative;
-  display: block;
-  overflow: hidden;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  cursor: pointer;
-  cursor: move;
-  cursor: grab;
-  cursor: -moz-grab;
-  cursor: -webkit-grab;
-}
-.slick-list:active, .slick-list.dragging {
-  cursor: pointer;
-  cursor: move;
-  cursor: grabbing;
-  cursor: -moz-grabbing;
-  cursor: -webkit-grabbing;
-}
-.slick-list:focus {
-  outline: none;
-}
-
-.slick-slider .slick-track,
-.slick-slider .slick-list {
-  -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
-}
-
-.slick-track {
-  position: relative;
-  left: 0;
-  top: 0;
-  display: block;
-  height: 100%;
-}
-.slick-track:before, .slick-track:after {
-  content: '';
-  display: table;
-}
-.slick-track:after {
-  clear: both;
-}
-.slick-loading .slick-track {
-  visibility: hidden;
-}
-
-.slick-slide {
-  display: none;
-  float: left;
-  height: 100%;
-  min-height: 1px;
-}
-[dir='rtl'] .slick-slide {
-  float: right;
-}
-
-.slick-slide img {
-  display: block;
-}
-
-.slick-slide.slick-loading img {
-  display: none;
-}
-
-.slick-slide.dragging img {
-  pointer-events: none;
-}
-
-.slick-initialized .slick-slide {
-  display: block;
-}
-
-.slick-loading .slick-slide {
-  visibility: hidden;
-}
-
-.slick-vertical .slick-slide {
-  display: block;
-  height: auto;
-  border: 1px solid transparent;
-}
-
-.slick-arrow.slick-hidden {
-  display: none;
-}
-
-/* Theme */
-/* ---------------------------- */
-/* Arrows */
-.slick-prev,
-.slick-next {
-  display: block;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-       -o-transform: translateY(-50%);
-          transform: translateY(-50%);
-  background: transparent;
-  border: none;
-  font-size: 2.5em;
-  color: #fff;
-  line-height: 1;
-}
-
-.slick-prev {
-  right: 100%;
-  margin-right: 0.125em;
-}
-
-.slick-next {
-  left: 100%;
-  margin-left: 0.125em;
-}
-
-.slick-dots {
-  display: block;
-  width: 100%;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  text-align: center;
-}
-
-.slick-dots li {
-  position: relative;
-  display: inline-block;
-  height: 1.125em;
-  width: 1.125em;
-  margin: 0;
-  cursor: pointer;
-}
-
-.slick-dots li button {
-  display: block;
-  height: 100%;
-  width: 100%;
-  padding: 0.25em;
-  font-size: 0;
-  line-height: 0;
-  outline: none;
-  color: transparent;
-  background: transparent;
-  cursor: pointer;
-}
-.slick-dots li button:before {
-  content: "\2022";
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  height: 100%;
-  width: 100%;
-  text-align: center;
-  font-size: 36px;
-  line-height: 0.5em;
-  color: #000;
-  opacity: 0.25;
-}
-.slick-dots li button:hover, .slick-dots li button:focus {
-  outline: none;
-}
-.slick-dots li button:hover:before, .slick-dots li button:focus:before {
-  opacity: 1;
-}
-
-.slick-dots li.slick-active button:before {
-  color: #000;
-  opacity: 0.75;
-}
-
 /* ==========================================================================
    >>EXCEPTIONS
    ========================================================================== */
-/* ==========================================================================
-   >>FORMS
-   ========================================================================== */
 /* --------------------------------------------------------------------------
-   ->Reset
+   ->animations
    -------------------------------------------------------------------------- */
-/* G├®n├®ral Reset */
-button,
-input,
-textarea,
-select,
-optgroup {
-  margin: 0;
-  color: inherit;
-  font-family: inherit;
-  font-size: inherit;
-  background-color: transparent;
-  outline-style: none;
-  /* Supr bordure bleu chrome et safari */
-  text-transform: none;
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
-
-/* Boutons */
-button {
-  overflow: visible;
-  /* IE 8/9/10/11 overflow hidden */
+@-o-keyframes spin {
+  0% {
+    -o-transform: rotate(0deg);
+       transform: rotate(0deg);
+  }
+  100% {
+    -o-transform: rotate(360deg);
+       transform: rotate(360deg);
+  }
 }
-
-button,
-html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-  -webkit-appearance: none;
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+         -o-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+         -o-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
-
-/* Remove inner padding and border in Firefox 4+ */
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-  border: 0;
-  padding: 0;
-}
-
-/* Firefox 4+ setting `line-height` on `input` using `!important` in the UA stylesheet */
-input {
-  line-height: normal;
-}
-
-/* Normalize checkbox and radio button */
-input[type="checkbox"],
-input[type="radio"] {
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 0;
-}
-
-/**
- * Fix the cursor style for Chrome's increment/decrement buttons. For certain
- * `font-size` values of the `input`, it causes the cursor style of the
- * decrement button to change from `default` to `text`.
- */
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  height: auto;
-}
-
-/**
- * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
- * 2. Address `box-sizing` set to `border-box` in Safari and Chrome.
- */
-input[type="search"] {
-  -webkit-appearance: textfield;
-  /* 1 */
-  -webkit-box-sizing: content-box;
-     -moz-box-sizing: content-box;
-          box-sizing: content-box;
-  /* 2 */
-}
-
-/**
- * Remove inner padding and search cancel button in Safari and Chrome on OS X.
- * Safari (but not Chrome) clips the cancel button when the search input has
- * padding (and `textfield` appearance).
- */
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-/* legend normalize */
-legend {
-  white-space: normal;
-}
-
-/* select normalize */
-/* if select styling bugs on WebKit */
-/* select { -webkit-appearance: none; } */
-select {
-  -webkit-appearance: menulist-button;
-}
-
-/* --------------------------------------------------------------------------
-   ->G├®n├®ral
-   -------------------------------------------------------------------------- */
-/* Curseur */
-label,
-.label,
-button,
-input[type="submit"],
-input[type="button"],
-input[type="reset"] {
-  cursor: pointer;
-}
-
-/* Alignement */
-label,
-.label,
-button,
-input,
-select {
-  vertical-align: middle;
-}
-
-/* D├®sactiv├® */
-button[disabled],
-input[disabled] {
-  cursor: not-allowed;
-}
-
-/* Textarea */
-textarea {
-  overflow: auto;
-  vertical-align: top;
-  resize: vertical;
-}
-
-/* optgroup */
-optgroup {
-  font-weight: 700;
-}
-
-/* --------------------------------------------------------------------------
-   ->Styles persos
-   -------------------------------------------------------------------------- */
-input,
-textarea,
-select {
-  display: block;
-  width: 15.625em;
-  border: 1px solid #F6F6F6;
-  padding: .5em;
-  -webkit-border-radius: 0px;
-  /* Remove border radius safari */
-}
-
-label,
-.label {
-  display: inline-block;
-}
-
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"],
-input[type="radio"],
-input[type="checkbox"] {
-  display: inline-block;
-  width: auto;
-}
-
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"],
-input[type="range"],
-input[type="color"],
-input[type="radio"],
-input[type="checkbox"],
-input[type="image"] {
-  border: none;
-}
-
-input[type="radio"],
-input[type="checkbox"],
-input[type="image"] {
-  background-color: transparent;
-}
-
-input[type="range"],
-input[type="color"] {
-  padding: 0;
-}
-
-input[type="color"] {
-  width: 3em;
-}
-
-textarea {
-  min-height: 4.5;
-}
-
-/* --------------------------------------------------------------------------
-   ->Styles invalide
-   -------------------------------------------------------------------------- */
-select:invalid,
-input:invalid,
-textarea:invalid {
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  border: 1px solid #F6F6F6;
-}
-
-select:required:invalid,
-input:required:invalid,
-input:focus:invalid,
-textarea:required:invalid,
-textarea:focus:invalid {
-  background: rgba(203, 29, 29, 0.2);
-  border-color: #cb1d1d;
-}
-
-/* D├®sactiver le bouton d'envoie si invalide. */
-input:invalid ~ [type="submit"],
-select:invalid ~ [type="submit"],
-textarea:invalid ~ [type="submit"] {
-  opacity: .3;
-  pointer-events: none;
-  cursor: default;
-}
-
-/* --------------------------------------------------------------------------
-   ->Styles placeholder
-   -------------------------------------------------------------------------- */
-::-webkit-input-placeholder {
-  color: inherit;
-  opacity: .5;
-}
-
-:-moz-placeholder {
-  color: inherit;
-  opacity: .5;
-}
-
-::-moz-placeholder {
-  color: inherit;
-  opacity: .5;
-}
-
-:-ms-input-placeholder {
-  color: inherit;
-  opacity: .5;
-}
-
-/* --------------------------------------------------------------------------
-   ->Bouton
-   -------------------------------------------------------------------------- */
-.btn {
-  display: inline-block;
-  padding: .6em 1em;
-  color: #fff;
-  background-color: #000;
-  vertical-align: middle;
-  -webkit-transition: all 0.3s;
-       -o-transition: all 0.3s;
-          transition: all 0.3s;
-}
-.btn:hover, .btn:focus, .btn:active {
-  color: #fff;
-  background-color: #00d8a8;
-}
-.btn[disabled] {
-  color: #fff;
-  background-color: #000;
-}
-
 /* ==========================================================================
    >>PRINT
    ========================================================================== */
