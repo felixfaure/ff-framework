@@ -105,6 +105,18 @@
     }
   }
 
+	@else if $query-type == "max-height" {
+    @media only screen and (max-height: em($value)) {
+      @content;
+    }
+  }
+
+	@else if $query-type == "min-height" {
+    @media only screen and (min-height: em($value)) {
+      @content;
+    }
+  }
+
   @else if $query-type == "hdpi" {
     @media only screen and (-webkit-min-device-pixel-ratio: $ratioHDPI),
     only screen and (min--moz-device-pixel-ratio: $ratioHDPI),
