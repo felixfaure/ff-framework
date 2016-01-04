@@ -6,14 +6,14 @@
    -------------------------------------------------------------------------- */
 @if $headings-size {
 @for $i from 1 through length($headings-size) {
-    $selector    : "h#{$i}, .h#{$i}";
-    $visual      : nth($headings-size, $i);
-    $weight      : nth($headings-weight, $i);
+  $selector: "h#{$i}, .h#{$i}";
+  $visual  : nth($headings-size, $i);
+  $weight  : nth($headings-weight, $i);
 
-    #{$selector} {
-        @include flow-hr($visual);
-        font-weight: $weight;
-    }
+  #{$selector} {
+    @include flow-hr($visual);
+    font-weight: $weight;
+  }
 }
 }
 
@@ -26,16 +26,16 @@ h6, .h6 {
 	font-family: $font-secondaire;
 	max-width: $max-p-width;
 	//Eviter problèmes de margin
-    @if $vertical-rythm != '1t' {
-	&:last-child {
-		margin-bottom: 0;
-	}
-    }
-    @if $vertical-rythm != '1b' {
-	&:first-child {
-		margin-top: 0;
-	}
-    }
+  @if $vertical-rythm != '1t' {
+  	&:last-child {
+  		margin-bottom: 0;
+  	}
+  }
+  @if $vertical-rythm != '1b' {
+  	&:first-child {
+  		margin-top: 0;
+  	}
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -51,9 +51,9 @@ pre,
 table,
 caption,
 figure {
-    font-size: 1em; /* equiv 16px */
-    line-height: $line-height-base;
-    margin: $line-height-base * 1em (0);
+  font-size: 1em; /* equiv 16px */
+  line-height: $line-height-base;
+  margin: $line-height-base * 1em (0);
 	max-width: $max-p-width;
 	// Virer marge basse sur premier et dernier enfant
 	&:last-child {
@@ -78,7 +78,7 @@ p,
    -------------------------------------------------------------------------- */
 /* Gras et italique */
 b, strong {
-    font-weight: 700;
+  font-weight: 700;
 }
 i, em {
 	font-style: italic;
@@ -86,9 +86,9 @@ i, em {
 
 /* Indice et exposant */
 sub, sup {
-    position: relative;
-    font-size: .75em;
-    vertical-align: 0;
+  position: relative;
+  font-size: .75em;
+  vertical-align: 0;
 }
 sup {
   bottom: 1ex;
@@ -145,7 +145,7 @@ ol {
 	list-style-position: $puce-position;
 	&.unstyled {
 		list-style: none;
-        padding-left: 0;
+    padding-left: 0;
 	}
 }
 
@@ -177,23 +177,23 @@ kbd {
 	font-family: $font-monospace;
 }
 samp {
-    white-space: pre-line;
-    white-space: pre-wrap;
-    line-height: 1em;
+  white-space: pre-line;
+  white-space: pre-wrap;
+  line-height: 1em;
 }
 pre {
-    overflow: auto;
+  overflow: auto;
 }
 kbd {
-    display: inline-block;
-    padding: em(2,12) em(4,12);
-    border: 1px solid #B4B4B4;
-    border-radius: em(3,12);
-    background-color: #F4F7F8;
-    box-shadow: 0px 1px 1px rgba($noir, .2), 0px 2px 0px 0px rgba($blanc, .7) inset;
-    font-size: em(12);
-    font-weight: 700;
-    white-space: nowrap;
+  display: inline-block;
+  padding: em(2,12) em(4,12);
+  border: 1px solid #B4B4B4;
+  border-radius: em(3,12);
+  background-color: #F4F7F8;
+  box-shadow: 0px 1px 1px rgba($noir, .2), 0px 2px 0px 0px rgba($blanc, .7) inset;
+  font-size: em(12);
+  font-weight: 700;
+  white-space: nowrap;
 }
 
 /* Code */
@@ -203,12 +203,12 @@ kbd {
 } @else {
 pre > code {
 	display: block;
-    max-height: em(400);
-    overflow-x: auto;
-    padding: .5em 1em;
-    tab-size: 4;
-    white-space: pre;
-    background-color: #efefef;
+  max-height: em(400);
+  overflow-x: auto;
+  padding: .5em 1em;
+  tab-size: 4;
+  white-space: pre;
+  background-color: #efefef;
 }
 }
 
@@ -216,15 +216,15 @@ pre > code {
 mark {
 	padding: .125em .25em;
 	background: $jaune;
-    color: $noir;
+  color: $noir;
 }
 
 /* Abbreviations, sigles, etc. */
 abbr[title] {
-    border-bottom: dotted 1px;
-    cursor: help;
-    font-variant : none;
-    text-decoration: none;
+  border-bottom: dotted 1px;
+  cursor: help;
+  font-variant : none;
+  text-decoration: none;
 }
 
 /* Citations
@@ -232,35 +232,35 @@ abbr[title] {
  */
 q,
 blockquote {
-    quotes: "\201C" "\201D" "\2018" "\2019";
+  quotes: "\201C" "\201D" "\2018" "\2019";
 }
 :lang(fr) q,
 :lang(fr) blockquote {
-    quotes: "\00AB\00A0" "\00A0\00BB" "\201C" "\201D" "\2018" "\2019";
+  quotes: "\00AB\00A0" "\00A0\00BB" "\201C" "\201D" "\2018" "\2019";
 }
 :lang(en) q,
 :lang(en) blockquote {
-    quotes: "\201C" "\201D" "\2018" "\2019";
+  quotes: "\201C" "\201D" "\2018" "\2019";
 }
 :lang(es) q,
 :lang(es) blockquote {
-    quotes: "\00AB" "\00BB" "\201C" "\201D";
+  quotes: "\00AB" "\00BB" "\201C" "\201D";
 }
 :lang(it) q,
 :lang(it) blockquote {
-    quotes: "\00AB\00A0" "\00A0\00BB" "\201C" "\201D";
+  quotes: "\00AB\00A0" "\00A0\00BB" "\201C" "\201D";
 }
 :lang(de) q,
 :lang(de) blockquote {
-    quotes: "\201e" "\201c" "\201a" "\2018";
+  quotes: "\201e" "\201c" "\201a" "\2018";
 }
 q:before,
 blockquote:before {
-    content: open-quote;
+  content: open-quote;
 }
 q:after,
 blockquote:after {
-    content: close-quote;
+  content: close-quote;
 }
 
 /* Ligne horizontale */
@@ -270,25 +270,25 @@ hr {
 	color: $couleur-ligne;
 	background-color: $couleur-ligne;
 	margin: 1em 0;
-    padding: 0;
+  padding: 0;
 }
 
 /* --------------------------------------------------------------------------
    ->tailles alternatives
    -------------------------------------------------------------------------- */
 $sizes:
-    smallest ($taille-base - 6),
-    smaller ($taille-base - 4),
-    small   ($taille-base - 2),
-    big     ($taille-base + 2),
-    bigger  ($taille-base + 4),
-    biggest ($taille-base + 6);
+  smallest ($taille-base - 6),
+  smaller ($taille-base - 4),
+  small   ($taille-base - 2),
+  big     ($taille-base + 2),
+  bigger  ($taille-base + 4),
+  biggest ($taille-base + 6);
 
 @each $size in $sizes {
-    $keyword: nth($size, 1);
-    $size-px: nth($size, 2);
+  $keyword: nth($size, 1);
+  $size-px: nth($size, 2);
 
-    .#{$keyword} {
-        @include flow-other($size-px);
-    }
+  .#{$keyword} {
+    @include flow-other($size-px);
+  }
 }
