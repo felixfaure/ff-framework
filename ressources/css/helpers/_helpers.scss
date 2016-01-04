@@ -10,8 +10,8 @@
 .srOnly {
     position: absolute;
     clip: rect(1px, 1px, 1px, 1px);
-    height: 1px;
-    width: 1px;
+    height: 1px!important;
+    width: 1px!important;
     overflow: hidden;
     margin: -1px;
     padding: 0;
@@ -54,7 +54,7 @@ img.right,
 .aligncenter { margin-bottom: .3em; }
 
 /* Masquage */
-.none {
+.is-hide {
 	display: none;
 }
 
