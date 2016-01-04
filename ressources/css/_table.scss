@@ -9,11 +9,13 @@
 .table-fixed {
 	table-layout: fixed;
 }
-.table_row {
+.table_row,
+.tr {
 	display: table-row;
 	width: 100%;
 }
-.table_cell {
+.table_cell,
+.td {
 	display: table-cell;
 	vertical-align: top;
 }
