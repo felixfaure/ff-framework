@@ -48,10 +48,10 @@ node_modules
 logs
 
 # Wordpress
-.htaccess
-sitemap.xml
-sitemap.xml.gz
-wp-config.php
+# .htaccess
+# sitemap.xml
+# sitemap.xml.gz
+# wp-config.php
 
 # MS office
 *.tmp
