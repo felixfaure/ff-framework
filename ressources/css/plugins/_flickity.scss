@@ -1,83 +1,115 @@
 /* --------------------------------------------------------------------------
-   ->Flickity
+   ->Flickity v2.0.3
    -------------------------------------------------------------------------- */
 .flickity-enabled {
-	position: relative;
+  position: relative;
 }
 .flickity-enabled:focus {
 	outline: none;
 }
 .flickity-viewport {
-	overflow: hidden;
-	position: relative;
-	height: 100%;
+  overflow: hidden;
+  position: relative;
+  height: 100%;
 }
 .flickity-slider {
-	position: absolute;
-	width: 100%;
-	height: 100%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 
 /* draggable */
 .flickity-enabled.is-draggable {
-	-webkit-tap-highlight-color: transparent;
-	tap-highlight-color: transparent;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
+  -webkit-tap-highlight-color: transparent;
+          tap-highlight-color: transparent;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .flickity-enabled.is-draggable .flickity-viewport {
-	cursor: move;
-	cursor: -webkit-grab;
-	cursor: grab;
+  cursor: move;
+  cursor: -webkit-grab;
+  cursor: grab;
 }
 .flickity-enabled.is-draggable .flickity-viewport.is-pointer-down {
-	cursor: -webkit-grabbing;
-	cursor: grabbing;
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
 }
 
 /* ---- previous/next buttons ---- */
 .flickity-prev-next-button {
-	position: absolute;
-	width: em(26);
-	height: em(26);
-	top: 50%;
-	margin-bottom: -1 * em(26 * .5);
-	transition: opacity .3s;
+  position: absolute;
+  top: 50%;
+  width: em(44);
+  height: em(44);
+  border: none;
+  border-radius: 50%;
+  background: rgba($blanc,.75);
+  cursor: pointer;
+	transform: translateY(-50%);
 }
 .flickity-prev-next-button:hover {
-
+	background: $blanc;
 }
-// .flickity-prev-next-button:focus {
-// 	outline: none;
-// }
-// .flickity-prev-next-button:active {
-// 	filter: alpha(opacity=60); /* IE8 */
-// 	opacity: 0.6;
-// }
+.flickity-prev-next-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px $noir;
+}
 .flickity-prev-next-button.previous {
-	left: 0;
+	left: em(10);
 }
 .flickity-prev-next-button.next {
-	right: 0;
+	right: em(10);
+}
+/* right to left */
+.flickity-rtl .flickity-prev-next-button.previous {
+  left: auto;
+  right: em(10);
+}
+.flickity-rtl .flickity-prev-next-button.next {
+  right: auto;
+  left: em(10);
 }
 .flickity-prev-next-button:disabled {
-	opacity: .5;
-	cursor: auto;
+  opacity: .3;
+  cursor: auto;
 }
 .flickity-prev-next-button svg {
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
 }
 .flickity-prev-next-button .arrow {
-	fill: $color-txt-body;
+  fill: $noir;
 }
-/* color & size if no SVG - IE8 and Android 2.3 */
-.flickity-prev-next-button.no-svg {
-	color: $color-txt-body;
-	font-size: em(26);
+
+/* ---- page dots ---- */
+.flickity-page-dots {
+  position: absolute;
+  width: 100%;
+  bottom: em(-25);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+  line-height: 1;
+}
+.flickity-rtl .flickity-page-dots {
+	direction: rtl;
+}
+.flickity-page-dots .dot {
+  display: inline-block;
+  width: em(10);
+  height: em(10);
+  margin: 0 em(8);
+  background: $noir;
+  border-radius: 50%;
+  opacity: .25;
+  cursor: pointer;
+}
+.flickity-page-dots .dot.is-selected {
+  opacity: 1;
 }
