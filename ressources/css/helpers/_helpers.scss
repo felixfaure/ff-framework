@@ -7,15 +7,18 @@
 }
 
 /* Masquage accessible */
+/* http://hugogiraudel.com/2016/10/13/css-hide-and-seek/ */
 .srOnly {
-    position: absolute;
-    clip: rect(1px, 1px, 1px, 1px);
-    height: 1px!important;
-    width: 1px!important;
-    overflow: hidden;
-    margin: -1px;
-    padding: 0;
-    border: 0;
+  position: absolute;
+	height: 1px!important;
+  width: 1px!important;
+  clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+  overflow: hidden;
+  // margin: -1px;
+  padding: 0;
+  border: 0;
+	white-space: nowrap,
 }
 .srOnly-focusable {
   &:active,
@@ -23,9 +26,11 @@
     position: static;
     width: auto;
     height: auto;
-    margin: 0;
-    overflow: visible;
-    clip: auto;
+		clip: auto;
+		clip-path: none;
+		overflow: visible;
+    // margin: 0;
+		white-space: normal;
   }
 }
 
