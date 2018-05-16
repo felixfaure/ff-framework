@@ -2,55 +2,59 @@
    >>HELPERS TYPOS
    ========================================================================== */
 /* Allignement du texte */
-.txtLeft   { text-align: left; }
-.txtRight  { text-align: right; }
-.txtCenter { text-align: center; }
-.txtJustify {
+.txt-l   { text-align: left; }
+.txt-r  { text-align: right; }
+.txt-c { text-align: center; }
+.txt-j {
 	text-align: justify;
 	word-wrap: break-word;
 	hyphens: auto;
 }
-.txtNoJustify {
-	text-align: left;
-	word-wrap: normal;
-	hyphens: none;
-}
 
 /* Mise en forme */
-.uppercase {
+.txt-uc {
 	text-transform: uppercase;
 }
-.italic {
+.txt-lc {
+	text-transform: none;
+}
+.txt-it {
 	font-style: italic;
 }
-.bold {
+.txt-b {
 	font-weight: 700;
 }
-.light {
+.txt-lt {
 	font-weight: 300;
 }
-.regular {
+.txt-reg {
 	font-weight: 400;
 }
-.underline {
+.txt-s {
 	text-decoration: underline;
+}
+.txt-line {
+	text-decoration: line-through;
 }
 
 /* Fonts */
-.defautFont {
+.txt-f1 {
 	font-family: $font-default;
 }
-.secondFont {
+.txt-f2 {
 	font-family: $font-secondaire;
 }
 
 /* Couleurs */
-.txtWhite {
+.txt-white {
 	color: $blanc;
 }
-.txtBlack {
+.txt-black {
 	color: $noir;
 }
-.txtRed {
+.txt-red {
 	color: $rouge;
+}
+.txt-grey {
+	color: $gris;
 }

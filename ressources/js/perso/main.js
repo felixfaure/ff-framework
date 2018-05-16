@@ -37,24 +37,6 @@
     //Helper functions
     //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
     //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-    function toCameCase(name) {
-      return name.replace(/([a-z])-([a-z])/g, function(str, m1, m2) {
-        return m1 + m2.toUpperCase();
-      }).replace(/^-/, '');
-    }
-
-    //Parse html string
-    function html2dom( htmlstr, query ) {
-      var container = d.createElement('div');
-      container.innerHTML = htmlstr;
-      return query ? $(query,container) : container.children;
-    }
-
-    //Insert after
-    function insertAfter(newNode, el) {
-      el.parentNode.insertBefore(newNode, el.nextElementSibling);
-    }
-
     //Easing functions (inspired by http://gizma.com/easing/)
     var easing = {
       linear: function (t) { return t },
@@ -105,8 +87,20 @@
     //Supports
     //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
     //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-    if(!support.objectFit) ffclass.add(html,'no-objectfit');
-    if(!support.objectPosition) ffclass.add(html,'no-objectposition');
+    // if(!support.objectFit) ffclass.add(html,'no-objectfit');
+    // if(!support.objectPosition) ffclass.add(html,'no-objectposition');
+
+
+    //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+    //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+    //Keys event
+    //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+    //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+    d.addEventListener('keydown', function(e) {
+      if(e.keyCode == 27) {
+        //Echap...
+      }
+    });
 
 
     //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■

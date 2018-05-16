@@ -17,11 +17,6 @@ body {
 	line-height: $line-height-base;
 }
 
-/* Pour IE8 qui ne prend pas en charge les medias query, on limite la largeur */
-.lt-ie9 body {
-	min-width: $palier-1;
-}
-
 /* Sélection */
 @include selection {
   background: $couleur-selection-bg;

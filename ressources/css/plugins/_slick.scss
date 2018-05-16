@@ -1,5 +1,5 @@
 /* --------------------------------------------------------------------------
-   ->Slick slider styles généreaux
+   ->Slick slider styles généreaux (v1.8.0)
    -------------------------------------------------------------------------- */
 /* Slider */
 /* ---------------------------- */
@@ -22,21 +22,21 @@
 	display: block;
 	overflow: hidden;
 	height: 100%; //add
-	margin: 0;
-	padding: 0;
+	// margin: 0;
+	// padding: 0;
 	cursor: pointer; //add
 	cursor: move; //add
 	cursor: grab; //add
-    cursor: -moz-grab; //add
-    cursor: -webkit-grab; //add
-    &:active,
+  cursor: -moz-grab; //add
+  cursor: -webkit-grab; //add
+  &:active,
 	&.dragging {
 		cursor: pointer; //add
-    	cursor: move; //add
+    cursor: move; //add
 		cursor: grabbing; //add
-	    cursor: -moz-grabbing; //add
-	    cursor: -webkit-grabbing; //add
-    }
+    cursor: -moz-grabbing; //add
+    cursor: -webkit-grabbing; //add
+  }
 	&:focus {
 		outline: none;
 	}
@@ -58,6 +58,8 @@
 	top: 0;
 	display: block;
 	height: 100%; //add
+	margin-left: auto;
+	margin-right: auto;
 	&:before,
 	&:after {
 		content: '';
@@ -81,33 +83,32 @@
 	[dir='rtl'] & {
 		float: right;
 	}
-}
-.slick-slide img {
-	display: block;
-	// pointer-events: none; //add
-}
-.slick-slide.slick-loading img {
-	display: none;
-}
-.slick-slide.dragging img {
-	 pointer-events: none;
-}
-.slick-initialized .slick-slide {
-	display: block;
-}
-.slick-loading .slick-slide {
-	visibility: hidden;
-}
-.slick-vertical .slick-slide {
-    display: block;
-    height: auto;
-    border: 1px solid transparent;
+	img {
+		display: block;
+		// pointer-events: none; //add
+	}
+	&.slick-loading img {
+		display: none;
+	}
+	&.dragging img {
+		pointer-events: none;
+	}
+	.slick-initialized & {
+		display: block;
+	}
+	.slick-loading & {
+		visibility: hidden;
+	}
+	.slick-vertical & {
+		display: block;
+		height: auto;
+		border: 1px solid transparent;
+	}
 }
 
 .slick-arrow.slick-hidden {
-    display: none;
+  display: none;
 }
-
 
 
 /* Theme */
@@ -124,11 +125,14 @@
 	top: 50%;
 	transform: translateY(-50%);
 	// padding: .4em .1em;
-	background: transparent;
-	border: none;
+	// background: transparent;
+	// border: none;
 	font-size: em(40);
 	color: $blanc;
 	line-height: 1;
+	&.slick-disabled {
+		opacity: .5;
+	}
 	// transition: color .4s;
 	// &:hover,
 	// &:focus,
@@ -137,12 +141,14 @@
 	// }
 }
 .slick-prev {
-	right: 100%;
-	margin-right: em(5,40);
+	left: 0;
+	// right: 100%;
+	// margin-right: em(5,40);
 }
 .slick-next {
-	left: 100%;
-	margin-left: em(5,40);
+	right: 0;
+	// left: 100%;
+	// margin-left: em(5,40);
 }
 
 .slick-dots {

@@ -57,6 +57,9 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+th {
+	text-align: left;
+}
 
 /* Audio */
 audio:not([controls]) {

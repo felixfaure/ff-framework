@@ -2,6 +2,42 @@
    >>MODULES
    ========================================================================== */
 /* --------------------------------------------------------------------------
+  ->Grille
+  -------------------------------------------------------------------------- */
+$grid-m-h: 40;
+$grid-m-v: 80;
+$grid-nb: 3;
+.grid {
+	margin-left: rem(-.5 * $grid-m-h);
+	margin-right: rem(-.5 * $grid-m-h);
+	overflow: hidden;
+}
+.grid_i {
+  display: inline-block;
+	width: (100% / $grid-nb);
+	vertical-align: top;
+	border-color: transparent;
+	border-style: solid;
+	border-left-width: rem(.5 * $grid-m-h);
+	border-right-width: rem(.5 * $grid-m-h);
+	border-top-width: rem(.5 * $grid-m-v);
+	border-bottom-width: rem(.5 * $grid-m-v);
+	background-clip: padding-box;
+	&:nth-of-type(-n + #{$grid-nb}) {
+		margin-top: rem(-.5 * $grid-m-v);
+	}
+}
+.grid-flex {
+	display: flex;
+	flex-wrap: wrap;
+	.grid_i {
+		display: block;
+		flex-basis: auto;
+	}
+}
+
+
+/* --------------------------------------------------------------------------
   ->Skip links
   -------------------------------------------------------------------------- */
 /* Pour avoir le focus chrome oblige a mettre un tabindex à -1, on lui enlève l'outline */

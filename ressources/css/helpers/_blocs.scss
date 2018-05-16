@@ -1,22 +1,20 @@
 /* ==========================================================================
    >>HELPERS BLOCS
    ========================================================================== */
-/* Inline block */
-.inlineConteneur>*,
-.inlineBlock {
-	display: inline-block;
-}
-
 /* Wrapper */
 .wrapper {
 	width: $pc-wrap;
-	max-width: em($width-wrap);
+	max-width: rem($width-wrap);
 	margin-left: auto;
 	margin-right: auto;
 }
+.wrapper_full {
+	margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+}
 
 /* Répartition justifiée parfaite */
-.perfectJustify {
+.pj {
 	display: block;
 	text-align: justify;
 	overflow: hidden;
@@ -32,10 +30,30 @@
 		width: 100%;
 	}
 }
-.perfectJustify_i {
+.pj_i {
 	display: inline-block;
 	vertical-align: middle;
 	position: relative;
 	top: 1em * $line-height-base;
 	text-align: left;
+}
+
+/* Cover, contain */
+.cv {
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.cv-img {
+	object-fit: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.cv-contain {
+	object-fit: contain;
+	background-size: contain;
 }

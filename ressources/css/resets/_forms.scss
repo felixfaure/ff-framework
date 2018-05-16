@@ -26,6 +26,7 @@ input,
 textarea,
 select {
   -webkit-border-radius: 0px;
+  border-radius: 0;
 }
 
 /* Boutons */
@@ -74,11 +75,20 @@ input[type="number"]::-webkit-outer-spin-button {
  * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
  * 2. Address `box-sizing` set to `border-box` in Safari and Chrome.
  */
-input[type="search"] {
-  -webkit-appearance: textfield; /* 1 */
-  // box-sizing: content-box; /* 2 */
-  box-sizing: border-box;
-}
+ input[type="search"] {
+   // -webkit-appearance: textfield; /* 1 */
+   // box-sizing: content-box; /* 2 */
+   box-sizing: border-box;
+   border-radius: 0px;
+ }
+
+ /* Remove box shadow inputs */
+ input[type="search"],
+ input[type="text"],
+ input[type="email"],
+ textarea {
+   -webkit-appearance: none;
+ }
 
 /**
  * Remove inner padding and search cancel button in Safari and Chrome on OS X.
@@ -140,6 +150,36 @@ textarea {
 /* optgroup */
 optgroup {
   font-weight: 700;
+}
+
+} @else {
+
+button {
+  display: inline-block;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  border: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  background-color: transparent;
+  outline-style: none; /* Supr bordure bleu chrome et safari */
+  text-transform: none;
+  letter-spacing: inherit;
+  -webkit-appearance: none;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+button[disabled] {
+  cursor: not-allowed;
 }
 
 } //End if hasForm

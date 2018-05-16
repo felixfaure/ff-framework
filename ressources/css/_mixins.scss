@@ -11,6 +11,23 @@
 
 
 //=============================================
+//Screen reader only :
+//=============================================
+@mixin srOnly {
+	position: absolute;
+	height: 1px!important;
+  width: 1px!important;
+  clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+  overflow: hidden;
+  // margin: -1px;
+  padding: 0;
+  border: 0;
+	white-space: nowrap;
+}
+
+
+//=============================================
 //Vendor prefixes :
 //=============================================
 @mixin vendor-prefix($property, $value, $prefixes: webkit moz ms o) {

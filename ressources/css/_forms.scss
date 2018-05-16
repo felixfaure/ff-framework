@@ -27,8 +27,8 @@ input[type="reset"],
 input[type="submit"],
 input[type="radio"],
 input[type="checkbox"] {
-    display: inline-block;
-    width: auto;
+  display: inline-block;
+  width: auto;
 }
 button,
 input[type="button"],
@@ -39,34 +39,34 @@ input[type="color"],
 input[type="radio"],
 input[type="checkbox"],
 input[type="image"] {
-    border: none;
+  border: none;
 }
 input[type="radio"],
 input[type="checkbox"],
 input[type="image"] {
-    background-color: transparent;
+  background-color: transparent;
 }
 input[type="range"],
 input[type="color"] {
-    padding: 0;
+  padding: 0;
 }
 input[type="color"] {
-    width: 3em;
+  width: 3em;
 }
 // input[type="date"] {
-//     &::-webkit-datetime-edit-fields-wrapper { background: silver; }
-//     &::-webkit-datetime-edit-text,
-//     &::-webkit-datetime-edit-month-field,
-//     &::-webkit-datetime-edit-day-field,
-//     &::-webkit-datetime-edit-year-field {
-//       color: inherit;
-//       opacity: .5;
-//     }
-//     &::-webkit-inner-spin-button { display: none; }
-//     &::-webkit-calendar-picker-indicator { display: none; }
+//   &::-webkit-datetime-edit-fields-wrapper { background: silver; }
+//   &::-webkit-datetime-edit-text,
+//   &::-webkit-datetime-edit-month-field,
+//   &::-webkit-datetime-edit-day-field,
+//   &::-webkit-datetime-edit-year-field {
+//     color: inherit;
+//     opacity: .5;
+//   }
+//   &::-webkit-inner-spin-button { display: none; }
+//   &::-webkit-calendar-picker-indicator { display: none; }
 // }
 textarea {
-    min-height: $nb-lines-textarea * $line-height-base * 1em;
+  min-height: $nb-lines-textarea * $line-height-base * 1em;
 }
 
 /* --------------------------------------------------------------------------
@@ -75,9 +75,9 @@ textarea {
 select:invalid,
 input:invalid,
 textarea:invalid {
-    box-shadow: none;
-    outline: none;
-    border: $input-defaut-border;
+  box-shadow: none;
+  outline: none;
+  border: $input-defaut-border;
 }
 select:focus:invalid,
 input:focus:invalid,
@@ -85,25 +85,25 @@ textarea:focus:invalid,
 select.is-error,
 input.is-error,
 textarea.is-error {
-    background: rgba($rouge,.2);
-    border-color: $rouge;
+  background: rgba($rouge,.2);
+  border-color: $rouge;
 }
 
 /* Désactiver le bouton d'envoie si invalide. */
 input:invalid ~ [type="submit"],
 select:invalid ~ [type="submit"],
 textarea:invalid ~ [type="submit"] {
-    opacity: .3;
-    pointer-events: none;
-    cursor: default;
+  opacity: .3;
+  pointer-events: none;
+  cursor: default;
 }
 
 /* --------------------------------------------------------------------------
    ->Styles placeholder
    -------------------------------------------------------------------------- */
 @include placeholder {
-    color: inherit;
-    opacity: .5;
+  color: inherit;
+  opacity: .5;
 }
 } //End if hasForm
 
@@ -111,20 +111,16 @@ textarea:invalid ~ [type="submit"] {
    ->Bouton
    -------------------------------------------------------------------------- */
 .btn {
-    display: inline-block;
-    padding: .6em 1em;
-    color: $color-txt-btn;
-    background-color: $bg-color-btn;
-    vertical-align: middle;
-    transition: all 0.3s;
-    &:hover,
-    &:focus,
-    &:active {
-        color: $color-txt-btn-hover;
-        background-color: $bg-color-btn-hover;
-    }
-    &[disabled] {
-        color: $color-txt-btn;
-        background-color: $bg-color-btn;
-    }
+  display: inline-block;
+  padding: 0;
+  vertical-align: middle;
+  transition: all .3s;
+  // &:not([disabled]):hover,
+  // &:not([disabled]):focus,
+  // &:not([disabled]):active {
+  //
+  // }
+  &[disabled] {
+    cursor: default;
+  }
 }

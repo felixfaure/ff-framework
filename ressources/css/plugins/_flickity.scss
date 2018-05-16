@@ -1,5 +1,5 @@
 /* --------------------------------------------------------------------------
-   ->Flickity v2.0.3
+   ->Flickity v2.0.8
    -------------------------------------------------------------------------- */
 .flickity-enabled {
   position: relative;
@@ -47,20 +47,24 @@
   border-radius: 50%;
   background: rgba($blanc,.75);
   cursor: pointer;
-	transform: translateY(-50%);
+  /* vertically center */
+  transform: translateY(-50%);
 }
 .flickity-prev-next-button:hover {
-	background: $blanc;
+  background: rgba($blanc,1);
 }
 .flickity-prev-next-button:focus {
   outline: none;
-  box-shadow: 0 0 0 2px $noir;
+  box-shadow: 0 0 0 5px #09F;
+}
+.flickity-prev-next-button:active {
+  opacity: .6;
 }
 .flickity-prev-next-button.previous {
-	left: em(10);
+  left: em(10);
 }
 .flickity-prev-next-button.next {
-	right: em(10);
+  right: em(10);
 }
 /* right to left */
 .flickity-rtl .flickity-prev-next-button.previous {
@@ -76,14 +80,15 @@
   cursor: auto;
 }
 .flickity-prev-next-button svg {
+  display: block;
+  width: 100%;
+  height: 100%;
   position: absolute;
   left: 0;
   top: 0;
-  width: 100%;
-  height: 100%;
 }
 .flickity-prev-next-button .arrow {
-  fill: $noir;
+  fill: currentColor;
 }
 
 /* ---- page dots ---- */
@@ -98,14 +103,14 @@
   line-height: 1;
 }
 .flickity-rtl .flickity-page-dots {
-	direction: rtl;
+  direction: rtl;
 }
 .flickity-page-dots .dot {
   display: inline-block;
   width: em(10);
   height: em(10);
   margin: 0 em(8);
-  background: $noir;
+  background: currentColor;
   border-radius: 50%;
   opacity: .25;
   cursor: pointer;
