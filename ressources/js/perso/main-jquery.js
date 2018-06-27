@@ -14,7 +14,11 @@
       windowH,
       windowW,
       scrollT,
-      serveur_test = d.location.hostname == "localhost";
+      $adminBar = $('#wpadminbar'),
+      has_adminBar = $body.hasClass('admin-bar'),
+      adminBar_h = 0,
+      serveur_test = d.location.hostname == "localhost",
+      is_requeting = false;
 
 
   //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
@@ -25,12 +29,17 @@
   function update_dimensions() {
     windowH = $window.height();
     windowW = $window.width();
+    update_adminbar();
     update_scroll();
   }
   function update_scroll() {
     scrollT = $window.scrollTop();
   }
-  update_dimensions();
+
+  function update_adminbar() {
+    $adminBar = !$adminBar.length && has_adminBar ? $('#wpadminbar') : $adminBar;
+    adminBar_h = $adminBar.length && $adminBar.is(':visible') ? $adminBar.height() : 0;
+  }
 
 
   //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
@@ -39,6 +48,21 @@
   //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
   //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
   //...
+
+
+  //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+  //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+  //Scroll jusqu'a un element
+  //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+  //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+  function scrollToEl($el) {
+    $('html, body').animate({
+      scrollTop: $el ? ($el.offset().top - parseInt($html.css("margin-top"))) : 0
+    }, 300);
+  }
+
+  var $directElToScroll = $body.find('.js-scroll-to-me').first();
+  if($directElToScroll.length) scrollToEl($directElToScroll);
 
 
   //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
@@ -70,7 +94,7 @@
   //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
   $window.on('resize', function( event ) {
     update_dimensions();
-  });
+  }).trigger('resize');
 
 
   //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
@@ -78,8 +102,22 @@
   //On scroll
   //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
   //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+  // var ticking = false;
   $window.on('scroll', function( event ) {
     update_scroll();
-  });
+    // requestTick();
+  }).trigger('scroll');
+
+  // function requestTick() {
+  //   if (!ticking) {
+  //     ticking = true;
+  //     w.requestAnimationFrame(trigger_scroll);
+  //   }
+  // }
+  //
+  // function trigger_scroll() {
+  //   ticking = false;
+  //   // Fonctions a exécuter au scroll
+  // }
 
 })(jQuery);
