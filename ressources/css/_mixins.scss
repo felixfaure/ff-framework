@@ -182,3 +182,17 @@
 	line-height: line-height($value, $type-vr);
 	margin: margin-em-other($value, $type-vr) ;
 }
+
+
+//=============================================
+//Mixins pour supprimer l'espace en haut d'un texte :
+//=============================================
+@mixin lhCrop($line-height, $capital-letter: 1) {
+  &::before {
+    content: '';
+    display: block;
+    height: 0;
+    width: 0;
+    margin-top: calc((#{$capital-letter} - #{$line-height}) * 0.5em);
+  }
+}
