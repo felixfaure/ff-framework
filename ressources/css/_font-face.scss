@@ -10,6 +10,7 @@
 			url('fonts/icomoon.svg?18ajcm#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
+	font-display: block;
 }
 
 //IE9+ (both)
@@ -19,6 +20,7 @@
 // 			 url('fonts/example.woff') format('woff');
 // 	font-weight: normal;
 // 	font-style: normal;
+// 	font-display: swap;
 // }
 // or (better compatibility)
 // @font-face {
@@ -28,4 +30,5 @@
 //        url('fonts/example.ttf') format('truetype');
 // 	font-weight: normal;
 // 	font-style: normal;
+// 	font-display: swap;
 // }
