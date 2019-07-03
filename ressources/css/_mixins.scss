@@ -116,6 +116,12 @@
     }
   }
 
+	@else if $query-type == "max-print" {
+    @media screen and (max-width: em($value)), print {
+      @content;
+    }
+  }
+
   @else if $query-type == "min" {
     @media only screen and (min-width: em($value)) {
       @content;
