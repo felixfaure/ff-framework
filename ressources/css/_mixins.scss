@@ -28,6 +28,22 @@
 
 
 //=============================================
+//Icomoon :
+//=============================================
+@mixin icomoon {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+
+//=============================================
 //Vendor prefixes :
 //=============================================
 @mixin vendor-prefix($property, $value, $prefixes: webkit moz ms o) {
@@ -56,6 +72,18 @@
       @content;
     }
     ::selection {
+      @content;
+    }
+  }
+}
+
+
+//=============================================
+//Hover :
+//=============================================
+@mixin hover {
+  @media (hover: hover), (-ms-high-contrast:none) {
+    &:hover {
       @content;
     }
   }

@@ -89,6 +89,7 @@ input[type="search"],
 input[type="text"],
 input[type="email"],
 input[type="url"],
+input[type="tel"],
 textarea {
   -webkit-appearance: none;
 }
@@ -167,6 +168,7 @@ button {
   color: inherit;
   font-family: inherit;
   font-size: inherit;
+  font-weight: inherit;
   background-color: transparent;
   outline-style: none; /* Supr bordure bleu chrome et safari */
   text-transform: none;

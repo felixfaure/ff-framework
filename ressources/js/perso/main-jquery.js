@@ -37,8 +37,9 @@
   }
 
   function update_adminbar() {
-    $adminBar = !$adminBar.length && has_adminBar ? $('#wpadminbar') : $adminBar;
-    adminBar_h = $adminBar.length && $adminBar.is(':visible') ? $adminBar.height() : 0;
+    // $adminBar = !$adminBar.length && has_adminBar ? $('#wpadminbar') : $adminBar;
+    // adminBar_h = $adminBar.length && $adminBar.is(':visible') ? $adminBar.height() : 0;
+    adminBar_h = parseInt($html.css("margin-top")) + parseInt($body.css("margin-top"));
   }
 
 
@@ -95,6 +96,21 @@
   $window.on('resize', function( event ) {
     update_dimensions();
   }).trigger('resize');
+
+
+  //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+  //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+  //Media queries
+  //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+  //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+  // var mediaQuery = w.matchMedia('(min-width: 768px)');
+  // function mediaQueryCheck(e) {
+  //   if (e.matches) {
+  //     console.log('Media Query Matched!');
+  //   }
+  // }
+  // mediaQuery.addListener(mediaQueryCheck);
+  // mediaQueryCheck(mediaQuery);
 
 
   //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
