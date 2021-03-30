@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* ==========================================================================
    >>FORMS
    ========================================================================== */
@@ -13,13 +14,13 @@ input,
 textarea,
 select {
   display: block;
-	width: $input-defaut-size;
-	border: $input-defaut-border;
-  padding: .5em;
+  width: 100%;
+	border: 0;
+  padding: 0;
+  line-height: 1;
 }
-label,
-.label {
-	display: inline-block;
+label {
+	display: block;
 }
 button,
 input[type="button"],
@@ -69,6 +70,7 @@ textarea {
   min-height: $nb-lines-textarea * $line-height-base * 1em;
 }
 
+
 /* --------------------------------------------------------------------------
    ->Styles invalide
    -------------------------------------------------------------------------- */
@@ -77,33 +79,35 @@ input:invalid,
 textarea:invalid {
   box-shadow: none;
   outline: none;
-  border: $input-defaut-border;
 }
-select:focus:invalid,
-input:focus:invalid,
-textarea:focus:invalid,
-select.is-error,
-input.is-error,
-textarea.is-error {
-  background: rgba($rouge,.2);
-  border-color: $rouge;
-}
+// select:focus:invalid,
+// input:focus:invalid,
+// textarea:focus:invalid,
+// select.is-error,
+// input.is-error,
+// textarea.is-error {
+//   background: rgba($rouge,.2);
+//   border-color: $rouge;
+// }
 
-/* Désactiver le bouton d'envoie si invalide. */
-input:invalid ~ [type="submit"],
-select:invalid ~ [type="submit"],
-textarea:invalid ~ [type="submit"] {
-  opacity: .3;
-  pointer-events: none;
-  cursor: default;
-}
+// /* Désactiver le bouton d'envoie si invalide. */
+// input:invalid ~ [type="submit"],
+// select:invalid ~ [type="submit"],
+// textarea:invalid ~ [type="submit"] {
+//   opacity: .3;
+//   pointer-events: none;
+//   cursor: default;
+// }
 
 /* --------------------------------------------------------------------------
    ->Styles placeholder
    -------------------------------------------------------------------------- */
 @include placeholder {
   color: inherit;
-  opacity: .5;
+  opacity: 1;
+}
+::-webkit-input-placeholder {
+  line-height: normal;
 }
 } //End if hasForm
 
@@ -114,13 +118,321 @@ textarea:invalid ~ [type="submit"] {
   display: inline-block;
   padding: 0;
   vertical-align: middle;
-  transition: all .3s;
-  // &:not([disabled]):hover,
-  // &:not([disabled]):focus,
-  // &:not([disabled]):active {
-  //
-  // }
+  // background-color: $couleur3;
+  // color: $couleur1;
+  transition: color .25s, background-color .25s, border-color .25s, opacity .25s, transform .25s;
   &[disabled] {
     cursor: default;
+    pointer-events: none;
+    opacity: .5;
+  }
+  @include hover(':not([disabled])') {
+    // background-color: $couleur1;
+    // color: $blanc;
   }
 }
+
+// .btn-block {
+//   display: block;
+//   width: 100%;
+//   text-align: center;
+// }
+// .btn-icon {
+//   position: relative;
+//   text-align: left;
+//   padding-right: em(20 + 24 + 20, 14);
+//   [class^="icon-"] {
+//     position: absolute;
+//     top: 50%;
+//     right: em(20,24);
+//     transform: translateY(-50%);
+//     font-size: em(24,14);
+//   }
+// }
+// .btn-block.btn-icon {
+//   padding: em(17,16) em(25,16) em(16,16) em(25,16);
+//   padding-right: em(20 + 24 + 20, 16);
+//   border-radius: em((1.6875 * 16 + 17 + 16) * .5, 16);
+//   text-transform: none;
+//   font-size: rem(16);
+//   line-height: 1.6875; //27
+//   font-weight: 500;
+//   [class^="icon-"] {
+//     font-size: em(24,16);
+//   }
+// }
+
+
+// /* --------------------------------------------------------------------------
+//    ->Form
+//    -------------------------------------------------------------------------- */
+// .form {
+//   .form_p {
+//     font-size: rem(16);
+//     &:not(:last-child) {
+//       margin-bottom: rem(25);
+//     }
+//   }
+// }
+// .form_message {
+//   margin-bottom: rem(25);
+// }
+// .form_p-required:not(.no-ast) {
+//   label {
+//     &:after {
+//       content: "*";
+//     }
+//   }
+// }
+// .form_field {
+//   input,
+//   select,
+//   textarea {
+//     padding: rem(17) rem(20) rem($padInput - 17) rem(20);
+//     border: 1px solid $couleur3;
+//     background-color: $couleur3;
+//     transition: background-color .25s, border-color .25s;
+//     &:focus {
+//       border-color: $couleur1;
+//       background-color: rgba($couleur3,0);
+//     }
+//   }
+//   &.is-error {
+//     input,
+//     select,
+//     textarea {
+//       border-color: $rouge;
+//       background-color: rgba($couleur3,0);
+//     }
+//   }
+//   textarea {
+//     height: em(177,16);
+//   }
+//   .select2 {
+//     width: 100%;
+//   }
+// }
+// .form_field-float {
+//   position: relative;
+//   input,
+//   textarea {
+//     padding-top: rem(24);
+//     padding-bottom: rem($padInput - 24);
+//   }
+//   label {
+//     width: 100%;
+//     height: 100%;
+//     padding: rem(17) rem(20) rem($padInput - 17) rem(20);
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     text-align: left;
+//     transform-origin: top left;
+//     pointer-events: none;
+//     transform: translate(rem(-10),rem(-12)) scale(#{(13 / 16)});
+//     transition: transform .25s;
+//   }
+// }
+// .is-js-init {
+//   .form_field-float {
+//     input:not(:focus):not(.has-content) ~ label,
+//     select ~ label,
+//     textarea:not(:focus):not(.has-content) ~ label {
+//       transform: translate(0,0) scale(1);
+//     }
+//     select.has-content ~ label {
+//       opacity: 0;
+//       z-index: -1;
+//     }
+//   }
+// }
+// .form_radio label {
+//   position: relative;
+//   padding-left: rem(24 + 16);
+//   padding-top: rem(31 * .5);
+//   input[type="radio"] {
+//     position: absolute;
+//     opacity: 0;
+//     padding: 0;
+//     width: 1px;
+//     height: 1px;
+//     pointer-events: none;
+//     opacity: 0;
+//   }
+//   & > span {
+//     display: block;
+//     margin-top: 1em * $line-height-base * -.5;
+//     &:before {
+//       content: '';
+//       font-size: rem(24);
+//       display: block;
+//       width: em(31,24);
+//       height: em(31,24);
+//       position: absolute;
+//       top: 0;
+//       left: 0;
+//       border: 1px solid $couleur1;
+//       border-radius: 50%;
+//       pointer-events: none;
+//       color: rgba($couleur1,0);
+//       transition: color .25s;
+//     }
+//   }
+//   input[type="radio"] {
+//     &:checked + span {
+//       &:before {
+//         color: rgba($couleur1,1);
+//       }
+//       &:after {
+//         content: '';
+//         font-size: rem(24);
+//         display: block;
+//         width: em(21,24);
+//         height: em(21,24);
+//         position: absolute;
+//         top: em(5,24);
+//         left: em(5,24);
+//         background: $couleur1;
+//         border-radius: 50%;
+//         pointer-events: none;
+//         color: rgba($couleur1,0);
+//         transition: color .25s;
+//       }
+//     }
+//   }
+//   a {
+//     text-decoration: underline;
+//     @include hover {
+//       color: $gris4;
+//     }
+//   }
+// }
+// .form_check label {
+//   position: relative;
+//   padding-left: rem(24 + 16);
+//   padding-top: rem(31 * .5);
+//   input[type="checkbox"] {
+//     position: absolute;
+//     opacity: 0;
+//     padding: 0;
+//     width: 1px;
+//     height: 1px;
+//     pointer-events: none;
+//     opacity: 0;
+//   }
+//   & > span {
+//     display: block;
+//     margin-top: 1em * $line-height-base * -.5;
+//     &:before {
+//       @include icomoon;
+//       content: "\e915";
+//       display: block;
+//       width: em(31,24);
+//       height: em(31,24);
+//       line-height: em(29,24);
+//       text-align: center;
+//       position: absolute;
+//       top: 0;
+//       left: 0;
+//       border: 1px solid $couleur1;
+//       pointer-events: none;
+//       color: rgba($couleur1,0);
+//       font-size: rem(24);
+//       text-indent: em(-1,24);
+//       transition: color .25s;
+//     }
+//   }
+//   input[type="checkbox"] {
+//     &:checked + span {
+//       &:before {
+//         color: rgba($couleur1,1);
+//       }
+//     }
+//   }
+//   a {
+//     text-decoration: underline;
+//     @include hover {
+//       color: $gris4;
+//     }
+//   }
+// }
+// .form_radio.form_p-required label,
+// .form_check.form_p-required label {
+//   &:after {
+//     display: none;
+//   }
+// }
+// .form_radio.is-error label,
+// .form_check.is-error label {
+//   & > span {
+//     &:before {
+//       border-color: $rouge;
+//     }
+//   }
+// }
+// .form_submit {
+//   margin-top: rem(35);
+// }
+//
+// .form-grid {
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: space-between;
+//   align-items: stretch;
+//   margin-left: rem(-20);
+//   margin-right: rem(-20);
+//   margin-bottom: rem(-30);
+//   .form-grid {
+//     margin-left: 0;
+//     margin-right: 0;
+//     margin-bottom: 0;
+//   }
+//   .form_p,
+//   .form_p:not(:last-child) {
+//     margin-bottom: rem(30);
+//   }
+//   .form_p {
+//     flex: 1 1 100%;
+//     margin-left: rem(20);
+//     margin-right: rem(20);
+//   }
+//   .form_p.is-w2 {
+//     flex: 1 1 33.34%;
+//     flex: 1 1 calc(50% - #{rem(20 * 2)});
+//     max-width: calc(50% - #{rem(20 * 2)});
+//   }
+//   .form_p.is-w3 {
+//     flex: 1 1 25%;
+//     flex: 1 1 calc(33.333% - #{rem(20 * 2)});
+//     max-width: calc(33.333% - #{rem(20 * 2)});
+//   }
+//   .form_p.is-w4 {
+//     flex: 1 1 20%;
+//     flex: 1 1 calc(25% - #{rem(20 * 2)});
+//     max-width: calc(25% - #{rem(20 * 2)});
+//   }
+// }
+//
+// .form_field-selectNumber {
+//   select {
+//     padding: em(8,17) em(17,17) em(8,17) em(17,17);
+//     padding-right: em(26,17);
+//     color: $gris3;
+//     cursor: pointer;
+// 		background-image: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath d='M7.406 7.828l4.594 4.594 4.594-4.594 1.406 1.406-6 6-6-6z'%3E%3C/path%3E%3C/svg%3E"), url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath d='M7.406 15.422l-1.406-1.406 6-6 6 6-1.406 1.406-4.594-4.594z'%3E%3C/path%3E%3C/svg%3E");
+//     background-repeat: no-repeat, no-repeat;
+//     background-position: right em(8,17) bottom 20%, right em(8,17) top 20%;
+//     background-size: em(14,17) auto, em(14,17) auto;
+//   }
+// }
+//
+// .form_p-select select {
+//   padding-right: em(50,16);
+//   background-image: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='%233B4186' d='M7.406 7.828l4.594 4.594 4.594-4.594 1.406 1.406-6 6-6-6z'%3E%3C/path%3E%3C/svg%3E");
+//   background-repeat: no-repeat;
+//   background-position: right em(19 - (18 - 9) * .5,16) top 52%;
+//   background-size: em(24,16) auto;
+//   &[disabled] {
+//     background-image: none;
+//   }
+// }

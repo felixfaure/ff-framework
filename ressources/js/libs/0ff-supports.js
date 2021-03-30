@@ -70,7 +70,7 @@
 		} catch (e) {}
 		return bool;
 	}
-	support.video = support_video();
+	// support.video = support_video();
 
 
 	//Event animation/transition end
@@ -90,7 +90,7 @@
 		}
 		return false;
 	}
-	support.transitionend = transitionEndEventName();
+	// support.transitionend = transitionEndEventName();
 
 	function animationEndEventName() {
 		var i,
@@ -108,7 +108,7 @@
 		}
 		return false;
 	}
-	support.animationend = animationEndEventName();
+	// support.animationend = animationEndEventName();
 
 
 	support.objectFit = testCSS("object-fit");

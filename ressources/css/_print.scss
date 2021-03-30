@@ -1,67 +1,85 @@
+@charset "UTF-8";
 /* ==========================================================================
    >>PRINT
    ========================================================================== */
 @media print {
-    /* Général */
-    * {
-        background: transparent !important;
-        //color: #000 !important; /* Black prints faster: h5bp.com/s */
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
+  /* Général */
+  * {
+    // background: transparent !important;
+    //color: #000 !important; /* Black prints faster: h5bp.com/s */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
 
-    @page {
-        margin: 0.5cm;
-    }
+  @page {
+    margin: 0.5cm;
+  }
 
-    /* Liens, abbr */
-    p a[href]:after,
-    .p a[href]:after {
-        content: " (" attr(href) ")";
-    }
-    p abbr[title]:after,
-    .p abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
-    /* Pas pour images (classe à ajoutée...), liens internes et js */
-    p .linkWithNoTxt a:after,
-    p a[href^="javascript:"]:after,
-    p a[href^="#"]:after,
-    .p .linkWithNoTxt a:after,
-    .p a[href^="javascript:"]:after,
-    .p a[href^="#"]:after {
-        content: "";
-    }
+  /* Liens */
+  .txt p a[href]:not([href^="mailto:"]):after,
+  .txt ul a[href]:not([href^="mailto:"]):after,
+  .txt ol a[href]:not([href^="mailto:"]):after {
+    content: " (" attr(href) ")";
+  }
 
-    /* Gestion des débordement de page */
-    pre,
-    blockquote,
-    ul,
-    ol,
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
+  /* Gestion des débordement de page */
+  pre,
+  blockquote,
+  ul,
+  ol,
+  tr,
+  img,
+  a {
+    page-break-inside: avoid;
+  }
 
-    h1,
-    h2,
-    h3,
-    caption {
-        page-break-after: avoid;
-    }
+  h1,
+  h2,
+  h3,
+  caption {
+    page-break-after: avoid;
+  }
 
-    /* En tete de table */
-    thead {
-        display: table-header-group; /* h5bp.com/t */
-    }
+  /* En tete de table */
+  thead {
+    display: table-header-group; /* h5bp.com/t */
+  }
 
-    /* Veuves et orphelins */
-    p,
-    .p,
-    blockquote,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
+  /* Veuves et orphelins */
+  p,
+  blockquote,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  #header,
+  #footer,
+  #tarteaucitronRoot,
+  .bc,
+  .media-video {
+    display: none!important;
+  }
+
+  .acc_content {
+    display: block!important;
+  }
+  .is-closed > .acc_head button::after {
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  .btn {
+    border: 1px solid $noir!important;
+    background-color: transparent!important;
+    color: $noir!important;
+  }
+
+  .section {
+    border-top: 1px solid $gris!important;
+    &:before,
+    &:after {
+      display: none!important;
     }
+  }
 }

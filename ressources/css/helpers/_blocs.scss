@@ -1,8 +1,10 @@
+@charset "UTF-8";
 /* ==========================================================================
    >>HELPERS BLOCS
    ========================================================================== */
 /* Wrapper */
 .wrapper {
+	display: block;
 	width: $pc-wrap;
 	max-width: rem($width-wrap);
 	margin-left: auto;
@@ -11,31 +13,6 @@
 .wrapper_full {
 	margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
-}
-
-/* Répartition justifiée parfaite */
-.pj {
-	display: block;
-	text-align: justify;
-	overflow: hidden;
-	&:before {
-		content: '';
-		display: block;
-		width: 100%;
-		margin-bottom: -1em * $line-height-base;
-	}
-	&:after {
-		content: '';
-		display: inline-block;
-		width: 100%;
-	}
-}
-.pj_i {
-	display: inline-block;
-	vertical-align: middle;
-	position: relative;
-	top: 1em * $line-height-base;
-	text-align: left;
 }
 
 /* Cover, contain */
@@ -49,11 +26,11 @@
 }
 .cv-img {
 	object-fit: cover;
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
+	// background-position: center center;
+	// background-repeat: no-repeat;
+	// background-size: cover;
 }
 .cv-contain {
 	object-fit: contain;
-	background-size: contain;
+	// background-size: contain;
 }

@@ -1,78 +1,7 @@
+@charset "UTF-8";
 /* ==========================================================================
    >>TYPO
    ========================================================================== */
-/* --------------------------------------------------------------------------
-   ->titres
-   -------------------------------------------------------------------------- */
-@if $headings-size {
-@for $i from 1 through length($headings-size) {
-  $selector: "h#{$i}, .h#{$i}";
-  $visual  : nth($headings-size, $i);
-  $weight  : nth($headings-weight, $i);
-
-  #{$selector} {
-    @include flow-hr($visual);
-    font-weight: $weight;
-  }
-}
-}
-
-h1, .h1,
-h2, .h2,
-h3, .h3,
-h4, .h4,
-h5, .h5,
-h6, .h6 {
-	font-family: $font-secondaire;
-	max-width: $max-p-width;
-	//Eviter problèmes de margin
-  @if $vertical-rythm != '1t' {
-  	&:last-child {
-  		margin-bottom: 0;
-  	}
-  }
-  @if $vertical-rythm != '1b' {
-  	&:first-child {
-  		margin-top: 0;
-  	}
-  }
-}
-
-/* --------------------------------------------------------------------------
-   ->paragraphes et autres
-   -------------------------------------------------------------------------- */
-p,
-.p,
-ul,
-ol,
-dl,
-blockquote,
-pre,
-table,
-caption,
-figure {
-  font-size: 1em; /* equiv 16px */
-  line-height: $line-height-base;
-  margin: $line-height-base * 1em (0);
-	max-width: $max-p-width;
-	// Virer marge basse sur premier et dernier enfant
-	&:last-child {
-		margin-bottom: 0;
-	}
-	&:first-child {
-		margin-top: 0;
-	}
-}
-
-@if $p-justify {
-p,
-.p {
-	text-align: justify;
-	word-wrap: break-word;
-	hyphens: auto;
-}
-}
-
 /* --------------------------------------------------------------------------
    ->mise en forme du texte
    -------------------------------------------------------------------------- */
@@ -105,74 +34,31 @@ ins {
   text-decoration: underline;
 }
 
+
 /* --------------------------------------------------------------------------
    ->liens
    -------------------------------------------------------------------------- */
+a,
+button {
+  transition: color .25s, background-color .25s;
+  cursor: pointer;
+}
+
 /* Rappel : l'ordre des pseudo-classes doit être : link > visited > hover/focus > active */
 a {
-	color: $color-links;
-	text-decoration: $a-underline;
-	cursor: pointer;
-	transition: color .3s;
-	&:hover,
-	&:focus,
-	&:active {
-		color: $color-links-hover;
-	}
-	&:focus {
-		outline: thin dotted;
-	}
-	&:hover,
-	&:active {
-		outline: 0;
-	}
+  text-decoration: none;
+  color: inherit;
 }
 
-nav a {
-	text-decoration: none;
-}
-
-// Lien externe :
-// a[href^="http://"],
-// a[href^="https://"]
-// Enlever pour notre domaine
-// a[href^="http://www.mondomaine.com"]
-
-// Contact :
-// a[href^="mailto:"]
-
-// PDF :
-// a[href$=".pdf"]
 
 /* --------------------------------------------------------------------------
    ->listes à puces et numérotées
    -------------------------------------------------------------------------- */
 ul,
 ol {
-	padding-left: $puce-padding;
-	list-style-position: $puce-position;
-	&.unstyled {
-		list-style: none;
-    padding-left: 0;
-	}
+	list-style: none;
 }
 
-/* éviter marges supplémentaires sur éléments imbriqués et dans les menus */
-li p,
-li .p,
-li ul,
-li ol,
-nav ul,
-nav ol {
-  margin-bottom: 0;
-  margin-top: 0;
-}
-nav ul,
-nav ol {
-	padding-left: 0;
-	list-style: none;
-	max-width: none;
-}
 
 /* --------------------------------------------------------------------------
    ->autres mises en forme
@@ -205,10 +91,6 @@ kbd {
 }
 
 /* Code */
-@if $prism {
-/* Use with prism.js : http://prismjs.com/ */
-/* cf. partie prism */
-} @else {
 pre > code {
 	display: block;
   max-height: em(400);
@@ -217,7 +99,6 @@ pre > code {
   tab-size: 4;
   white-space: pre;
   background-color: #efefef;
-}
 }
 
 /* Surlignement */
@@ -281,22 +162,247 @@ hr {
   padding: 0;
 }
 
+
 /* --------------------------------------------------------------------------
-   ->tailles alternatives
+   ->texte classique
    -------------------------------------------------------------------------- */
-$sizes:
-  smallest ($taille-base - 6),
-  smaller ($taille-base - 4),
-  small   ($taille-base - 2),
-  big     ($taille-base + 2),
-  bigger  ($taille-base + 4),
-  biggest ($taille-base + 6);
+.txt {
+  h2,
+  h3,
+  h4,
+  p,
+  ul,
+  ol,
+  figure,
+  blockquote,
+  table {
+    max-width: rem($maxW);
+  }
+  h2,
+  h3 {
+    margin-top: rem(25 * 2);
+    margin-bottom: rem(25);
+    font-size: rem(24);
+    line-height: 1.25; //30
+    font-weight: 700;
+    color: $couleur1;
+  }
+  h4 {
+    font-size: rem(17);
+    line-height: $line-height-base; //25
+    font-weight: 700;
+    color: $couleur1;
+  }
+  p,
+  ul,
+  ol,
+  blockquote,
+  .acc {
+    margin-bottom: rem(25);
+  }
+  p,
+  ul,
+  ol,
+  figure,
+  blockquote {
+    font-size: rem(17);
+    line-height: $line-height-base; //25
+  }
+  .acc + .acc {
+    margin-top: rem(-25);
+  }
+  // p {
+  //   text-align: justify;
+  //   word-wrap: break-word;
+  //   hyphens: auto;
+  // }
 
-@each $size in $sizes {
-  $keyword: nth($size, 1);
-  $size-px: nth($size, 2);
+  a:not(.btn) {
+    text-decoration: underline;
+    color: $couleur1;
+    // &[target="_blank"] {
+    //   &:after {
+    //     @include icomoon;
+    //     display: inline-block;
+    //     vertical-align: middle;
+    //     content: "\e91a";
+    //     margin-left: em(2,14);
+    //     font-size: em(14,17);
+    //     text-decoration: none;
+    //   }
+    // }
+    @include hover {
+      text-decoration: none;
+    }
+  }
 
-  .#{$keyword} {
-    @include flow-other($size-px);
+  ul:not(.unstyled),
+  ol:not(.unstyled) {
+    padding-left: em(28,17);
+    ul,
+    ol {
+      margin: 0;
+      font-size: 1em;
+    }
+  }
+  ul:not(.unstyled) > li,
+  ol:not(.unstyled) > li {
+    &:before {
+      display: inline-block;
+      width: em(28,17);
+      margin-left: em(-28,17);
+      color: $couleur1;
+    }
+  }
+  ul:not(.unstyled) {
+  	& > li {
+  		&:before {
+  			content: "•";
+  		}
+  	}
+  }
+  ol:not(.unstyled) {
+		counter-reset: ol;
+		& > li {
+			counter-increment: ol;
+			&:before {
+				content: counter(ol);
+        font-weight: 700;
+			}
+		}
+	}
+  p + ul:not(.unstyled),
+  p + ol:not(.unstyled) {
+    margin-top: rem(-25);
+  }
+
+  figure {
+    margin-top: rem(45);
+    margin-bottom: rem(45);
+  }
+
+  blockquote {
+    position: relative;
+    padding-left: em(28,17);
+    font-weight: 700;
+    color: $couleur1;
+    &:before {
+      content: " ";
+      display: block;
+      width: rem(4);
+      position: absolute;
+      top: em(4,17);
+      bottom: em(4,17);
+      left: 0;
+      background-color: $couleur1;
+    }
+    p {
+      margin: 0;
+    }
+  }
+  cite {
+    font-weight: 400;
+  }
+
+  cite {
+    font-size: rem(14);
+    line-height: 1.429; //20
+    color: $gris;
+    a:not(.btn) {
+      color: inherit;
+      @include hover {
+        color: $couleur1;
+      }
+    }
+  }
+
+  h2,
+  h3,
+  h4,
+  p,
+  ul,
+  ol,
+  figure,
+  blockquote,
+  table,
+  .acc {
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  // ul.select2-results__options {
+  //   max-width: 100%;
+  //   margin-bottom: 0;
+  //   padding-left: 0;
+  //   font-size: 1em;
+  //   line-height: inherit;
+  //   & > li:before {
+  //     display: none;
+  //   }
+  // }
+
+  table {
+    width: 100%;
+    margin-top: rem(25);
+    margin-bottom: rem(25);
+    &.has-fixed-layout {
+      table-layout: fixed;
+    }
+    th,
+    td {
+      border-bottom: 1px solid $gris;
+      padding-top: rem(11);
+      padding-bottom: rem(10);
+      font-size: rem(16);
+      line-height: 1.5; //24
+      &:not(:last-child) {
+        padding-right: rem(10);
+      }
+    }
+    strong {
+      color: $couleur1;
+    }
+    thead th,
+    thead td {
+      border-color: $couleur1;
+      font-size: rem(13);
+      line-height: 1.846; //24
+      color: $gris;
+      text-transform: uppercase;
+      letter-spacing: em(1,13);
+    }
+    thead,
+    tbody:first-child tr:first-child {
+      th,
+      td {
+        padding-top: 0;
+      }
+    }
   }
 }
+
+
+/* --------------------------------------------------------------------------
+   ->tailles
+   -------------------------------------------------------------------------- */
+// .f1-64 { //...
+//   font-size: rem(64);
+//   line-height: 1.25; //80
+// }
+//
+// .f2-64,
+// .f2-32 {
+//   font-family: $font-secondaire;
+// }
+// .f2-64 { //...
+//   font-size: rem(64);
+//   line-height: 1.25; //80
+// }
+// .f2-32 { //...
+//   font-size: rem(32);
+//   line-height: 1.25; //40
+// }

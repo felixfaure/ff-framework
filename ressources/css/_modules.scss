@@ -1,6 +1,73 @@
+@charset "UTF-8";
 /* ==========================================================================
    >>MODULES
    ========================================================================== */
+/* --------------------------------------------------------------------------
+   ->Lazyload
+   -------------------------------------------------------------------------- */
+html:not(.is-js-init) img.lazyload  {
+	display: none!important;
+}
+.lazyload,
+.lazyloading {
+	opacity: 0;
+}
+.lazyloaded {
+	opacity: 1;
+	transition: opacity .3s;
+}
+
+
+/* --------------------------------------------------------------------------
+   ->Skip links
+   -------------------------------------------------------------------------- */
+.skipLink {
+  &:focus {
+		position: absolute;
+		top: rem(10);
+		left: rem(10);
+		z-index: 9000;
+		padding: 1em;
+		background-color: $couleur1;
+		color: $blanc;
+  }
+}
+
+@include mq($nav-mobile) {
+	.skipLink {
+		&[href="#nav"] {
+			display: none;
+		}
+	}
+}
+
+
+/* --------------------------------------------------------------------------
+   ->Lien avec ligne animé au hover
+   -------------------------------------------------------------------------- */
+.lkHv_l {
+	background-image: linear-gradient(currentColor, currentColor);
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  transition: background-size .25s;
+}
+.lkHv {
+	@include hover {
+		.lkHv_l {
+			background-position: 0% 100%;
+			background-size: 100% 2px;
+		}
+	}
+}
+.lkHv.lkHv_l {
+	@include hover {
+		background-position: 0% 100%;
+		background-size: 100% 2px;
+	}
+}
+
+
 /* --------------------------------------------------------------------------
   ->Grille
   -------------------------------------------------------------------------- */
@@ -10,6 +77,7 @@ $grid-nb: 3;
 .grid {
 	margin-left: rem(-.5 * $grid-m-h);
 	margin-right: rem(-.5 * $grid-m-h);
+	margin-bottom: rem(-1 * $grid-m-v);
 	overflow: hidden;
 }
 .grid_i {
@@ -20,46 +88,18 @@ $grid-nb: 3;
 	border-style: solid;
 	border-left-width: rem(.5 * $grid-m-h);
 	border-right-width: rem(.5 * $grid-m-h);
-	border-top-width: rem(.5 * $grid-m-v);
-	border-bottom-width: rem(.5 * $grid-m-v);
-	background-clip: padding-box;
-	&:nth-of-type(-n + #{$grid-nb}) {
-		margin-top: rem(-.5 * $grid-m-v);
-	}
+	margin-bottom: rem($grid-m-v);
 }
-.grid-flex {
-	display: flex;
-	flex-wrap: wrap;
-	.grid_i {
-		display: block;
-		flex-basis: auto;
-	}
+.grid_i-full {
+	width: 100%;
 }
 
-
-/* --------------------------------------------------------------------------
-  ->Skip links
-  -------------------------------------------------------------------------- */
-/* Pour avoir le focus chrome oblige a mettre un tabindex à -1, on lui enlève l'outline */
-*[tabindex="-1"]:focus {
-	outline: none;
+.js-grid {
+	position: relative;
+	overflow: hidden;
 }
-/* Même styles que WP */
-.skipLinks {
-	position: fixed;
-	left: em(6);
-	top: em(7);
-	z-index: 9999;
-	a {
-		display: inline-block;
-		padding: em(15,14) em(23,14) em(14,14);
-		background-color: #F1F1F1;
-		color: #21759B;
-		font-size: em(14);
-		font-weight: 700;
-		text-decoration: none;
-		box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.6);
-	}
+.js-grid.is-init.grid {
+	margin-bottom: 0;
 }
 
 
@@ -80,7 +120,7 @@ $grid-nb: 3;
 	height: em(40);
 	margin-left: -1 * em(40 * .5);
 	margin-top: -1 * em(40 * .5);
-	border: em(3) solid rgba($color-txt-body, 0.2);
+	border: em(3) solid rgba($color-txt-body, .2);
 	border-left-color: $color-txt-body;
 	border-radius: 50%;
 	transform: translateZ(0);
@@ -111,3 +151,58 @@ $grid-nb: 3;
 	}
 }
 }
+
+
+/* --------------------------------------------------------------------------
+	 ->Breadcrumb
+   -------------------------------------------------------------------------- */
+.bc {
+	white-space: nowrap;
+	overflow: hidden;
+	overflow-x: auto;
+	li {
+		display: inline-block;
+		&:not(:last-child):after {
+	    content: ">";
+	    display: inline-block;
+	    text-align: center;
+	    width: 1em;
+	    vertical-align: top;
+		}
+	}
+	a {
+		@include hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+
+/* --------------------------------------------------------------------------
+	 ->Sticky bar
+   -------------------------------------------------------------------------- */
+.stickyBar_inner {
+	position: relative;
+	width: 100%;
+	height: rem($nav-h);
+	z-index: 3000;
+	.is-fixed & {
+		position: fixed;
+		top: 0;
+		left: 0;
+		transition: transform .25s;
+		html:not(.is-nav-hide) & {
+	    transform: translateY(rem($nav-h));
+	  }
+	}
+}
+
+
+//====================================================================================
+//BLOCKS
+//====================================================================================
+@import 'blocks/section';
+@import 'blocks/accordeon';
+@import 'blocks/media';
+@import 'blocks/slider';
+@import 'blocks/modal';

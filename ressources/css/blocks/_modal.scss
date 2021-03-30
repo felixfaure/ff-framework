@@ -1,0 +1,43 @@
+/* --------------------------------------------------------------------------
+   ->Modale
+   -------------------------------------------------------------------------- */
+.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 6000;
+	background-color: rgba($couleur1,.95);
+	color: $blanc;
+  &.is-hide {
+    display: none;
+  }
+}
+.modal_close {
+	position: absolute;
+  top: rem(36);
+  right: (100% - $pc-wrap) * .5 * .5;
+  transform: translateX(50%);
+  font-size: rem(24);
+	[class^="icon-"] {
+		display: block;
+		transform-origin: center center;
+		transition: transform .3s ease-in-out;
+	}
+	@include hover {
+		[class^="icon-"] {
+			transform: rotate(90deg);
+		}
+	}
+}
+.modal_inner {
+	padding: rem(32) rem(32);
+	height: 100%;
+	width: 100%;
+  a {
+		@include hover {
+			color: rgba($blanc,.75);
+		}
+  }
+}

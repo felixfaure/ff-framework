@@ -1,0 +1,21 @@
+/* --------------------------------------------------------------------------
+   ->Slider
+   -------------------------------------------------------------------------- */
+.slider {
+  width: 100%;
+  white-space: nowrap;
+  overflow-x: auto;
+  &.flickity-enabled {
+    white-space: normal;
+    overflow: hidden;
+  }
+}
+.slider_i {
+  display: inline-block;
+  vertical-align: top;
+  white-space: normal;
+  margin-right: rem(40);
+  .flickity-enabled & {
+    display: block;
+  }
+}

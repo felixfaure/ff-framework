@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* --------------------------------------------------------------------------
    ->Flickity v2.2.1
    -------------------------------------------------------------------------- */
@@ -41,28 +42,27 @@
 .flickity-button {
   position: absolute;
   background: hsla(0, 0%, 100%, 0.75);
-  border: none;
   color: #333;
+  &:focus {
+		z-index: 1;
+	}
+  .flickity-enabled:not(.is-draggable) & {
+		display: none;
+	}
 }
 
-.flickity-button:hover {
-  background: white;
-  cursor: pointer;
-}
+// .flickity-button:hover {
+//   background: white;
+// }
 
-.flickity-button:focus {
-  outline: none;
-  box-shadow: 0 0 0 5px #19F;
-}
-
-.flickity-button:active {
-  opacity: .6;
-}
+// .flickity-button:focus {
+//   outline: none;
+//   box-shadow: 0 0 0 5px #19F;
+// }
 
 .flickity-button:disabled {
   opacity: .3;
   cursor: auto;
-  /* prevent disabled button from capturing pointer up event. #716 */
   pointer-events: none;
 }
 
@@ -94,8 +94,9 @@
 
 .flickity-prev-next-button .flickity-button-icon {
   position: absolute;
-  left: 20%;
-  top: 20%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
   width: 60%;
   height: 60%;
 }

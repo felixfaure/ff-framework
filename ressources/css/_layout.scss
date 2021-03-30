@@ -1,14 +1,143 @@
+@charset "UTF-8";
 /* ==========================================================================
    >>LAYOUT
    ========================================================================== */
 /* --------------------------------------------------------------------------
    ->header
    -------------------------------------------------------------------------- */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 4000;
+  background-color: $blanc;
+  transition: transform .25s;
+  .is-nav-hide & {
+    transform: translateY(-100.1%);
+  }
+}
+.header_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: rem($nav-h);
+}
+.header_logo {
+  position: relative;
+  flex: 0 0 auto;
+  display: block;
+  width: rem(54);
+  height: rem(48);
+  svg {
+    display: block;
+  	width: 100%;
+  	height: 100%;
+  	position: absolute;
+  	top: 0;
+  	left: 0;
+  }
+  path {
+    fill: $couleur1;
+  }
+}
+.header_nav {
+  flex: 1 1 auto;
+  display: flex;
+  margin-left: rem(60 - 15);
+}
+.nav_wrapper {
+  flex: 1 1 auto;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.nav_i  {
+  &:last-child {
+    margin-right: rem(-15);
+  }
+}
+.nav_i > a {
+  display: block;
+  padding: rem(15);
+  position: relative;
+  &:after {
+    content: " ";
+    display: block;
+    height: rem(5);
+    position: absolute;
+    bottom: rem(5);
+    left: rem(15);
+    right: rem(15);
+    border-radius: rem(5 * .5);
+    background-color: $couleur1;
+    pointer-events: none;
+		transform: scaleX(0);
+		transform-origin: right center;
+		transition: transform .25s;
+  }
+}
+.nav_i:not(.nav_i-search):not(.nav_i-langs).is-open > a {
+  &:after {
+		transform: scaleX(1);
+		transform-origin: left center;
+  }
+}
+.nav_i:not(.nav_i-search):not(.nav_i-langs) > a {
+  @include hover {
+    &:after {
+  		transform: scaleX(1);
+  		transform-origin: left center;
+    }
+  }
+}
+
+.nav_sub {
+  display: none;
+  position: fixed;
+  top: rem($nav-h);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 4100;
+  background-color: $couleur1;
+  color: $blanc;
+  .is-open & {
+    display: block;
+  }
+}
+.navSub {
+  overflow: auto;
+}
+
+.header_close {
+  display: none;
+  position: fixed;
+  top: rem(36);
+  right: (100% - $pc-wrap) * .5 * .5;
+  transform: translateX(50%);
+  color: $blanc;
+  font-size: rem(24);
+  [class^="icon-"] {
+    display: block;
+  }
+  .has-subnavOpen & {
+    display: block;
+  }
+}
+
+.triggerMobile {
+  display: none;
+}
 
 
 /* --------------------------------------------------------------------------
    ->content
    -------------------------------------------------------------------------- */
+.main {
+  overflow: hidden;
+}
 
 
 /* --------------------------------------------------------------------------

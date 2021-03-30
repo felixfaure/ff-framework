@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* ==========================================================================
    >>HELPERS TYPOS
    ========================================================================== */
@@ -21,6 +22,9 @@
 .txt-it {
 	font-style: italic;
 }
+.txt-900 {
+	font-weight: 900;
+}
 .txt-700 {
 	font-weight: 700;
 }
@@ -43,18 +47,4 @@
 }
 .txt-f2 {
 	font-family: $font-secondaire;
-}
-
-/* Couleurs */
-.txt-white {
-	color: $blanc;
-}
-.txt-black {
-	color: $noir;
-}
-.txt-red {
-	color: $rouge;
-}
-.txt-grey {
-	color: $gris;
 }

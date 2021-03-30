@@ -81,9 +81,12 @@
 //=============================================
 //Hover :
 //=============================================
-@mixin hover {
+@mixin hover($add: '') {
+	html[data-whatinput="keyboard"] &#{$add}:focus {
+		@content;
+	}
   @media (hover: hover), (-ms-high-contrast:none) {
-    &:hover {
+    &#{$add}:hover {
       @content;
     }
   }

@@ -1,38 +1,38 @@
 //Couleurs basiques
 //=================
-$noir: #000 !default;
-$blanc: #fff !default;
-$gris: #F6F6F6 !default;
-$jaune: #ff0 !default;
-$rouge: #cb1d1d !default;
+$noir: #000;
+$blanc: #fff;
+$gris: #F6F6F6;
+$jaune: #ff0;
+$rouge: #D8232A; //pastille panier, bordure input erreur, accueil dernière minute
+$vert: #03a706;
 
 //Couleurs principales du projet
 //==============================
-$couleur1: #00d8a8 !default; //...
-//...
+$couleur1-l: #4950A7; //...
+$couleur1: #3B4186; //...
+$couleur1-d: #2f346b; //...
+$couleur2: #EEB12A; //...
+$couleur2-d: #d59e25; //...
+
+$gris1: #1A1919; //...
+$gris2: #333333; //...
+$gris3: #4A4A4A; //...
+$gris4: #757575; //...
+$gris5: #AAAAAA; //...
+$gris6: #BBBBBB; //...
+$gris7: #CCCCCC; //...
 
 //Couleurs générales
 //==================
-$bg-color-body: $blanc !default;
-$color-txt-body: $noir !default;
-
-//Couleur des boutons (.btn)
-//==========================
-$bg-color-btn: $noir !default;
-$bg-color-btn-hover: $couleur1 !default;
-$color-txt-btn: $blanc !default;
-$color-txt-btn-hover: $blanc !default;
-
-//Couleurs des liens
-//==================
-$color-links: $couleur1 !default;
-$color-links-hover: $noir !default;
+$bg-color-body: $blanc;
+$color-txt-body: $gris1;
 
 //Couleur de la sélection
 //=======================
-$couleur-selection-bg: darken($couleur1,5%) !default;
-$couleur-selection-ft: $blanc !default;
+$couleur-selection-bg: $couleur2;
+$couleur-selection-ft: $couleur1;
 
 //Couleur des hr, quote, etc.
 //===========================
-$couleur-ligne: $couleur1 !default;
+$couleur-ligne: $couleur1;

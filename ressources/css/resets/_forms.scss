@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @if $hasForm {
 /* ==========================================================================
    >>RESET FORMS
@@ -113,7 +114,14 @@ legend {
 /* if select styling bugs on WebKit */
 /* select { -webkit-appearance: none; } */
 select {
-  -webkit-appearance: menulist-button;
+  // -webkit-appearance: menulist-button;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  &::-ms-expand {
+    display: none;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -121,7 +129,6 @@ select {
    -------------------------------------------------------------------------- */
 /* Curseur */
 label,
-.label,
 button,
 input[type="submit"],
 input[type="button"],
@@ -131,7 +138,6 @@ input[type="reset"] {
 
 /* Alignement */
 label,
-.label,
 button,
 input,
 select {

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* ==========================================================================
    >>RESET GENERAL
    ========================================================================== */
@@ -39,9 +40,9 @@ img {
   -ms-interpolation-mode: bicubic;
 	width: auto;
 }
-img:not([src$=".svg"]) {
-  height: auto;
-}
+// img:not([src$=".svg"]) {
+//   height: auto;
+// }
 a img {
 	border: 0;
 }

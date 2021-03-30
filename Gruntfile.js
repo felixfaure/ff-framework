@@ -17,10 +17,6 @@ module.exports = function(grunt) {
 				src: ['ressources/js/libs/*.js'], // Tous les plugins et libs
 				dest: 'ressources/js/build/plugins.js',
 			},
-			header: {
-				src: ['ressources/js/header/*.js'], // Fichiers scripts header
-				dest: 'ressources/js/build/header.js',
-			},
             prod: {
 				src: ['ressources/js/libs/*.js','ressources/js/perso/*.js'], // Fichiers scripts perso + plugins
 				dest: 'ressources/js/build/production.js',
@@ -39,10 +35,6 @@ module.exports = function(grunt) {
 				src: 'ressources/js/build/production.js',
 				dest: 'js/production.min.js'
 			},
-			header: {
-				src: 'ressources/js/build/header.js',
-				dest: 'js/header.min.js'
-			}
 		},
 
 		sass: {
@@ -66,7 +58,7 @@ module.exports = function(grunt) {
                     "Android >= 4",
                     "Chrome >= 20", //35
                     "Firefox >= 24", //31
-                    "Explorer >= 8", //9
+                    "Explorer >= 11", //9
                     "iOS >= 6", //7
                     "Opera >= 12",
                     "Safari >= 6" //7.1
@@ -89,24 +81,6 @@ module.exports = function(grunt) {
 				}
 			}
 		},
-
-		browserSync: {
-            dev: {
-                bsFiles: {
-                    src : [
-                        "style.css",
-                        "*.html",
-                        "*.php",
-                        "js/*.js",
-                        "img/*"
-                    ]
-                },
-                options: {
-					proxy: "localhost/ff-framework",
-                    watchTask: true // < VERY important
-                }
-            }
-        },
 
 		watch: {
 			options: {
@@ -132,9 +106,8 @@ module.exports = function(grunt) {
 
 	require('load-grunt-tasks')(grunt);
 
-    grunt.registerTask('default', ['sass', 'autoprefixer', 'cssmin', 'concat', 'uglify']);
-    grunt.registerTask('css', ['sass', 'autoprefixer', 'cssmin']);
-    grunt.registerTask('js', ['concat', 'uglify']);
-    grunt.registerTask('live', ['sass', 'autoprefixer', 'cssmin', 'concat', 'uglify', 'browserSync', 'watch']);
+  grunt.registerTask('default', ['sass', 'autoprefixer', 'cssmin', 'concat', 'uglify', 'watch']);
+  grunt.registerTask('css', ['sass', 'autoprefixer', 'cssmin']);
+  grunt.registerTask('js', ['concat', 'uglify']);
 
 };

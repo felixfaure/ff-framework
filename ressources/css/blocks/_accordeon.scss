@@ -1,0 +1,75 @@
+/* --------------------------------------------------------------------------
+   ->Accordeon
+   -------------------------------------------------------------------------- */
+.acc {
+  border-color: $gris;
+  border-style: solid;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+}
+.acc + .acc {
+  border-top-width: 0;
+}
+
+.acc:not(.is-init) > .acc_head,
+.acc.is-init > .acc_head button {
+  display: block;
+  width: 100%;
+  padding-top: rem(16);
+  padding-bottom: rem(14);
+}
+.acc_head {
+  h3 {
+    margin: 0;
+  }
+}
+.acc_head button {
+  position: relative;
+  padding-right: rem(24 + 10);
+  &:after {
+    content: "\e90c";
+    @include icomoon;
+    display: block;
+    width: 1em;
+    height: 1em;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    // transform: translateY(-50%);
+    pointer-events: none;
+    text-align: center;
+    // line-height: 1em;
+    color: $couleur1;
+    font-size: rem(24);
+    transform-origin: center center;
+    transform: translateY(-50%) rotate(135deg);
+    transition: transform .25s;
+  }
+}
+.acc_head button {
+  @include hover {
+    color: $couleur1;
+  }
+}
+.is-closed > .acc_head button {
+  &:after {
+    transform: translateY(-50%) rotate(0deg);
+  }
+}
+.acc_content {
+  padding-bottom: rem(25);
+}
+
+//Si premier
+.acc:first-child {
+  border-top-width: 0;
+}
+.acc:first-child > .acc_head,
+.acc:first-child > .acc_head button {
+  padding-top: 0;
+}
+.acc:first-child > .acc_head button {
+  &:after {
+    margin-top: rem(16 * -.5);
+  }
+}

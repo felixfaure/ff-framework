@@ -1,0 +1,36 @@
+@charset "UTF-8";
+/* ==========================================================================
+   >>Outline
+   ========================================================================== */
+a,
+button,
+[tabindex] {
+  &:hover,
+  &:focus,
+	&:active {
+		outline: 0;
+	}
+}
+
+html[data-whatinput="keyboard"] {
+  a,
+  button,
+  .inputOL,
+  [tabindex] {
+    &:focus {
+  		outline: 2px dashed $couleur1;
+      outline-offset: 2px;
+  	}
+  }
+  .form_check input[type="checkbox"]:focus + span {
+    &:before {
+      outline: 2px dashed $couleur1;
+      outline-offset: 2px;
+    }
+  }
+  // .xxx a {
+  //   &:focus {
+  //     outline-offset: -2px;
+  // 	}
+  // }
+}

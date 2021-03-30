@@ -1,0 +1,49 @@
+/* --------------------------------------------------------------------------
+   ->Média
+   -------------------------------------------------------------------------- */
+.media {
+  a,
+  iframe,
+  img {
+    display: block;
+    width: 100%;
+  }
+  img {
+    height: auto;
+  }
+  figcaption {
+    display: block;
+    margin-top: em(10,14);
+    font-size: rem(14);
+    line-height: 1.429; //20
+  }
+}
+.media_wrapper {
+  position: relative;
+  padding-bottom: 100% * (9 / 16);
+  iframe {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+// cf. https://github.com/WordPress/gutenberg/blob/master/packages/block-library/src/embed/constants.js
+.is-aspect-21-9 .media_wrapper {
+  padding-bottom: 100% * (9 / 21);
+}
+.is-aspect-18-9 .media_wrapper {
+  padding-bottom: 100% * (9 / 18);
+}
+.is-aspect-4-3 .media_wrapper {
+  padding-bottom: 100% * (3 / 4);
+}
+.is-aspect-1-1 .media_wrapper {
+  padding-bottom: 100% * (1 / 1);
+}
+.is-aspect-9-16 .media_wrapper {
+  padding-bottom: 100% * (16 / 9);
+}
+.is-aspect-1-2 .media_wrapper {
+  padding-bottom: 100% * (2 / 1);
+}
