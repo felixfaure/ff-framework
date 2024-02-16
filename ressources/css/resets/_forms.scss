@@ -36,6 +36,9 @@ button {
   padding: 0;
   overflow: visible; /* IE 8/9/10/11 overflow hidden */
   text-align: inherit;
+  display: inline-block;
+  width: auto;
+  border: none;
 }
 
 button,
